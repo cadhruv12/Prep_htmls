@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FC Prep File — Al Sayer Franchising</title>
+<style>
+:root{
+  --bg:#FAF8F3;--card:#FFFFFF;--ink:#1E1E1B;--ink-soft:#5B5650;
+  --teal:#14463F;--teal-soft:#E4EEEC;
+  --amber:#B9852E;--amber-soft:#F6EBD9;
+  --rule:#DDD6C7;--rule-soft:#EDE8DD;
+  --plum:#5C3A52;--plum-soft:#EFE5EC;
+  --slate:#33526B;--slate-soft:#E7EEF3;
+  --coffee:#6B4226;--coffee-soft:#F0E6DD;
+  --green:#1D5C3A;--green-soft:#E2F0E8;
+  --navy:#1C3557;--navy-soft:#E3EAF1;
+  --red:#7A2020;--red-soft:#F5E5E5;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+  line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:900px;margin:0 auto;padding:48px 28px 100px;}
+.mono{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;}
+
+.cover{border:1px solid var(--rule);border-radius:2px;padding:36px 36px 28px;background:var(--card);position:relative;margin-bottom:24px;}
+.stamp{position:absolute;top:24px;right:28px;font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:.12em;color:var(--amber);border:1px solid var(--amber);padding:4px 9px;border-radius:2px;text-transform:uppercase;}
+.fileref{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;font-size:11.5px;color:var(--ink-soft);letter-spacing:.04em;margin-bottom:14px;}
+h1.title{font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif;font-size:28px;font-weight:600;margin:0 0 6px;line-height:1.2;max-width:540px;}
+.subtitle{font-size:15px;color:var(--ink-soft);margin-bottom:18px;}
+.metarow{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft);padding-top:16px;}
+.metaitem{min-width:180px;margin:0 32px 8px 0;}
+.metaitem .mk{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);}
+.metaitem .mv{font-size:13.5px;margin-top:2px;}
+
+.howto{font-size:13px;color:var(--ink-soft);background:var(--amber-soft);border-left:3px solid var(--amber);padding:12px 16px;margin-bottom:32px;border-radius:0 2px 2px 0;}
+.howto b{color:var(--amber);}
+
+.sec-head{display:flex;align-items:baseline;gap:14px;margin:48px 0 6px;border-bottom:2px solid var(--ink);padding-bottom:10px;}
+.sec-num{font-size:13px;color:var(--ink-soft);}
+.sec-head h2{font-family:Georgia,serif;font-size:21px;margin:0;flex:1;}
+.chip{font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:9px;}
+.chip-teal{background:var(--teal-soft);color:var(--teal);}
+.chip-amber{background:var(--amber-soft);color:var(--amber);}
+.chip-slate{background:var(--slate-soft);color:var(--slate);}
+.chip-red{background:var(--red-soft);color:var(--red);}
+.sec-intro{font-size:14.5px;color:var(--ink-soft);margin:14px 0 22px;max-width:760px;}
+
+.layman{border-radius:2px;padding:16px 20px;margin-bottom:16px;}
+.layman .eyebrow{font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:6px;}
+.layman p{margin:0;font-size:14px;color:var(--ink);}
+
+.concept{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--teal);border-radius:2px;padding:18px 22px;margin-bottom:22px;}
+.concept h3{font-family:Georgia,serif;font-size:15.5px;margin:0 0 8px;color:var(--teal);}
+.concept p{margin:0 0 10px;font-size:14px;}
+.concept p:last-child{margin-bottom:0;}
+
+.worked{background:#FFFDF8;border:1px solid var(--amber);border-radius:2px;padding:18px 22px;margin-bottom:22px;}
+.worked h3{font-family:Georgia,serif;font-size:14.5px;margin:0 0 4px;color:var(--amber);text-transform:uppercase;letter-spacing:.03em;}
+.worked .setup{font-size:13.5px;margin:6px 0 14px;color:var(--ink-soft);}
+.takeaway{font-size:13.5px;background:var(--teal-soft);padding:10px 14px;border-radius:2px;margin-top:8px;}
+.takeaway b{color:var(--teal);}
+
+.warn{background:var(--red-soft);border:1px solid #C9A0A0;border-left:4px solid var(--red);border-radius:2px;padding:14px 18px;margin-bottom:16px;font-size:13.5px;}
+.warn b{color:var(--red);}
+.info{background:var(--slate-soft);border:1px solid #C9D8E2;border-left:4px solid var(--slate);border-radius:2px;padding:14px 18px;margin-bottom:16px;font-size:13.5px;}
+.info b{color:var(--slate);}
+.tip{background:var(--teal-soft);border:1px solid #AECFBC;border-left:4px solid var(--teal);border-radius:2px;padding:14px 18px;margin-bottom:16px;font-size:13.5px;}
+.tip b{color:var(--teal);}
+
+table.calc{width:100%;border-collapse:collapse;font-size:13.5px;margin-bottom:10px;}
+table.calc th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);border-bottom:1px solid var(--ink);padding:6px 8px;}
+table.calc td{padding:7px 8px;border-bottom:1px solid var(--rule-soft);vertical-align:top;}
+table.calc td.num{text-align:right;font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;}
+table.calc tr.total td{border-top:1.5px solid var(--ink);border-bottom:none;font-weight:600;}
+table.calc tr.hi td{background:var(--amber-soft);}
+table.calc tr.ok td{background:var(--teal-soft);}
+table.calc tr.bad td{background:var(--red-soft);}
+
+table.ledger{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0;font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;}
+table.ledger th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);border-bottom:1px solid var(--ink);padding:5px 8px;}
+table.ledger td{padding:5px 8px;border-bottom:1px dotted var(--rule);}
+table.ledger td.dr,table.ledger td.cr{text-align:right;width:120px;}
+table.ledger td.dr{color:var(--slate);}
+table.ledger td.cr{color:var(--teal);}
+table.ledger tr.lbl td{padding-top:12px;font-family:-apple-system,sans-serif;font-size:12px;font-weight:600;color:var(--amber);border-bottom:none;}
+table.ledger tr.total td{border-top:1px solid var(--ink);border-bottom:none;font-weight:700;}
+
+details.qcard{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--teal);border-radius:2px;margin-bottom:12px;}
+details.qcard summary{list-style:none;cursor:pointer;padding:15px 18px;display:flex;gap:12px;align-items:flex-start;}
+details.qcard summary::-webkit-details-marker{display:none;}
+.qnum{font-size:11px;color:var(--teal);flex:0 0 auto;padding-top:2px;min-width:34px;font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;}
+.qtag{font-size:10px;letter-spacing:.04em;text-transform:uppercase;padding:2px 7px;border-radius:9px;flex-shrink:0;margin-top:3px;}
+.qtag-ceo{background:var(--amber-soft);color:var(--amber);}
+.qtag-cfo{background:var(--slate-soft);color:var(--slate);}
+.qtag-hr{background:var(--plum-soft);color:var(--plum);}
+.qtext{font-size:14.5px;font-weight:500;flex:1;}
+.chev{font-size:11px;color:var(--ink-soft);flex:0 0 auto;margin-top:3px;}
+details[open] summary .chev::after{content:"▲";}
+.chev::after{content:"▼";}
+.answer{padding:0 18px 20px 64px;font-size:14px;line-height:1.65;}
+.answer p{margin:0 0 10px;}
+.answer p:last-child{margin-bottom:0;}
+.answer ul{margin:6px 0 10px;padding-left:20px;}
+.answer li{margin-bottom:5px;}
+.anchor{margin-top:14px;padding:10px 14px;background:var(--amber-soft);border-radius:2px;font-size:13.5px;}
+.anchor b{color:var(--amber);}
+
+.never-box{background:var(--red-soft);border:1px solid #C9A0A0;border-radius:2px;padding:18px 22px;margin-bottom:22px;}
+.never-box h3{font-family:Georgia,serif;font-size:14.5px;margin:0 0 10px;color:var(--red);}
+.never-box ul{margin:0;padding-left:18px;font-size:13.5px;}
+.never-box li{margin-bottom:6px;}
+
+.cl-box{background:var(--card);border:1px solid var(--rule);border-radius:2px;padding:20px 24px;margin-bottom:22px;}
+.cl-box h3{font-family:Georgia,serif;font-size:15px;margin:0 0 14px;}
+.cl-box ul{list-style:none;margin:0;padding:0;}
+.cl-box li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--rule-soft);font-size:13.5px;}
+.cl-box li:last-child{border-bottom:none;}
+.cl-box input[type=checkbox]{accent-color:var(--teal);width:15px;height:15px;flex-shrink:0;margin-top:2px;cursor:pointer;}
+
+.anchor-grid{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:14px;}
+.anchor-grid th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);border-bottom:1px solid var(--ink);padding:7px 10px;}
+.anchor-grid td{padding:9px 10px;border-bottom:1px solid var(--rule-soft);vertical-align:top;}
+.anchor-grid tr:last-child td{border-bottom:none;}
+.anchor-grid td.topic{color:var(--ink-soft);font-size:13px;width:180px;}
+
+.toolbar{display:flex;gap:10px;margin-bottom:10px;}
+.btn{font-size:11px;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--teal);color:var(--teal);background:transparent;padding:8px 14px;border-radius:2px;cursor:pointer;font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;}
+.btn:hover{background:var(--teal);color:#fff;}
+
+/* Tab navigation — exact Al Babtain pattern */
+.tabbar{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--rule);display:flex;gap:0;margin-bottom:0;}
+.tabbar-inner{max-width:900px;margin:0 auto;display:flex;width:100%;}
+.tabbtn{flex:1;text-align:center;padding:16px 10px;font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);background:transparent;border:none;border-bottom:3px solid transparent;cursor:pointer;}
+.tabbtn .tlabel{display:block;font-family:Georgia,serif;text-transform:none;font-size:13.5px;letter-spacing:0;color:var(--ink);margin-top:3px;}
+.tabbtn.active{border-bottom-color:var(--ink);}
+.tabbtn.active .tlabel{font-weight:600;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+
+.mastercover{max-width:900px;margin:36px auto 0;padding:0 28px;}
+.mastercover .mc-card{border:1px solid var(--rule);border-radius:2px;padding:26px 30px;background:var(--card);}
+.mastercover h1{font-family:Georgia,serif;font-size:24px;margin:0 0 8px;}
+.mastercover p{font-size:13.5px;color:var(--ink-soft);margin:0;max-width:640px;}
+
+/* Per-volume accent overrides */
+#tab-v1 details.qcard{border-left-color:var(--teal);}
+#tab-v1 details.qcard .qnum{color:var(--teal);}
+#tab-v1 details.qcard.ceo{border-left-color:var(--amber);}
+#tab-v1 details.qcard.ceo .qnum{color:var(--amber);}
+#tab-v2 details.qcard{border-left-color:var(--slate);}
+#tab-v2 details.qcard .qnum{color:var(--slate);}
+#tab-v3 details.qcard{border-left-color:var(--plum);}
+#tab-v3 details.qcard .qnum{color:var(--plum);}
+#tab-v4 details.qcard{border-left-color:var(--coffee);}
+#tab-v4 details.qcard .qnum{color:var(--coffee);}
+#tab-v5 details.qcard{border-left-color:var(--green);}
+#tab-v5 details.qcard .qnum{color:var(--green);}
+#tab-v6 details.qcard{border-left-color:var(--navy);}
+#tab-v6 details.qcard .qnum{color:var(--navy);}
+
+footer{text-align:center;font-size:11.5px;color:var(--ink-soft);margin-top:50px;}
+@media print{body{background:#fff;}.toolbar{display:none;}details.qcard{break-inside:avoid;}.wrap{max-width:100%;padding:10px;}}
+@media(max-width:640px){.tabbtn{font-size:10px;padding:12px 4px;}.tabbtn .tlabel{font-size:12px;}.answer{padding-left:18px;}h1.title{font-size:21px;}}
+</style>
+</head>
+<body>
+
+<div class="mastercover">
+  <div class="mc-card">
+    <h1>Financial Controller — Al Sayer Franchising Prep File</h1>
+    <p>Six-volume interview preparation: company intelligence, FC technical domains, Q&amp;A frameworks, IFRS deep-dive, Kuwait compliance context, and day-before checklist. Use tabs to switch volumes.</p>
+  </div>
+</div>
+
+<div class="tabbar"><div class="tabbar-inner">
+<button class="tabbtn active" onclick="switchTab('v1')">Company<span class="tlabel">Company Intelligence</span></button>
+<button class="tabbtn" onclick="switchTab('v2')">FC Technical<span class="tlabel">FC Technical Domains</span></button>
+<button class="tabbtn" onclick="switchTab('v3')">Q&amp;As<span class="tlabel">Interview Q&amp;As</span></button>
+<button class="tabbtn" onclick="switchTab('v4')">IFRS<span class="tlabel">IFRS Deep-Dive</span></button>
+<button class="tabbtn" onclick="switchTab('v5')">Kuwait<span class="tlabel">Kuwait Compliance</span></button>
+<button class="tabbtn" onclick="switchTab('v6')">Day Before<span class="tlabel">Day Before</span></button>
+</div></div>
+
+<!-- ═══════════════════════════════════ VOL 1: COMPANY ═══════════════════════════════════ -->
+<div class="tab-panel active" id="tab-v1">
+<div class="wrap">
+
+<div class="cover">
+  <div class="stamp">Active Interview — FC Role</div>
+  <div class="fileref">Volume 1 of 6 · Al Sayer Franchising Holding Co., K.S.C.C.</div>
+  <h1 class="title">Company Intelligence</h1>
+  <div class="subtitle">Caribou Coffee · Five Guys · Kuwait's largest multi-brand F&amp;B franchise operator</div>
+  <div class="metarow">
+    <div class="metaitem"><div class="mk">Role</div><div class="mv">Financial Controller</div></div>
+    <div class="metaitem"><div class="mk">Chairman</div><div class="mv">Naser Al Sayer</div></div>
+    <div class="metaitem"><div class="mk">CEO</div><div class="mv">Joseph Chartouni</div></div>
+    <div class="metaitem"><div class="mk">HQ</div><div class="mv">Assima Tower, Sharq, Kuwait</div></div>
+  </div>
+</div>
+
+<div class="warn"><b>Critical distinction:</b> Al Sayer Franchising (Caribou Coffee / Five Guys) and One PM Franchising (Pret A Manger) are entirely separate companies. Shared Al-Sayer surname in leadership is a common Kuwaiti family name — different persons, different entities, different brand portfolios. Never conflate them.</div>
+
+<div class="sec-head"><span class="sec-num">1.1</span><h2>Company Snapshot</h2><span class="chip chip-teal">K.S.C.C.</span></div>
+<table class="calc">
+  <tr><th>Field</th><th>Detail</th></tr>
+  <tr><td>Legal name</td><td>Al Sayer Franchising Holding Co., K.S.C.C.</td></tr>
+  <tr><td>Structure</td><td>Kuwaiti Shareholding Closed Company — privately held, family-controlled, not listed</td></tr>
+  <tr><td>Founded</td><td>2004</td></tr>
+  <tr><td>Chairman</td><td>Naser Al Sayer</td></tr>
+  <tr><td>CEO</td><td>Joseph Chartouni</td></tr>
+  <tr><td>HQ</td><td>Assima Tower, Sharq, Kuwait City</td></tr>
+  <tr><td>Brands</td><td>Caribou Coffee (master franchisee) · Five Guys (master franchisee)</td></tr>
+  <tr><td>Footprint</td><td>~280–300 stores; operations in Kuwait HQ and extending into Turkey and other MENA markets</td></tr>
+  <tr><td>Headcount</td><td>~3,000 employees across 30+ nationalities</td></tr>
+  <tr><td>Group context</td><td>Part of the broader Al Sayer Group — diversified Kuwaiti holding company (automotive, franchising, real estate)</td></tr>
+</table>
+
+<div class="sec-head"><span class="sec-num">1.2</span><h2>Brand Profiles</h2></div>
+<div class="concept">
+  <h3>Caribou Coffee</h3>
+  <p>US origin (Minneapolis, 1992). Premium specialty coffee and beverages — competes at the premium tier against Starbucks. Founded by John and Kim Puckett with a Minnesota Boundary Waters wilderness theme. Al Sayer holds the master franchise for Kuwait and regional MENA markets and is reportedly the largest Caribou franchisee in the Middle East. Café-format stores — dine-in, takeaway, and drive-through.</p>
+  <p>Financial profile: higher APC than QSR tier. Labour-intensive model (barista skill). Significant cost of goods around specialty coffee beans — commodity price exposure (arabica futures).</p>
+</div>
+<div class="concept" style="border-left-color:var(--amber);">
+  <h3 style="color:var(--amber);">Five Guys</h3>
+  <p>US origin (Arlington, Virginia, 1986). Premium casual burger and fries QSR — known for fresh, never-frozen beef. Founded by Jerry and Janie Murrell. Higher average spend than standard QSR (closer to "better burger" tier). Al Sayer holds master franchise for Kuwait and regional markets. Customisation-led model: customer chooses toppings from a large free selection.</p>
+  <p>Financial profile: fresh beef supply chain = perishable management critical. No freezers in kitchen = daily delivery requirements. Food cost % typically higher than frozen-beef QSR competitors.</p>
+</div>
+
+<div class="sec-head"><span class="sec-num">1.3</span><h2>Business Model</h2><span class="chip chip-amber">Master Franchise</span></div>
+<table class="calc">
+  <tr><th>Element</th><th>How it works for Al Sayer</th></tr>
+  <tr><td>Master franchise rights</td><td>Al Sayer pays Caribou Coffee (US) and Five Guys (US) an upfront master franchise fee for exclusive territorial development rights. This is capitalised as an Intangible Asset (IAS 38) and amortised over the franchise term.</td></tr>
+  <tr><td>Ongoing royalty</td><td>Approximately 5–8% of net store sales payable monthly to each US franchisor. USD-denominated — FX exposure on every payment. Must be accrued monthly against confirmed net sales. Kuwait 5% retention rule applies (see Vol 5).</td></tr>
+  <tr><td>Marketing fund</td><td>Typically 1–2% of net sales contributed to a brand marketing fund administered by the franchisor. Expensed directly as incurred.</td></tr>
+  <tr><td>Company-operated stores</td><td>Al Sayer operates all stores directly — keeps 100% of store revenue, bears all operating costs. No sub-franchise income currently known.</td></tr>
+  <tr><td>Revenue drivers</td><td>Net sales (food and beverage) · Delivery aggregator sales (Talabat, Deliveroo — net of ~20–30% commission) · Catering and events (if applicable)</td></tr>
+  <tr><td>Cost drivers</td><td>Food and beverage COGS · Labour (largest variable cost) · Occupancy (IFRS 16 ROU depreciation + lease interest) · Royalties to US franchisors · Marketing fund · Utilities · Capex for store rollouts</td></tr>
+</table>
+
+<div class="sec-head"><span class="sec-num">1.4</span><h2>What the FC Role Exists to Do</h2></div>
+<div class="info"><b>Context:</b> At a 300-store, 3,000-employee, dual-brand F&amp;B operation, the FC is the financial engine room. This is not a reporting role — it is a controls and integrity role at scale. The CEO and GM make expansion decisions based on data the FC owns.</div>
+<table class="calc">
+  <tr><th>FC responsibility</th><th>Why it matters here</th></tr>
+  <tr><td>Multi-brand P&amp;L reporting</td><td>Caribou and Five Guys must report separately — different royalty structures, different food cost profiles, different seasonal patterns</td></tr>
+  <tr><td>Store-level unit economics</td><td>4-wall EBITDA per store drives closure and expansion decisions. FC owns this data.</td></tr>
+  <tr><td>POS-to-GL integrity</td><td>300 stores × daily transactions = high-volume reconciliation. Any gap = revenue leakage or system failure.</td></tr>
+  <tr><td>IFRS 16 lease schedule</td><td>~300 leases on the balance sheet. Each store is a separate ROU asset and lease liability. FC owns the master lease schedule.</td></tr>
+  <tr><td>Payroll for 3,000 staff</td><td>EOSI accruals, WPS compliance, overtime rate validation. F&amp;B has high turnover — EOSI liability is material.</td></tr>
+  <tr><td>Franchise fee compliance</td><td>Royalty accruals, TCC/NOL tracking for Kuwait 5% retention, accurate net sales reporting to franchisors.</td></tr>
+  <tr><td>IAS 29 Turkey operations</td><td>Hyperinflationary accounting — technically complex, audit-sensitive.</td></tr>
+  <tr><td>Capex tracking</td><td>Store rollouts involve significant capex. FC tracks against budget and feeds asset register.</td></tr>
+</table>
+
+<div class="sec-head"><span class="sec-num">1.5</span><h2>Your Differentiators for This Role</h2></div>
+<table class="calc">
+  <tr><th>Their need</th><th>Your credential</th></tr>
+  <tr><td>Multi-entity finance management</td><td>Managed 13 P&amp;Ls simultaneously across 7 companies in a Kuwait holding group</td></tr>
+  <tr><td>F&amp;B / retail understanding</td><td>Fantasy World Toys — physical retail stores, store-level P&amp;L, shrinkage controls, footfall-dependent revenue</td></tr>
+  <tr><td>IFRS application in live environments</td><td>Applied IFRS across multi-entity consolidations; familiar with IFRS 16, IAS 21, IAS 29 context</td></tr>
+  <tr><td>Kuwait compliance depth</td><td>EOSI provisioning, WPS, 5% tax retention (Law No. 2/2008) — not learning on the job</td></tr>
+  <tr><td>ERP and data infrastructure</td><td>SAP implementation and management; Odoo configuration; Power BI reporting layers</td></tr>
+  <tr><td>CA ICAI credential</td><td>Technical finance credibility — IFRS grounding, audit readiness, structured close methodology</td></tr>
+</table>
+
+</div>
+</div>
+
+<!-- ═══════════════════════════════════ VOL 2: FC TECHNICAL ═══════════════════════════════════ -->
+<div class="tab-panel" id="tab-v2">
+<div class="wrap">
+
+<div class="cover">
+  <div class="stamp">Technical Depth</div>
+  <div class="fileref">Volume 2 of 6 · FC Technical Domains</div>
+  <h1 class="title">The 8 Technical Domains the FC Must Own</h1>
+  <div class="subtitle">Franchise accounting · IFRS 16 · IAS 29 · Store P&amp;L · POS reconciliation · Inventory · Payroll · Capex</div>
+</div>
+
+<div class="sec-head"><span class="sec-num">2.1</span><h2>Franchise Fee and Royalty Accounting</h2><span class="chip chip-teal">IFRS 15 / IAS 38</span></div>
+<div class="layman" style="background:var(--slate-soft);border:1px solid #C9D8E2;">
+  <div class="eyebrow" style="color:var(--slate);">Plain English First</div>
+  <p>Al Sayer pays Caribou and Five Guys two types of fees: a large upfront lump sum to acquire territorial rights, and monthly royalties based on sales. These are treated very differently — the upfront fee becomes a balance sheet asset; the royalties are a monthly operating expense.</p>
+</div>
+<table class="calc">
+  <tr><th>Fee type</th><th>Accounting treatment</th><th>Standard</th></tr>
+  <tr><td>Master franchise fee (upfront)</td><td>Capitalise as Intangible Asset. Amortise straight-line over the franchise term (typically 10–20 years). Test for impairment if indicators arise.</td><td>IAS 38</td></tr>
+  <tr><td>Ongoing royalty (~5–8% of net sales)</td><td>Expense in the period as incurred. Accrue monthly based on confirmed net sales. USD-denominated — retranslate at closing rate each period. FX gain/loss in P&amp;L.</td><td>IAS 37 / IAS 21</td></tr>
+  <tr><td>Marketing fund (~1–2% of net sales)</td><td>Expense as incurred unless Al Sayer acts as agent for a pass-through fund (net presentation). Most likely expensed directly.</td><td>IFRS 15</td></tr>
+  <tr><td>Sub-franchise income (if applicable)</td><td>Recognise over time as performance obligation (brand licence + ongoing support) is satisfied. Variable royalties recognised as sub-franchisee generates sales.</td><td>IFRS 15</td></tr>
+</table>
+
+<div class="worked">
+  <h3>Worked Example: Journal Entries</h3>
+  <div class="setup">Assume Al Sayer pays USD 2M upfront master franchise fee to Caribou Coffee on Day 1. Franchise term: 20 years. Monthly royalty: 6% of KWD 500K net sales = KWD 30K, payable in USD.</div>
+  <table class="ledger">
+    <tr><th>Account</th><th class="dr">DR</th><th class="cr">CR</th></tr>
+    <tr class="lbl"><td colspan="3">Day 1 — Capitalisation of master franchise fee</td></tr>
+    <tr><td>Intangible Asset — Master Franchise Right (Caribou)</td><td class="dr">USD 2,000,000</td><td class="cr"></td></tr>
+    <tr><td>Cash / Payable to Caribou Coffee (US)</td><td class="dr"></td><td class="cr">USD 2,000,000</td></tr>
+    <tr class="lbl"><td colspan="3">Year-end — Annual amortisation (USD 2M ÷ 20 years = USD 100K/year)</td></tr>
+    <tr><td>Amortisation Expense — Franchise Right</td><td class="dr">KWD equiv.</td><td class="cr"></td></tr>
+    <tr><td>Accumulated Amortisation — Master Franchise Right</td><td class="dr"></td><td class="cr">KWD equiv.</td></tr>
+    <tr class="lbl"><td colspan="3">Monthly royalty accrual (KWD 30K on KWD 500K net sales)</td></tr>
+    <tr><td>Royalty Expense</td><td class="dr">KWD 30,000</td><td class="cr"></td></tr>
+    <tr><td>Royalty Payable (USD-denominated liability)</td><td class="dr"></td><td class="cr">KWD 30,000</td></tr>
+    <tr class="lbl"><td colspan="3">Payment — 5% Kuwait retention applied</td></tr>
+    <tr><td>Royalty Payable</td><td class="dr">KWD 30,000</td><td class="cr"></td></tr>
+    <tr><td>Cash (95% released)</td><td class="dr"></td><td class="cr">KWD 28,500</td></tr>
+    <tr><td>Tax Retention Payable — KTA (5% withheld)</td><td class="dr"></td><td class="cr">KWD 1,500</td></tr>
+  </table>
+  <div class="takeaway"><b>Key point:</b> The 5% Kuwait retention applies to every royalty payment to the US franchisors. FC must track TCC/NOL status for both Caribou and Five Guys before releasing full payment.</div>
+</div>
+
+<div class="sec-head"><span class="sec-num">2.2</span><h2>IFRS 16 — Lease Accounting (~300 stores, all leased)</h2><span class="chip chip-teal">IFRS 16</span></div>
+<div class="layman" style="background:var(--slate-soft);border:1px solid #C9D8E2;">
+  <div class="eyebrow" style="color:var(--slate);">Plain English First</div>
+  <p>Every store location is rented. Before IFRS 16, rent was just an operating expense. Now, every lease above 12 months creates a Right-of-Use (ROU) asset on the balance sheet and a matching lease liability. With ~300 stores, this is one of the largest balance sheet items in the company — and the FC owns every line of it.</p>
+</div>
+<table class="calc">
+  <tr><th>Element</th><th>What the FC must know</th></tr>
+  <tr><td>Recognition trigger</td><td>Lease term &gt;12 months AND not low-value → recognise ROU Asset + Lease Liability at commencement</td></tr>
+  <tr><td>Measurement</td><td>Present value of future lease payments, discounted at Incremental Borrowing Rate (IBR) — the rate Al Sayer could borrow at for similar term and collateral in Kuwait</td></tr>
+  <tr><td>ROU Asset</td><td>Classified under PPE. Depreciated straight-line over the shorter of lease term or useful life. Depreciation replaces rent in the P&amp;L — it does NOT equal the old rent figure.</td></tr>
+  <tr><td>Lease Liability</td><td>Unwound using effective interest method. Each payment = interest component (finance cost in P&amp;L) + principal repayment (reduces the liability on BS)</td></tr>
+  <tr><td>Variable rent (% of sales)</td><td>Exclude from lease liability. Expense in the period as sales occur. Very common in mall leases in Kuwait — must be tracked separately from the fixed element.</td></tr>
+  <tr><td>Renewal options</td><td>Include in lease term only if reasonably certain to exercise. Management judgement required — audit flashpoint. Document rationale per store.</td></tr>
+  <tr><td>Lease modifications</td><td>Store closures, rent concessions, extensions — each triggers remeasurement of both ROU Asset and Lease Liability. High-frequency event at 300 stores.</td></tr>
+  <tr><td>P&amp;L impact vs old IAS 17</td><td>EBITDA improves (depreciation and interest are below EBITDA; old rent was above). Net profit impact = higher charge in early years of lease (reverses later). Leverage ratios increase (liabilities on BS).</td></tr>
+  <tr class="ok"><td>FC's master lease schedule must contain</td><td>Per store: commencement date · lease term · IBR · annual payment schedule · ROU opening balance · annual depreciation · lease liability opening balance · annual interest · annual principal repayment · ROU closing NBV · Lease liability closing balance</td></tr>
+</table>
+
+<div class="sec-head"><span class="sec-num">2.3</span><h2>IAS 29 — Hyperinflationary Accounting (Turkey)</h2><span class="chip chip-amber">Advanced</span></div>
+<div class="layman" style="background:var(--amber-soft);border:1px solid #D4B96E;">
+  <div class="eyebrow" style="color:var(--amber);">Plain English First</div>
+  <p>Turkey has experienced very high inflation. When a country reaches cumulative inflation above 100% over 3 years, IFRS requires the subsidiary's financials to be restated in today's purchasing power before translating to KWD. This is technically one of the most complex areas in IFRS and one of the highest-impact areas for Al Sayer that most interview candidates won't prepare for.</p>
+</div>
+<table class="calc">
+  <tr><th>Step</th><th>What happens</th></tr>
+  <tr><td>1. Determine applicability</td><td>Cumulative 3-year inflation &gt;100% → IAS 29 applies. Turkey has met this threshold. FC monitors the IASB hyperinflationary economies list annually.</td></tr>
+  <tr><td>2. Restate non-monetary items</td><td>Apply Turkish consumer price index (CPI) factor to PPE, inventory, intangibles, equity — express in current purchasing power. Monetary items (cash, receivables, payables) not restated — already in current units.</td></tr>
+  <tr><td>3. Gain/loss on net monetary position</td><td>Holding net monetary liabilities during inflation = gain (purchasing power of debt erodes). Holding net monetary assets = loss. Recognised in P&amp;L.</td></tr>
+  <tr><td>4. Translate to KWD (IAS 21)</td><td>After IAS 29 restatement, translate at closing rate (not average rate — IAS 21 uses closing rate for hyperinflationary subsidiaries). Translation differences → OCI.</td></tr>
+  <tr><td>FC practical role</td><td>You likely won't perform the IAS 29 restatement yourself — use specialist support. But you must review, challenge, and present the output to auditors and to the CFO/CEO. Demonstrate you understand the mechanics.</td></tr>
+</table>
+
+<div class="sec-head"><span class="sec-num">2.4</span><h2>Store-Level P&amp;L — 4-Wall EBITDA</h2></div>
+<div class="layman" style="background:var(--slate-soft);border:1px solid #C9D8E2;">
+  <div class="eyebrow" style="color:var(--slate);">Why "4-Wall"?</div>
+  <p>4-wall EBITDA = what happens within the four walls of a single store, before any central overhead allocation. It is the primary KPI for evaluating whether an individual store is financially justified. FC must produce this for every store, every month.</p>
+</div>
+<table class="calc">
+  <tr><th>P&amp;L Line</th><th>Typical F&amp;B %</th><th>FC control point</th></tr>
+  <tr><td>Net Sales</td><td class="num">100%</td><td>POS reconciliation daily. Voids, refunds, discounts tracked and reviewed for each store.</td></tr>
+  <tr><td>Food and Beverage COGS</td><td class="num">28–34%</td><td>Variance vs theoretical food cost. Wastage, portion control, theft indicators. Weekly stock counts.</td></tr>
+  <tr><td><b>Gross Profit</b></td><td class="num"><b>66–72%</b></td><td></td></tr>
+  <tr><td>Labour Cost</td><td class="num">28–35%</td><td>Scheduled vs actual hours. Overtime %. Sales-per-labour-hour. Overtime spikes = alarm.</td></tr>
+  <tr><td>Occupancy (IFRS 16 depreciation + interest)</td><td class="num">10–18%</td><td>Fixed component from lease schedule. Variable rent (% of sales) tracked separately.</td></tr>
+  <tr><td>Royalty Expense</td><td class="num">5–8%</td><td>Calculated on net sales, accrued monthly. USD-denominated FX exposure.</td></tr>
+  <tr><td>Other Operating Expenses</td><td class="num">5–8%</td><td>Utilities (high in Kuwait climate), repairs, consumables, cleaning.</td></tr>
+  <tr class="ok"><td><b>4-Wall EBITDA</b></td><td class="num"><b>8–15%</b></td><td>Primary operating KPI. Below 10% = underperforming store — triggers management review. Below 0% = closure candidate.</td></tr>
+</table>
+
+<div class="sec-head"><span class="sec-num">2.5</span><h2>POS-to-GL Reconciliation</h2></div>
+<div class="layman" style="background:var(--slate-soft);border:1px solid #C9D8E2;">
+  <div class="eyebrow" style="color:var(--slate);">Plain English First</div>
+  <p>Every store's POS records every sale in real time. The FC must ensure what the POS records matches exactly what gets booked in the accounting system. With 300 stores, this is a massive daily discipline — any unexplained gap means either revenue is leaking or the system is broken.</p>
+</div>
+<table class="calc">
+  <tr><th>Control</th><th>Detail</th></tr>
+  <tr><td>Daily POS close reconciliation</td><td>POS closing report vs cash collected + card settlements. Variance above threshold (e.g. KD 5) → escalate same day. Shift manager signs off.</td></tr>
+  <tr><td>Cash handling</td><td>Cash counted by shift manager, sealed, deposited same or next business day. FC reviews deposit slips vs POS cash tender daily.</td></tr>
+  <tr><td>KNET / card settlements</td><td>Settlement files from acquiring bank vs POS card tender. Timing lag of 1–2 days — reconcile difference. Monthly bank vs GL reconciliation.</td></tr>
+  <tr><td>Aggregator platforms (Talabat, Deliveroo)</td><td>Sales appear gross on POS. Aggregator deducts 20–30% commission and remits net after 7–30 days. FC tracks gross vs net, accrues outstanding settlements at month-end.</td></tr>
+  <tr><td>POS-to-GL mapping table</td><td>FC owns the mapping: POS revenue category → GL account code, by brand, by cost centre. Must be maintained when menus or categories change.</td></tr>
+  <tr><td>Void and refund monitoring</td><td>All voids require manager authorisation. Refund frequency monitored store by store — spikes indicate control failure or potential fraud.</td></tr>
+</table>
+
+<div class="sec-head"><span class="sec-num">2.6</span><h2>Inventory Controls — Perishables</h2></div>
+<table class="calc">
+  <tr><th>Area</th><th>FC owns</th></tr>
+  <tr><td>Theoretical vs actual food cost</td><td>Recipe cost × quantities sold = theoretical COGS. Actual COGS from stock counts. Variance &gt;2% → investigate root cause immediately. Five Guys: fresh beef daily delivery means near-zero buffer.</td></tr>
+  <tr><td>Stock counting frequency</td><td>Weekly counts for high-value perishables (coffee beans, beef patties, dairy). Monthly full count. FC reviews count sheets and approves adjustments before posting.</td></tr>
+  <tr><td>Wastage recording</td><td>All wastage must be logged in POS or separate wastage system. Unrecorded wastage is the most common source of unexplained food cost variance. FC reviews wastage log weekly.</td></tr>
+  <tr><td>FIFO compliance (IAS 2)</td><td>Perishables must use FIFO cost formula. LIFO prohibited under IFRS. Expiry date rotation is a joint kitchen + finance control.</td></tr>
+  <tr><td>Supplier invoice matching</td><td>3-way match: purchase order → goods received note → supplier invoice. FC controls approval before payment is released. Fresh produce suppliers often deliver daily without formal PO — process must be tight.</td></tr>
+  <tr><td>Write-down triggers</td><td>When NRV &lt; cost (near-expiry items) → write-down to NRV, expense in period. Document with count sheet evidence for audit.</td></tr>
+</table>
+
+<div class="sec-head"><span class="sec-num">2.7</span><h2>Payroll — 3,000 Staff</h2></div>
+<table class="calc">
+  <tr><th>Element</th><th>FC control</th></tr>
+  <tr><td>WPS (Wages Protection System)</td><td>Payroll file must be submitted to PACI/bank on time every month. Late submission = government fines + potential license suspension. FC owns the submission calendar.</td></tr>
+  <tr><td>EOSI accrual</td><td>Kuwait Labour Law: minimum 15 days/year salary (first 5 years), 1 month/year thereafter. Must accrue monthly. With 3,000 staff and high F&amp;B turnover, this is a material BS liability. Understatement = audit qualification risk.</td></tr>
+  <tr><td>Annual leave accrual</td><td>30 calendar days/year under Kuwait Labour Law. Accrue earned but untaken leave as current liability. F&amp;B staff often do not take leave — can accumulate significantly.</td></tr>
+  <tr><td>Overtime rate validation</td><td>125% of basic for normal overtime, 150% for weekly rest day, 200% for public holidays. FC reviews overtime report weekly. F&amp;B overtime abuse is one of the most common payroll cost leakage areas.</td></tr>
+  <tr><td>Headcount reconciliation</td><td>Monthly: payroll headcount vs HR system vs actual store rosters. Discrepancy = ghost employee risk. Mandatory sign-off by store manager.</td></tr>
+  <tr><td>Nationalisation quota</td><td>FC must ensure regulatory reporting correctly tracks Kuwaiti-to-non-Kuwaiti employee ratio. Non-compliance → fines, license risk.</td></tr>
+</table>
+
+<div class="sec-head"><span class="sec-num">2.8</span><h2>Capex — Store Rollout</h2></div>
+<table class="calc">
+  <tr><th>Element</th><th>FC role</th></tr>
+  <tr><td>Store fit-out budget</td><td>Each new store has an approved capex budget (equipment, fit-out, signage, FF&amp;E). FC tracks actual vs budget in real time. Overruns above threshold require CEO approval before further expenditure.</td></tr>
+  <tr><td>Capitalisation policy</td><td>FC sets and enforces the threshold: below KD X = expense directly; above = capitalise and depreciate. Consistent application across brands and stores prevents audit issues.</td></tr>
+  <tr><td>Asset register</td><td>Per store: asset category, purchase date, cost, depreciation method (straight-line), useful life, NBV. FC owns the register and updates on every addition, disposal, or impairment.</td></tr>
+  <tr><td>Pre-approval payback model</td><td>Before opening a new store: NPV/IRR analysis from projected 4-wall EBITDA (bear/base/bull scenarios). FC builds the model; CFO/CEO approves. Discipline here prevents store proliferation at poor economics.</td></tr>
+  <tr><td>Store closures</td><td>De-recognise ROU asset and lease liability. Write off fit-out assets at NBV. Lease exit costs (termination penalties) provisioned under IAS 37. Any impairment loss recorded under IAS 36.</td></tr>
+</table>
+
+</div>
+</div>
+
+<!-- ═══════════════════════════════════ VOL 3: Q&As ═══════════════════════════════════ -->
+<div class="tab-panel" id="tab-v3">
+<div class="wrap">
+
+<div class="cover">
+  <div class="stamp" style="color:var(--plum);border-color:var(--plum);">Q&amp;A Frameworks</div>
+  <div class="fileref">Volume 3 of 6 · Interview Q&amp;As</div>
+  <h1 class="title">Interview Q&amp;As</h1>
+  <div class="subtitle">CEO · CFO · HR personas · Click any question to expand the full answer framework</div>
+</div>
+
+<div class="toolbar">
+  <button class="btn" style="border-color:var(--plum);color:var(--plum);" onclick="document.querySelectorAll('#tab-v3 details').forEach(d=>d.open=true)">Expand All</button>
+  <button class="btn" style="border-color:var(--plum);color:var(--plum);" onclick="document.querySelectorAll('#tab-v3 details').forEach(d=>d.open=false)">Collapse All</button>
+</div>
+
+<div class="sec-head"><span class="sec-num">3.1</span><h2>Opening and Background</h2></div>
+
+<details class="qcard">
+  <summary><span class="qnum">Q 01</span><span class="qtag qtag-ceo">CEO</span><span class="qtext">Walk me through your background and why you're the right person for this FC role.</span><span class="chev"></span></summary>
+  <div class="answer">
+    <p><strong>Why they're asking:</strong> They want to see if you understand F&amp;B operations, not just generic finance. And whether you can communicate complexity simply to a CEO who runs operations, not spreadsheets.</p>
+    <p><strong>Your answer:</strong> 20 years in GCC finance, mostly in multi-entity environments — holding groups, multiple P&amp;Ls, consolidated reporting. I've run finance functions for up to 13 entities simultaneously in Kuwait. Kuwait Labour Law, WPS, EOSI provisioning, the 5% retention rules — these aren't things I'm learning on the job.</p>
+    <p>On the F&amp;B and retail side: I've worked at Fantasy World Toys, which operated physical retail stores. I understand the unit economics model — store-level P&amp;L, inventory shrinkage, footfall-driven revenue. The conceptual bridge to F&amp;B is short.</p>
+    <p>What I bring to an FC role here: I can build the financial infrastructure around a 300-store operation. The controls, the reporting architecture, the lease management under IFRS 16, the franchise fee accounting, the POS-to-GL integrity. I've done the hard part — building robust finance from scratch — so the scale won't overwhelm me.</p>
+    <div class="anchor"><b>Anchor line:</b> "I've run finance for 13 entities simultaneously. 300 stores is complex, but it's the same discipline applied at scale."</div>
+  </div>
+</details>
+
+<details class="qcard ceo">
+  <summary><span class="qnum">Q 02</span><span class="qtag qtag-ceo">CEO</span><span class="qtext">You're coming from distribution. Why should we trust you with an F&amp;B operation?</span><span class="chev"></span></summary>
+  <div class="answer">
+    <p><strong>Why they're asking:</strong> Legitimate concern — take it head-on. They want confidence without arrogance, and substance not deflection.</p>
+    <p><strong>Your answer:</strong> Finance discipline transfers further than people assume. IFRS is IFRS — whether the inventory is coffee beans or auto parts, the accounting framework is the same. What changes in F&amp;B is velocity: daily cash reconciliation, perishable inventory, high-volume transactions. I've dealt with high-velocity environments — 70,000-row sales datasets, complex multi-currency environments, tight reconciliation pressures.</p>
+    <p>On the retail side specifically: Fantasy World Toys operated physical stores. I've lived the store-level P&amp;L, shrinkage controls, footfall-dependent revenue. The bridge to F&amp;B is short — food cost instead of shrinkage, barista labour instead of floor staff.</p>
+    <p>What I'll do in the first 30 days: spend time in stores, understanding the POS flow, talking to store managers, learning the food cost mechanics at ground level. I don't presume to know everything about F&amp;B from day one.</p>
+    <div class="anchor"><b>Anchor line:</b> "Finance discipline transfers. I'll spend the first weeks in stores learning the operating reality — not sitting in the finance office."</div>
+  </div>
+</details>
+
+<details class="qcard">
+  <summary><span class="qnum">Q 03</span><span class="qtag qtag-cfo">CFO</span><span class="qtext">What does a Financial Controller actually do differently from a Finance Manager?</span><span class="chev"></span></summary>
+  <div class="answer">
+    <p>A Finance Manager executes within a defined process. An FC owns the process — and the numbers before they leave finance. The distinction is accountability: if there's a reconciliation gap, an IFRS misapplication, or a control failure, it stops at the FC's desk.</p>
+    <p>Practically in F&amp;B: the FC designs the chart of accounts, sets the food cost reporting cadence, owns the IFRS 16 lease schedule, reviews monthly payroll accruals, approves journal entries before close, and challenges store managers when 4-wall EBITDA deteriorates. The Finance Manager might produce the report. The FC determines whether the report is telling the truth.</p>
+    <div class="anchor"><b>Anchor line:</b> "The FC owns the numbers before they leave finance. The buck stops here."</div>
+  </div>
+</details>
+
+<div class="sec-head"><span class="sec-num">3.2</span><h2>Technical Questions</h2></div>
+
+<details class="qcard">
+  <summary><span class="qnum">Q 04</span><span class="qtag qtag-cfo">CFO</span><span class="qtext">How would you set up the month-end close for a 300-store operation?</span><span class="chev"></span></summary>
+  <div class="answer">
+    <p>I'd run a phased close on a 4-day cycle:</p>
+    <ul>
+      <li><strong>Day 1:</strong> All store POS data in GL. Cash and card reconciliations signed off by store managers. Gaps flagged same day — not carried to Day 2.</li>
+      <li><strong>Day 2:</strong> COGS journals posted from actual month-end stock counts. Payroll accruals posted (actual hours). IFRS 16 amortisation and interest entries posted from the master lease schedule.</li>
+      <li><strong>Day 3:</strong> Royalty accruals on confirmed net sales. Prepayment and accrual schedule reviewed. Intercompany reconciliations if applicable. Bank reconciliation completed.</li>
+      <li><strong>Day 4:</strong> Final review. P&amp;L and BS flash report to CFO/CEO. Variance commentary: actual vs budget by brand, by store tier, by region.</li>
+    </ul>
+    <p>This only works if the infrastructure is in place first: a maintained IFRS 16 lease schedule, a food cost theoretical model per brand, a payroll accrual calculator, and a close checklist the team follows without me chasing them.</p>
+    <div class="anchor"><b>Anchor line:</b> "4-day close, systemised. Infrastructure first — speed comes from having the right foundations in place."</div>
+  </div>
+</details>
+
+<details class="qcard">
+  <summary><span class="qnum">Q 05</span><span class="qtag qtag-cfo">CFO</span><span class="qtext">We have a store where food cost keeps running at 38%, vs our theoretical 30%. Walk me through how you'd investigate.</span><span class="chev"></span></summary>
+  <div class="answer">
+    <p>8% variance on food cost is significant. At 30% of revenue, that's nearly a 27% cost overrun on the COGS line. I'd investigate in five layers:</p>
+    <ul>
+      <li><strong>Layer 1 — Data integrity:</strong> Is the 38% calculated correctly? Are all sales hitting the POS? Is the stock count accurate? Sometimes the issue is a recording error, not actual over-consumption.</li>
+      <li><strong>Layer 2 — Supplier pricing:</strong> Have ingredient costs increased? Check supplier invoices vs recipe cost assumptions. Price rises without menu price adjustments compress margin immediately — often masked as a "food cost problem."</li>
+      <li><strong>Layer 3 — Wastage:</strong> Pull the wastage log for this store. Is it being recorded? Unrecorded wastage is the most common source of unexplained food cost variance — particularly at Five Guys with fresh beef.</li>
+      <li><strong>Layer 4 — Portioning:</strong> Check actual portion weights vs recipe specifications. Staff giving larger portions than the recipe specifies. Common in stores with low supervision, especially with customisable items like Five Guys.</li>
+      <li><strong>Layer 5 — Theft or fraud:</strong> If layers 1–4 show nothing, I'm looking at unauthorised consumption, gifts to customers, or inventory leaving the store.</li>
+    </ul>
+    <p>I want 3–6 months of data to determine whether this is structural or event-driven before making any accusations.</p>
+    <div class="anchor"><b>Anchor line:</b> "Start with data integrity before assuming operational failure. 5-layer investigation, systematic. Don't accuse the GM before you've checked the recording."</div>
+  </div>
+</details>
+
+<details class="qcard">
+  <summary><span class="qnum">Q 06</span><span class="qtag qtag-cfo">CFO</span><span class="qtext">Explain how IFRS 16 affects our P&amp;L and balance sheet compared to the old lease standard.</span><span class="chev"></span></summary>
+  <div class="answer">
+    <p>Under old IAS 17, operating leases were entirely off-balance-sheet. Rent was a single straight-line expense in P&amp;L — simple, but it understated leverage for businesses with large lease commitments.</p>
+    <p>Under IFRS 16: every lease above 12 months creates a Right-of-Use asset (asset side of BS) and a Lease Liability (liability side). Both measured at present value of future lease payments discounted at the incremental borrowing rate at commencement.</p>
+    <p><strong>P&amp;L impact:</strong> The old rent expense disappears. Replaced by: (1) depreciation of the ROU asset — classified as an operating expense, straight-line, and (2) interest on the lease liability — finance cost, unwinding using effective interest method. In early years, combined charge exceeds old rent; decreases over time as liability reduces.</p>
+    <p><strong>EBITDA impact:</strong> EBITDA improves under IFRS 16 — both depreciation and interest are below the EBITDA line. The old rent was above EBITDA. For a 300-store operator, this is a significant reported EBITDA improvement on paper.</p>
+    <p><strong>Balance sheet impact:</strong> Debt ratios increase because lease liabilities now appear on the balance sheet. Any loan covenants tied to leverage ratios need to be assessed against this.</p>
+    <p>For Al Sayer with ~300 leases, the FC must maintain a complete lease schedule — updated for every store commencement, modification, extension, and closure. This is the FC's most complex continuous accounting task.</p>
+    <div class="anchor"><b>Anchor line:</b> "IFRS 16 brought leases onto the balance sheet — EBITDA improves, leverage ratios increase. 300 leases means this is one of the largest balance sheet items we have."</div>
+  </div>
+</details>
+
+<details class="qcard">
+  <summary><span class="qnum">Q 07</span><span class="qtag qtag-cfo">CFO</span><span class="qtext">Turkey has high inflation. How does that affect how we report those operations?</span><span class="chev"></span></summary>
+  <div class="answer">
+    <p>Turkey triggers IAS 29 — hyperinflationary accounting — when cumulative 3-year inflation exceeds 100%. Turkey has met this threshold and remains on the IASB's hyperinflationary economies list.</p>
+    <p>Practically: before translating the Turkey subsidiary's financials into KWD, the statements must first be restated in today's purchasing power. Non-monetary items — PPE, inventory, intangibles — are multiplied by a price index factor. Monetary items (cash, receivables, payables) are not restated — they're already in current nominal units.</p>
+    <p>The net effect on P&amp;L of the monetary position during hyperinflation: holding net monetary liabilities = gain (purchasing power of debt erodes). Holding net monetary assets = loss. This hits the consolidated P&amp;L.</p>
+    <p>After IAS 29 restatement, translate to KWD at the closing exchange rate — IAS 21 uses closing rate for hyperinflationary subsidiaries, not the average rate that would normally apply. Translation differences go to OCI.</p>
+    <p>In practice: specialist support for Turkey restatement calculations — technically complex, high audit sensitivity. But as FC, I review, challenge, and own the output.</p>
+    <div class="anchor"><b>Anchor line:</b> "IAS 29 restatement before IAS 21 translation. Closing rate applies. Specialist support for the calculation — FC owns the review."</div>
+  </div>
+</details>
+
+<div class="sec-head"><span class="sec-num">3.3</span><h2>Leadership and Strategic</h2></div>
+
+<details class="qcard ceo">
+  <summary><span class="qnum">Q 08</span><span class="qtag qtag-ceo">CEO</span><span class="qtext">What's the first thing you'd do in the first 30 days?</span><span class="chev"></span></summary>
+  <div class="answer">
+    <p><strong>Weeks 1–2 — Diagnose:</strong> Walk every finance process. Who does what, where the data comes from, what gets reviewed vs what gets assumed. Understand the ERP/POS integration. Visit a sample of stores — both Caribou and Five Guys. Review the last 3 months' management accounts and the prior year-end audit pack. Find the gaps before fixing anything.</p>
+    <p><strong>Weeks 3–4 — Prioritise:</strong> Two lists. First: compliance non-negotiables — anything that could create legal or audit exposure; fix immediately. Second: commercial quick wins — better reporting that helps the CEO make faster decisions; present as a 90-day plan.</p>
+    <p>I don't make changes in week 1. I learn first. The person before me had context I don't have yet, and week-1 assumptions cause month-6 problems.</p>
+    <div class="anchor"><b>Anchor line:</b> "Diagnose before prescribing. Week-1 assumptions cause month-6 problems."</div>
+  </div>
+</details>
+
+<details class="qcard ceo">
+  <summary><span class="qnum">Q 09</span><span class="qtag qtag-ceo">CEO</span><span class="qtext">A store GM tells you food cost variance is supplier price increases. Your data says it's wastage. How do you handle that?</span><span class="chev"></span></summary>
+  <div class="answer">
+    <p>I lead with the data, not the accusation. I sit with the GM and show the wastage log, the supplier invoice history, and the theoretical vs actual comparison side by side. If supplier prices are flat and wastage is the culprit, I let the numbers do the talking.</p>
+    <p>I also give the GM an out: maybe the wastage recording system is broken, not the actual behaviour. That's a process failure, not a character failure — and it's fixable. I offer to help fix it.</p>
+    <p>What I don't do: accept an explanation that contradicts the data without evidence. Finance's role is to maintain integrity of the numbers — not to be popular with GMs. But I do it respectfully, because I need GMs to see me as a partner, not an auditor out to catch them.</p>
+    <div class="anchor"><b>Anchor line:</b> "Lead with data, give them an out, stay firm. Finance must maintain integrity — but relationships matter for the long term."</div>
+  </div>
+</details>
+
+<div class="sec-head"><span class="sec-num">3.4</span><h2>Questions to Ask Them</h2></div>
+<table class="calc">
+  <tr><th>Your question</th><th>Why it signals sophistication</th></tr>
+  <tr><td>What ERP system are you running, and how mature is the POS-to-GL integration today?</td><td>Shows you understand the technical infrastructure the FC must own — and that gaps in this area are a risk.</td></tr>
+  <tr><td>How many leases are currently on the IFRS 16 schedule, and what's the current state of that ledger?</td><td>Signals you know this is a major ongoing technical area, not a one-time setup.</td></tr>
+  <tr><td>What does month-end close currently look like — how many days, and what's the biggest bottleneck?</td><td>Reveals maturity of the existing finance function and helps you calibrate what you're inheriting.</td></tr>
+  <tr><td>Are the Turkey operations currently reporting under IAS 29, and is there external specialist support for that?</td><td>Very few FC candidates would ask this. Demonstrates deep technical awareness and signals you've done serious preparation.</td></tr>
+  <tr><td>What's the biggest financial control challenge right now — POS integrity, food cost, payroll, or something else?</td><td>Gets them to tell you where the real pain is, so you can position your experience directly against it.</td></tr>
+</table>
+
+<div class="never-box">
+  <h3>Things never to say in this interview</h3>
+  <ul>
+    <li>I don't have F&amp;B experience so I'll need time to learn. (True — but frame it as structured learning, not a gap.)</li>
+    <li>I'll figure out IFRS 16 once I'm in the role. (You must show you already understand it and have worked with it.)</li>
+    <li>Food cost is the kitchen's problem, not finance. (Wrong — FC owns the financial reporting and investigation of food cost.)</li>
+    <li>I haven't worked with a POS system before. (Irrelevant — show you understand the reconciliation principle and controls.)</li>
+    <li>My current employer is [name]. (Never name the holding group. "In my current role" or "at the group" — always.)</li>
+  </ul>
+</div>
+
+</div>
+</div>
+
+<!-- ═══════════════════════════════════ VOL 4: IFRS ═══════════════════════════════════ -->
+<div class="tab-panel" id="tab-v4">
+<div class="wrap">
+
+<div class="cover">
+  <div class="stamp" style="color:var(--coffee);border-color:var(--coffee);">IFRS Reference</div>
+  <div class="fileref">Volume 4 of 6 · IFRS Deep-Dive</div>
+  <h1 class="title">IFRS Deep-Dive</h1>
+  <div class="subtitle">The four standards an FC at Al Sayer must know cold · With worked examples</div>
+</div>
+
+<div class="sec-head"><span class="sec-num">4.1</span><h2>IFRS 15 — Revenue Recognition</h2><span class="chip chip-teal">IFRS 15</span></div>
+<div class="layman" style="background:var(--coffee-soft);border:1px solid #C4A882;">
+  <div class="eyebrow" style="color:var(--coffee);">Plain English First</div>
+  <p>IFRS 15 controls when and how to recognise revenue. For Al Sayer, most revenue is simple (sell a coffee, recognise immediately at the point of delivery). But gift cards, loyalty programmes, and any sub-franchise income have specific, more complex treatment.</p>
+</div>
+<table class="calc">
+  <tr><th>Revenue type</th><th>IFRS 15 treatment</th><th>Al Sayer relevance</th></tr>
+  <tr><td>Store sales (food and beverages)</td><td>Point-in-time recognition. Revenue when customer receives goods. Performance obligation satisfied immediately.</td><td>The majority of revenue. Straightforward — POS records this. FC validates vs GL.</td></tr>
+  <tr><td>Gift cards / stored value</td><td>Recognise as deferred revenue (liability) when card sold. Recognise revenue on redemption. Breakage (cards never redeemed) recognised when probability established from historical patterns.</td><td>Caribou Coffee likely has gift cards. FC must track outstanding card balances and breakage rates.</td></tr>
+  <tr><td>Loyalty points</td><td>At sale, allocate transaction price between goods delivered and points earned. Points = separate performance obligation at standalone selling price. Revenue on points recognised when redeemed or expired.</td><td>If Caribou or Five Guys runs a loyalty programme: FC must account for the deferred revenue component at each sale.</td></tr>
+  <tr><td>Sub-franchise income (if applicable)</td><td>Initial fee: recognised over franchise term. Variable royalty: recognised as sub-franchisee generates sales — i.e., when the entity is entitled to it under the licence terms.</td><td>If Al Sayer sub-franchises any territory — not confirmed, but be prepared to discuss the treatment.</td></tr>
+</table>
+
+<div class="sec-head"><span class="sec-num">4.2</span><h2>IAS 2 — Inventories</h2><span class="chip chip-teal">IAS 2</span></div>
+<table class="calc">
+  <tr><th>Element</th><th>IAS 2 rule</th><th>Al Sayer application</th></tr>
+  <tr><td>Measurement</td><td>Lower of cost and Net Realisable Value (NRV) at each reporting date</td><td>For perishables near expiry, NRV can fall below cost — write-down required. Particularly relevant for Five Guys fresh beef.</td></tr>
+  <tr><td>Cost formula</td><td>FIFO or weighted average. LIFO prohibited under IFRS.</td><td>F&amp;B perishables should use FIFO. Regulatory and food safety requirements reinforce this — older stock consumed first.</td></tr>
+  <tr><td>Write-down</td><td>Write down to NRV when NRV &lt; cost. Recognise write-down as expense in the period. Do not reverse unless NRV subsequently increases.</td><td>Document write-down with count sheet showing expiry dates. Audit trail essential.</td></tr>
+  <tr><td>COGS calculation</td><td>Opening stock + purchases – closing stock = COGS consumed in the period</td><td>FC must ensure stock count accuracy — any error in closing stock flows directly and entirely into COGS and gross profit.</td></tr>
+</table>
+
+<div class="sec-head"><span class="sec-num">4.3</span><h2>IAS 21 — Foreign Currency Effects</h2><span class="chip chip-amber">FX Exposure</span></div>
+<div class="layman" style="background:var(--coffee-soft);border:1px solid #C4A882;">
+  <div class="eyebrow" style="color:var(--coffee);">Three FX exposures at Al Sayer</div>
+  <p>1. Royalty payments to US franchisors (USD-denominated). 2. Turkey subsidiary (TRY → KWD). 3. Any other foreign currency transactions (supplier invoices, FF&amp;E imports, etc.).</p>
+</div>
+<table class="calc">
+  <tr><th>Transaction type</th><th>IAS 21 treatment</th></tr>
+  <tr><td>Royalty payable to US franchisor (USD)</td><td>Recognise at spot rate on accrual date. Retranslate monetary liability at closing rate each period. Exchange difference (gain or loss) recognised in P&amp;L.</td></tr>
+  <tr><td>Turkey subsidiary (TRY → KWD)</td><td>If IAS 29 applies: restate to current purchasing power first (see Vol 2), then translate at closing rate. Translation differences in OCI (not P&amp;L).</td></tr>
+  <tr><td>Normal foreign subsidiary (if any)</td><td>Assets and liabilities at closing rate. Income and expenses at average rate (or transaction rate). Translation difference → OCI (foreign currency translation reserve in equity).</td></tr>
+  <tr><td>FX risk management</td><td>Natural hedge possible: if Turkey operations generate USD revenue, use to offset USD royalty payables. If formal hedging instruments used → IFRS 9 hedge accounting criteria must be met and documented.</td></tr>
+</table>
+
+<div class="sec-head"><span class="sec-num">4.4</span><h2>IAS 36 — Impairment of Assets</h2><span class="chip chip-amber">Annual Review</span></div>
+<div class="layman" style="background:var(--coffee-soft);border:1px solid #C4A882;">
+  <div class="eyebrow" style="color:var(--coffee);">Plain English First</div>
+  <p>If a store is consistently losing money, or the master franchise right is carried at more than its recoverable value, the assets must be written down. IAS 36 controls the process. For a 300-store operator, this is an annual exercise — and can affect reported profit materially.</p>
+</div>
+<table class="calc">
+  <tr><th>Trigger</th><th>IAS 36 response</th></tr>
+  <tr><td>Store 4-wall EBITDA persistently negative</td><td>Impairment indicator. Test the store's asset group (ROU asset + fit-out + equipment) against its recoverable amount = higher of Fair Value Less Costs to Sell (FVLCTS) and Value in Use (VIU from DCF of expected future cash flows).</td></tr>
+  <tr><td>Master franchise intangible</td><td>Indefinite useful life → annual impairment test required regardless of indicators. Finite useful life → amortise + impairment test only when indicators present.</td></tr>
+  <tr><td>Store closure decision</td><td>Assets written off. ROU asset and lease liability derecognised. Exit costs (lease termination penalties, fit-out removal) provisioned under IAS 37. Any impairment loss in P&amp;L.</td></tr>
+  <tr><td>Turkey operations (country-level indicator)</td><td>Significant adverse economic change (TRY devaluation, hyperinflation) = impairment indicator for Turkey-based assets. Test all Turkey CGUs.</td></tr>
+</table>
+
+</div>
+</div>
+
+<!-- ═══════════════════════════════════ VOL 5: KUWAIT ═══════════════════════════════════ -->
+<div class="tab-panel" id="tab-v5">
+<div class="wrap">
+
+<div class="cover">
+  <div class="stamp" style="color:var(--green);border-color:var(--green);">Kuwait Compliance</div>
+  <div class="fileref">Volume 5 of 6 · Kuwait Regulatory Context</div>
+  <h1 class="title">Kuwait Compliance</h1>
+  <div class="subtitle">Labour Law · 5% Tax Retention · KNET and Payments · K.S.C.C. Legal Structure</div>
+</div>
+
+<div class="sec-head"><span class="sec-num">5.1</span><h2>Kuwait Labour Law — P&amp;L and Balance Sheet Impact</h2><span class="chip chip-teal">Law No. 6 / 2010</span></div>
+<table class="calc">
+  <tr><th>Obligation</th><th>FC accounting treatment</th><th>Risk if wrong</th></tr>
+  <tr><td>EOSI (End of Service Indemnity)</td><td>Accrue monthly: minimum 15 days/year basic salary (first 5 years), 1 month/year thereafter. Balance sheet provision — current and non-current split. With 3,000 staff and high F&amp;B turnover, this is a material and growing liability.</td><td>Understatement → audit qualification → cash shock when employees terminate</td></tr>
+  <tr><td>Annual leave</td><td>30 calendar days/year. Accrue earned but untaken leave as a current liability each period. F&amp;B staff often do not take leave — can accumulate to large balances.</td><td>Understatement → prior period adjustments</td></tr>
+  <tr><td>Overtime rates</td><td>Expense in period earned. Rates: 125% (normal OT), 150% (rest day), 200% (public holidays). FC reviews overtime report and verifies correct rates are applied in payroll before WPS submission.</td><td>Underpayment → Labour Court claims</td></tr>
+  <tr><td>WPS (Wages Protection System)</td><td>Not an accounting entry per se — but FC must ensure payroll file submitted to PACI / bank on time every month. Late = government fines and potential operating license suspension.</td><td>License suspension risk for the company</td></tr>
+  <tr><td>Nationalisation quota</td><td>Track Kuwaiti-to-non-Kuwaiti employee ratio. FC must ensure regulatory submissions correctly reflect headcount mix. Non-compliance = fines and license risk.</td><td>Government enforcement action</td></tr>
+</table>
+
+<div class="sec-head"><span class="sec-num">5.2</span><h2>Kuwait 5% Tax Retention — Law No. 2 of 2008</h2><span class="chip chip-amber">Applied Directly to Royalties</span></div>
+<div class="info"><b>Specific to Al Sayer:</b> Ongoing royalty payments to Caribou Coffee (US) and Five Guys (US) are payments to foreign contractors. Both trigger the 5% retention obligation under Kuwait Law No. 2 of 2008. This is one of the FC's most important compliance obligations — non-compliance makes Al Sayer directly liable to the Kuwait Tax Authority (KTA) for the full retention amount.</div>
+<table class="calc">
+  <tr><th>Element</th><th>Detail</th></tr>
+  <tr><td>Legal obligation</td><td>Al Sayer must withhold 5% from all payments to foreign (non-Kuwaiti) contractors and service providers, including US franchisors, until they provide a Tax Clearance Certificate (TCC) or No Objection Letter (NOL) from the KTA.</td></tr>
+  <tr><td>Scope for Al Sayer</td><td>Monthly royalty to Caribou Coffee (US) · Monthly royalty to Five Guys (US) · Any other foreign contractor payments (consulting fees, equipment maintenance from foreign vendors, etc.)</td></tr>
+  <tr><td>Process</td><td>US franchisor registers the contract with KTA → obtains TCC or NOL → provides to Al Sayer. Until TCC/NOL received, Al Sayer releases only 95% of each payment and holds 5% in a tax retention payable account.</td></tr>
+  <tr><td>FC accounting entry</td><td>Dr Royalty Payable [full amount] → Cr Cash [95%] + Cr Tax Retention Payable — KTA [5%]</td></tr>
+  <tr><td>Failure consequences</td><td>Al Sayer becomes directly liable to KTA for the 5% on every non-withheld payment. Given volume and USD size of royalty payments, cumulative exposure can be substantial.</td></tr>
+  <tr><td>FC tracking requirement</td><td>Maintain a register of TCC/NOL status per foreign contractor, per contract year. Flag expiry dates — certificates must be renewed. Never release 100% without valid TCC/NOL on file.</td></tr>
+</table>
+
+<div class="sec-head"><span class="sec-num">5.3</span><h2>KNET and Payment Systems</h2></div>
+<table class="calc">
+  <tr><th>Payment system</th><th>FC relevance</th></tr>
+  <tr><td>KNET (debit cards)</td><td>Dominant payment method in Kuwait. Settlement to Al Sayer's bank account typically T+1. FC reconciles KNET settlement files from the bank vs POS card tender reports daily. Timing differences must be tracked.</td></tr>
+  <tr><td>Visa / Mastercard (credit)</td><td>Processed via acquiring bank. Settlement 1–2 business days. Merchant discount rate (~1.5–2%) is an operating expense — deducted by acquiring bank before settlement. FC must record MDR as expense, not net revenue.</td></tr>
+  <tr><td>Talabat / Deliveroo aggregators</td><td>Platform deducts commission (typically 20–30%) and remits net to Al Sayer after 7–30 days. FC must track: (a) gross sales on POS, (b) net settlement received, (c) commission expense, (d) timing difference accrued at month-end for unsettled periods.</td></tr>
+  <tr><td>Cash (declining but present)</td><td>Daily count by shift manager → secure safe → bank deposit same or next day. FC reviews bank deposit slips vs POS cash tender. Unexplained shortfalls = control failure indicator requiring investigation.</td></tr>
+</table>
+
+<div class="sec-head"><span class="sec-num">5.4</span><h2>K.S.C.C. Legal Structure — What the FC Must Know</h2></div>
+<table class="calc">
+  <tr><th>Element</th><th>Detail</th></tr>
+  <tr><td>K.S.C.C. definition</td><td>Kuwaiti Shareholding Closed Company. Shares held privately — not listed on Boursa Kuwait. Governed by Kuwait Companies Law No. 1 of 2016. Directors appointed by shareholders.</td></tr>
+  <tr><td>Statutory audit</td><td>Required by law. FC manages audit relationship, ensures financials are audit-ready, and meets statutory filing deadline (typically 3–4 months after year-end). Audit committee interaction if applicable.</td></tr>
+  <tr><td>MOC filings</td><td>Annual returns filed with Ministry of Commerce. FC signs off on financial information submitted. Inaccurate filings = regulatory exposure.</td></tr>
+  <tr><td>Zakat</td><td>Zakat not mandatory for K.S.C.C. entities (applies to K.S.C. — public listed companies). If Al Sayer Group has any listed K.S.C. entities, those would have Zakat obligations — FC must track accordingly.</td></tr>
+  <tr><td>Foreign ownership</td><td>K.S.C.C. may have foreign shareholder restrictions depending on sector (typically max 49% non-Kuwaiti in certain sectors). Check if franchise ownership structure is relevant.</td></tr>
+</table>
+
+</div>
+</div>
+
+<!-- ═══════════════════════════════════ VOL 6: DAY BEFORE ═══════════════════════════════════ -->
+<div class="tab-panel" id="tab-v6">
+<div class="wrap">
+
+<div class="cover">
+  <div class="stamp" style="color:var(--navy);border-color:var(--navy);">Final Prep</div>
+  <div class="fileref">Volume 6 of 6 · Day Before</div>
+  <h1 class="title">Day Before Checklist</h1>
+  <div class="subtitle">Run through this the evening before your interview · Check off as you go</div>
+</div>
+
+<div class="cl-box">
+  <h3>The Evening Before</h3>
+  <ul>
+    <li><input type="checkbox"> Know the interviewers by name: CEO Joseph Chartouni, Chairman Naser Al Sayer. Google Joseph Chartouni — check for any recent press, LinkedIn posts, or public statements about the company's expansion.</li>
+    <li><input type="checkbox"> Brand distinction absolutely cold: Caribou = premium coffeehouse, Five Guys = better burger QSR. Know both brand stories briefly (Minneapolis 1992, Arlington 1986).</li>
+    <li><input type="checkbox"> Food cost investigation 5-layer sequence ready to deliver without notes: data integrity → supplier pricing → wastage → portioning → theft/fraud.</li>
+    <li><input type="checkbox"> IFRS 16 explanation ready: ROU asset + lease liability, depreciation replaces rent, EBITDA improves, 300 leases = the most complex ongoing accounting task the FC owns.</li>
+    <li><input type="checkbox"> IAS 29 explanation ready: Turkey, hyperinflation, restate non-monetary items using CPI, translate at closing rate (not average), gain/loss on monetary position in P&amp;L.</li>
+    <li><input type="checkbox"> 5% retention rule: applies to Caribou and Five Guys royalty payments. Withhold 5% until TCC/NOL received. Never release 100% without certificate on file.</li>
+    <li><input type="checkbox"> Anchor lines ready (see grid below) — practise saying them out loud, not just reading them.</li>
+    <li><input type="checkbox"> 5 questions prepared to ask them (Vol 3, section 3.4).</li>
+    <li><input type="checkbox"> Fantasy World Toys bridge ready: physical stores, store-level P&amp;L, shrinkage controls, footfall-driven revenue — the conceptual bridge to F&amp;B is short.</li>
+    <li><input type="checkbox"> Employer confidentiality: never say the name of the holding group. "In my current role" or "at the group" — every time without exception.</li>
+    <li><input type="checkbox"> Logistics: Assima Tower, Sharq, Kuwait City. Allow 30 minutes extra for parking/building access. Arrive 15 minutes before the interview.</li>
+    <li><input type="checkbox"> Dress: business formal. Conservative. This is a family-owned Kuwaiti company — err formal.</li>
+  </ul>
+</div>
+
+<div class="sec-head"><span class="sec-num">6.1</span><h2>Anchor Lines — Practise These Out Loud</h2></div>
+<table class="anchor-grid">
+  <tr><th>Topic</th><th>Your anchor line</th></tr>
+  <tr><td class="topic">Experience breadth</td><td>"20 years GCC finance, most of it multi-entity — I've run finance for 13 entities simultaneously. 300 stores is complex but it's the same discipline applied at scale."</td></tr>
+  <tr><td class="topic">F&amp;B experience gap</td><td>"Finance discipline transfers. The velocity is different in F&amp;B but the principles aren't. And I've done physical retail at Fantasy World Toys — the bridge is shorter than it looks."</td></tr>
+  <tr><td class="topic">Month-end close</td><td>"4-day close, systemised. Infrastructure first — speed comes from having the right foundations in place."</td></tr>
+  <tr><td class="topic">Food cost investigation</td><td>"Start with data integrity before assuming operational failure. Five layers. I don't accuse the GM before I've checked whether the recording system is broken."</td></tr>
+  <tr><td class="topic">IFRS 16</td><td>"~300 leases — that's one of the largest balance sheet items in this company. I'd want a fully maintained schedule reviewed monthly, not a spreadsheet nobody touches."</td></tr>
+  <tr><td class="topic">Turkey / IAS 29</td><td>"IAS 29 restatement before IAS 21 translation. I'd bring in specialist support for the Turkey calculations and own the review — you can't present that to auditors without understanding it cold."</td></tr>
+  <tr><td class="topic">5% retention</td><td>"Every royalty payment to Caribou and Five Guys triggers the 5% retention rule. I'd maintain a live TCC/NOL register — you can't release 100% of a payment without the certificate on file."</td></tr>
+  <tr><td class="topic">Leadership style</td><td>"Finance must maintain integrity — that means sometimes telling people things they don't want to hear. I do it with data, not opinion. And I do it in a way that keeps the GM as a partner."</td></tr>
+  <tr><td class="topic">First 30 days</td><td>"Diagnose before prescribing. Week-1 assumptions cause month-6 problems. I've inherited enough finance functions to know that."</td></tr>
+</table>
+
+<div class="sec-head"><span class="sec-num">6.2</span><h2>Print Instructions</h2></div>
+<div class="tip"><b>To print this file:</b> File → Print → Save as PDF in your browser. All volumes will print in sequence — Q&amp;A cards will expand automatically in print mode so no answers are hidden. Print Vol 3 (Q&amp;As) and Vol 6 (Day Before) for a compact revision card.</div>
+
+<footer>Al Sayer FC Prep · Confidential — personal interview preparation only · Built with FinVertex Advisory methodology</footer>
+</div>
+</div>
+
+<script>
+function switchTab(id){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tabbtn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  const btns=document.querySelectorAll('.tabbtn');
+  const map={'v1':0,'v2':1,'v3':2,'v4':3,'v5':4,'v6':5};
+  btns[map[id]].classList.add('active');
+}
+</script>
+</body>
+</html>
