@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pret Kuwait &amp; KSA — Technical Study Guide</title>
+<style>
+  :root{
+    --ink:#1c1c1a;
+    --paper:#faf8f4;
+    --panel:#ffffff;
+    --line:#e2ddd2;
+    --accent:#7a3b2e;
+    --accent2:#5c6b4f;
+    --muted:#6b6759;
+    --warn-bg:#fbeee9;
+    --warn-line:#d99a7f;
+    --ex-bg:#f4f6ef;
+    --ex-line:#c3cdb0;
+    --code-bg:#2b2a26;
+    --code-ink:#e9e5d8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family: Georgia, 'Iowan Old Style', serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px 80px;}
+  header.hero{
+    border-bottom:3px solid var(--ink);
+    padding:48px 24px 28px;
+    margin-bottom:8px;
+  }
+  header.hero .wrap{padding:0;}
+  .eyebrow{
+    font-family:'Courier New', monospace;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:10px;
+  }
+  h1{
+    font-size:clamp(26px,4.2vw,40px);
+    margin:0 0 8px;
+    line-height:1.12;
+    font-weight:700;
+  }
+  .subtitle{
+    font-size:15.5px;
+    color:var(--muted);
+    max-width:680px;
+  }
+  .meta-row{
+    display:flex;
+    gap:24px;
+    flex-wrap:wrap;
+    margin-top:20px;
+    font-family:'Courier New', monospace;
+    font-size:12px;
+    color:var(--muted);
+  }
+  nav.toc{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:18px 22px;
+    margin:28px 0 36px;
+  }
+  nav.toc .eyebrow{margin-bottom:8px;}
+  nav.toc ol{margin:0;padding-left:20px;columns:2;column-gap:24px;font-size:13.5px;}
+  nav.toc li{margin-bottom:6px;break-inside:avoid;}
+  nav.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--muted);}
+  nav.toc a:hover{color:var(--accent);}
+
+  section{margin:50px 0;}
+  section h2{
+    font-size:22px;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:8px;
+    margin-bottom:18px;
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+  }
+  section h2 .num{
+    font-family:'Courier New', monospace;
+    font-size:13px;
+    color:var(--accent);
+    font-weight:normal;
+  }
+  h3{font-size:16.5px;margin:28px 0 10px;color:var(--accent);}
+  h4{font-size:14.5px;margin:18px 0 8px;color:var(--accent2);text-transform:uppercase;letter-spacing:.03em;}
+  p{margin:0 0 14px;font-size:15px;}
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:14px 0 22px;
+    font-size:14px;
+    background:var(--panel);
+  }
+  caption{
+    text-align:left;
+    font-family:'Courier New', monospace;
+    font-size:11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:6px;
+  }
+  th, td{
+    text-align:left;
+    padding:9px 11px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  th{
+    background:#f1ede3;
+    font-weight:700;
+    font-size:12.5px;
+  }
+  td.num, th.num{text-align:right;font-variant-numeric:tabular-nums;}
+  tr.total td{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);font-weight:700;}
+  tr.subtotal td{border-top:1px solid var(--ink);font-weight:700;}
+  tr:last-child td{border-bottom:1px solid var(--ink);}
+
+  ul, ol.steps{margin:0 0 16px;padding-left:22px;font-size:15px;}
+  li{margin-bottom:6px;}
+
+  .callout{
+    background:var(--panel);
+    border-left:4px solid var(--accent2);
+    padding:14px 18px;
+    margin:18px 0;
+    font-size:14.5px;
+  }
+  .callout.warn{background:var(--warn-bg);border-left-color:var(--warn-line);}
+  .callout .label{
+    font-family:'Courier New', monospace;
+    font-size:11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:block;
+    margin-bottom:6px;
+  }
+
+  .example{
+    background:var(--ex-bg);
+    border:1px solid var(--ex-line);
+    border-radius:4px;
+    padding:18px 22px;
+    margin:18px 0 24px;
+  }
+  .example .label{
+    font-family:'Courier New', monospace;
+    font-size:11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--accent2);
+    display:block;
+    margin-bottom:10px;
+  }
+  .example table{background:transparent;margin-bottom:8px;}
+  .example th{background:#e7ebdd;}
+
+  .je{
+    font-family:'Courier New', monospace;
+    font-size:13px;
+    background:var(--code-bg);
+    color:var(--code-ink);
+    padding:14px 18px;
+    border-radius:4px;
+    margin:12px 0 18px;
+    overflow-x:auto;
+    white-space:pre;
+    line-height:1.65;
+  }
+  .je .acct-debit{color:#9fd3a8;}
+  .je .acct-credit{color:#e3b07f;}
+
+  .qa{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:16px 20px;
+    margin-bottom:14px;
+  }
+  .qa .q{font-weight:700;margin-bottom:8px;}
+  .qa .a{color:var(--ink);font-size:14.5px;}
+  .qa .tag{
+    display:inline-block;
+    font-family:'Courier New', monospace;
+    font-size:10.5px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    background:#f1ede3;
+    color:var(--muted);
+    padding:2px 8px;
+    border-radius:10px;
+    margin-bottom:10px;
+  }
+
+  .glossary dt{font-weight:700;margin-top:14px;color:var(--accent);}
+  .glossary dd{margin-left:0;margin-bottom:4px;font-size:14.5px;}
+
+  footer{
+    margin-top:60px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+    font-family:'Courier New', monospace;
+    font-size:11px;
+    color:var(--muted);
+    text-align:center;
+  }
+
+  .print-btn{
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    background:var(--ink);
+    color:var(--paper);
+    border:none;
+    border-radius:30px;
+    padding:12px 20px;
+    font-family:'Courier New', monospace;
+    font-size:12px;
+    letter-spacing:.05em;
+    cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.2);
+    z-index:50;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  .backtotop{
+    display:inline-block;
+    margin-top:8px;
+    font-family:'Courier New', monospace;
+    font-size:11px;
+    color:var(--muted);
+    text-decoration:none;
+  }
+  .backtotop:hover{color:var(--accent);}
+
+  @media print{
+    .print-btn{display:none;}
+    body{background:#fff;}
+    section{margin:24px 0;page-break-inside:avoid;}
+    nav.toc{display:none;}
+  }
+
+  @media (max-width:600px){
+    nav.toc ol{columns:1;}
+    header.hero{padding:32px 16px 24px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Finance Interview — Technical Study Guide</div>
+    <h1>Pret A Manger — Kuwait &amp; KSA</h1>
+    <div class="subtitle">Full technical reference with worked examples and illustrative journal entries — franchise accounting, Kuwait and KSA tax mechanics, multi-entity consolidation, FX, store economics, and working capital. Built to be read end-to-end before the interview.</div>
+    <div class="meta-row">
+      <span>PREPARED · 30 JUN 2026</span>
+      <span>FUNCTIONAL CCY · KWD (illustrated alongside SAR)</span>
+      <span>FORMAT · STUDY GUIDE, NOT A SUMMARY</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<div class="callout warn">
+  <span class="label">A note on the numbers in this document</span>
+  All figures, percentages, and journal entries below are <strong>illustrative</strong> — built to demonstrate mechanics and let you rehearse the calculation logic out loud, not pulled from One PM's actual books (which aren't public). Use the structure and method; treat the specific numbers as teaching examples, and say so if asked directly whether these are real figures.
+</div>
+
+<nav class="toc">
+  <div class="eyebrow">Contents</div>
+  <ol>
+    <li><a href="#royalty">1. Franchise royalty accounting</a></li>
+    <li><a href="#fee">2. Initial franchise fee — capitalisation &amp; amortisation</a></li>
+    <li><a href="#marketing">3. Marketing / brand fund accounting</a></li>
+    <li><a href="#kw-retention">4. Kuwait 5% tax retention — full mechanics</a></li>
+    <li><a href="#ksa-wht">5. KSA withholding tax (ZATCA) — full mechanics</a></li>
+    <li><a href="#ksa-zakat">6. KSA Zakat — full mechanics</a></li>
+    <li><a href="#consolidation">7. Multi-entity consolidation — Kuwait + KSA</a></li>
+    <li><a href="#fx">8. FX exposure &amp; currency pegs</a></li>
+    <li><a href="#storepl">9. Store-level P&amp;L — full worked example</a></li>
+    <li><a href="#cogs">10. COGS &amp; food cost management</a></li>
+    <li><a href="#labour">11. Labour cost &amp; Kuwait Labour Law basics</a></li>
+    <li><a href="#rent">12. Percentage rent lease accounting</a></li>
+    <li><a href="#delivery">13. Delivery aggregator commission impact</a></li>
+    <li><a href="#capex">14. Capex &amp; payback analysis</a></li>
+    <li><a href="#workingcap">15. Working capital in F&amp;B retail</a></li>
+    <li><a href="#glossary">16. Glossary / quick reference</a></li>
+  </ol>
+</nav>
+
+<!-- ============ 1. ROYALTY ============ -->
+<section id="royalty">
+  <h2><span class="num">01</span> Franchise Royalty Accounting</h2>
+  <p><strong>The concept:</strong> a franchisee pays the franchisor (Pret UK/Asia entity) an ongoing royalty, almost always calculated as a <strong>percentage of net sales</strong> (sales net of VAT/discounts, not gross till receipts). This is the franchisor's recurring return on the brand licence, separate from the one-off initial franchise fee.</p>
+
+  <h3>How it's accounted for</h3>
+  <p>Royalty is expensed in the period the related sales occur — it's a direct, variable operating cost, not capitalised. It typically sits in the P&amp;L between gross profit and store EBITDA, often shown as its own line so management can see "store contribution before brand cost" separately.</p>
+
+  <div class="example">
+    <span class="label">Worked example — monthly royalty accrual, single shop</span>
+    <table>
+      <tr><th>Item</th><th class="num">Amount (KWD)</th></tr>
+      <tr><td>Net sales for the month (Shop: Al Hamra Tower)</td><td class="num">42,000</td></tr>
+      <tr><td>Royalty rate per franchise agreement</td><td class="num">6%</td></tr>
+      <tr><td>Royalty payable</td><td class="num">2,520</td></tr>
+    </table>
+    <p style="margin-bottom:0;">Illustrative journal entry at month-end:</p>
+    <div class="je"><span class="acct-debit">Dr</span> Royalty Expense (P&amp;L)                 2,520
+  <span class="acct-credit">Cr</span> Royalty Payable — Pret Franchisor (BS)        2,520
+  <span style="color:#999">Being royalty accrued at 6% of net sales for [month]</span>
+
+On payment (net of any Kuwait 5% retention — see Section 4):
+  <span class="acct-debit">Dr</span> Royalty Payable — Pret Franchisor              2,520
+  <span class="acct-credit">Cr</span> Tax Retention Payable — KTA (5%)                  126
+  <span class="acct-credit">Cr</span> Bank                                              2,394</div>
+  </div>
+
+  <h3>What to be ready to discuss</h3>
+  <ul>
+    <li>Whether royalty is calculated on a tiered basis (some agreements step down the rate above certain sales thresholds) — worth asking if you don't know the actual structure</li>
+    <li>Timing: accrued monthly against actual sales, vs. paid on a different cycle (e.g., paid quarterly in arrears) — creates a payable balance to track</li>
+    <li>Currency: if invoiced in GBP, you're translating KWD sales into a GBP royalty obligation — an FX translation step before the retention/WHT calculation even begins</li>
+  </ul>
+
+  <a class="backtotop" href="#top">↑ back to top</a>
+</section>
+
+<!-- ============ 2. FRANCHISE FEE ============ -->
+<section id="fee">
+  <h2><span class="num">02</span> Initial Franchise Fee — Capitalisation &amp; Amortisation</h2>
+  <p><strong>The concept:</strong> when a new shop opens, the franchisee typically pays a one-off, non-recurring initial franchise fee to the franchisor for the right to operate under the brand at that location. Unlike royalty, this is <strong>capitalised as an intangible asset</strong> and amortised over the life of the franchise agreement for that unit (commonly 5–10 years, matching the contract term).</p>
+
+  <div class="example">
+    <span class="label">Worked example — new shop opening</span>
+    <table>
+      <tr><th>Item</th><th class="num">Amount (KWD)</th></tr>
+      <tr><td>Initial franchise fee (per new shop)</td><td class="num">30,000</td></tr>
+      <tr><td>Franchise agreement term for this unit</td><td class="num">10 years</td></tr>
+      <tr><td>Annual amortisation (straight-line)</td><td class="num">3,000</td></tr>
+      <tr><td>Monthly amortisation charge</td><td class="num">250</td></tr>
+    </table>
+    <div class="je"><span style="color:#999">On payment / shop opening:</span>
+  <span class="acct-debit">Dr</span> Intangible Asset — Franchise Rights        30,000
+  <span class="acct-credit">Cr</span> Bank                                          30,000
+
+<span style="color:#999">Monthly amortisation:</span>
+  <span class="acct-debit">Dr</span> Amortisation Expense (P&amp;L)                    250
+  <span class="acct-credit">Cr</span> Accumulated Amortisation — Franchise Rights        250</span></div>
+  </div>
+
+  <h3>What to be ready to discuss</h3>
+  <ul>
+    <li>Impairment testing — if a shop underperforms badly or closes early, the remaining unamortised franchise fee balance needs an impairment review, similar logic to the goodwill impairment Pret UK itself took in FY2024</li>
+    <li>Whether the fee is per-shop or a lump-sum development fee covering a multi-unit development schedule (common in master franchise agreements) — the latter would be capitalised and allocated across the planned shop openings</li>
+  </ul>
+
+  <a class="backtotop" href="#top">↑ back to top</a>
+</section>
+
+<!-- ============ 3. MARKETING FUND ============ -->
+<section id="marketing">
+  <h2><span class="num">03</span> Marketing / Brand Fund Accounting</h2>
+  <p><strong>The concept:</strong> many franchise agreements require a separate contribution — often 1–3% of net sales — into a marketing/brand fund, either pooled regionally by the franchisor or ring-fenced for local market spend. The accounting question that always comes up: <strong>gross or net presentation?</strong></p>
+
+  <table>
+    <caption>Gross vs. Net Presentation</caption>
+    <tr><th>Approach</th><th>When it applies</th><th>P&amp;L impact</th></tr>
+    <tr><td><strong>Gross (agent model)</strong></td><td>Franchisee collects/forwards the fund and has no discretion over how it's spent — acting as a collection agent for the franchisor's regional marketing pot</td><td>Contribution shown as a pass-through; doesn't inflate the franchisee's own marketing expense line</td></tr>
+    <tr><td><strong>Net (principal model)</strong></td><td>Franchisee retains the fund and directs local marketing spend itself, subject to brand guidelines</td><td>Contribution is recognised as the franchisee's own marketing expense as spent, not as an immediate pass-through liability</td></tr>
+  </table>
+
+  <div class="example">
+    <span class="label">Worked example — local marketing fund (net/principal model)</span>
+    <table>
+      <tr><th>Item</th><th class="num">Amount (KWD)</th></tr>
+      <tr><td>Net sales for the month, all Kuwait shops</td><td class="num">280,000</td></tr>
+      <tr><td>Marketing fund contribution rate</td><td class="num">2%</td></tr>
+      <tr><td>Monthly contribution</td><td class="num">5,600</td></tr>
+    </table>
+    <div class="je"><span class="acct-debit">Dr</span> Marketing Fund Contribution (P&amp;L)        5,600
+  <span class="acct-credit">Cr</span> Bank / Accrued Marketing Liability               5,600
+  <span style="color:#999">Recognised as expense when contributed; if unspent, sits as
+  a liability until local campaigns draw it down</span></div>
+  </div>
+
+  <h3>What to be ready to discuss</h3>
+  <ul>
+    <li>Whether unspent marketing fund balances roll forward or are forfeited at year-end — affects whether you carry a liability or recognise income on lapse</li>
+    <li>Whether any portion is pooled regionally (across Kuwait + KSA + historically Qatar) vs. spent purely locally — relevant given the two-market scope of this role</li>
+  </ul>
+
+  <a class="backtotop" href="#top">↑ back to top</a>
+</section>
+
+<!-- ============ 4. KUWAIT RETENTION ============ -->
+<section id="kw-retention">
+  <h2><span class="num">04</span> Kuwait 5% Tax Retention — Full Mechanics</h2>
+  <p><strong>The legal basis:</strong> Law No. 2 of 2008 requires any party in Kuwait contracting with a foreign (non-Kuwaiti) entity to retain 5% of each payment due under that contract, until the foreign party obtains a <strong>No Liability Certificate (NOL)</strong> from the Kuwait Tax Authority (KTA) confirming its Kuwait tax position is clear.</p>
+
+  <h3>Why it applies here</h3>
+  <p>Pret's franchisor entity (UK or Asia-based) is a foreign party receiving ongoing payments — royalty, marketing fund, and the initial franchise fee — from a Kuwaiti contracting entity (One PM / the Kuwait operating company). That's squarely within scope.</p>
+
+  <h3>The mechanics, step by step</h3>
+  <ol class="steps">
+    <li><strong>KTA registration</strong> — the Kuwaiti contracting party (One PM's Kuwait entity) must register the contract with KTA, generally within a defined window after signing</li>
+    <li><strong>Retention at source</strong> — on every payment to the franchisor, the Kuwaiti entity retains 5% rather than remitting it</li>
+    <li><strong>Foreign party's compliance</strong> — the franchisor (or its local tax agent) files with KTA to demonstrate it has no outstanding Kuwait tax liability — this can take time, sometimes spanning multiple payment cycles</li>
+    <li><strong>NOL issued</strong> — once KTA is satisfied, it issues the No Liability Certificate</li>
+    <li><strong>Release of retention</strong> — accumulated retained amounts are released to the franchisor (or, if KTA finds a liability, applied against it first)</li>
+  </ol>
+
+  <div class="example">
+    <span class="label">Worked example — annual royalty payments with retention</span>
+    <table>
+      <tr><th>Quarter</th><th class="num">Royalty Due (KWD)</th><th class="num">5% Retained</th><th class="num">Paid to Franchisor</th></tr>
+      <tr><td>Q1</td><td class="num">28,000</td><td class="num">1,400</td><td class="num">26,600</td></tr>
+      <tr><td>Q2</td><td class="num">31,500</td><td class="num">1,575</td><td class="num">29,925</td></tr>
+      <tr><td>Q3</td><td class="num">29,800</td><td class="num">1,490</td><td class="num">28,310</td></tr>
+      <tr><td>Q4</td><td class="num">33,200</td><td class="num">1,660</td><td class="num">31,540</td></tr>
+      <tr class="total"><td>Full year</td><td class="num">122,500</td><td class="num">6,125</td><td class="num">116,375</td></tr>
+    </table>
+    <p>If the NOL is obtained in, say, March of the following year, the full <strong>KWD 6,125</strong> retained balance is released to the franchisor at that point (assuming no liability was found).</p>
+    <div class="je"><span style="color:#999">Each quarter, on payment:</span>
+  <span class="acct-debit">Dr</span> Royalty Payable — Franchisor          28,000
+  <span class="acct-credit">Cr</span> Tax Retention Payable — KTA               1,400
+  <span class="acct-credit">Cr</span> Bank                                        26,600
+
+<span style="color:#999">On NOL issuance and release:</span>
+  <span class="acct-debit">Dr</span> Tax Retention Payable — KTA            6,125
+  <span class="acct-credit">Cr</span> Bank                                         6,125</span></div>
+  </div>
+
+  <div class="callout warn">
+    <span class="label">Talking point — this is where you stand out</span>
+    Be ready to say plainly: the retention is a <strong>cash flow timing issue for the franchisor, not a cost to the Kuwaiti entity</strong> — but it creates an ongoing liability balance you must track, reconcile, and manage proactively so it doesn't sit stale on the balance sheet for years. A well-run finance function chases the NOL actively rather than letting retained balances accumulate indefinitely, since franchisors increasingly expect their Kuwaiti partners to manage this efficiently as part of the relationship.
+  </div>
+
+  <a class="backtotop" href="#top">↑ back to top</a>
+</section>
+
+<!-- ============ 5. KSA WHT ============ -->
+<section id="ksa-wht">
+  <h2><span class="num">05</span> KSA Withholding Tax (ZATCA) — Full Mechanics</h2>
+  <p><strong>The legal basis:</strong> Saudi Arabia's income tax law requires withholding tax (WHT) on payments made by a Saudi-resident entity to a non-resident party for Saudi-source income — royalties, licence fees, technical/management services, and similar. Administered by ZATCA (Zakat, Tax and Customs Authority).</p>
+
+  <h3>How it differs structurally from Kuwait's retention</h3>
+  <table>
+    <caption>Kuwait Retention vs. KSA WHT</caption>
+    <tr><th>Feature</th><th>Kuwait (Law 2/2008)</th><th>KSA WHT</th></tr>
+    <tr><td>Nature</td><td>Temporary retention, released on clearance</td><td>Final tax, deducted and remitted — not "held," genuinely withheld</td></tr>
+    <tr><td>Rate</td><td>Flat 5%</td><td>Varies by payment category — royalties commonly 15%; technical/consulting services 5%; management fees can differ — confirm actual contract classification</td></tr>
+    <tr><td>Clearance mechanism</td><td>NOL certificate required to release</td><td>No release mechanism — it's remitted to ZATCA monthly, full stop</td></tr>
+    <tr><td>Treaty relief</td><td>Generally not available in practice</td><td>Available if franchisor obtains a Certificate of Tax Residence and the UK-Saudi treaty reduces the applicable rate</td></tr>
+  </table>
+
+  <div class="example">
+    <span class="label">Worked example — monthly royalty payment from KSA entity</span>
+    <table>
+      <tr><th>Item</th><th class="num">Amount (SAR)</th></tr>
+      <tr><td>Net sales, KSA shops for the month</td><td class="num">155,000</td></tr>
+      <tr><td>Royalty rate</td><td class="num">6%</td></tr>
+      <tr><td>Royalty due</td><td class="num">9,300</td></tr>
+      <tr><td>WHT rate applied (royalty classification, treaty not yet documented)</td><td class="num">15%</td></tr>
+      <tr><td>WHT withheld &amp; remitted to ZATCA</td><td class="num">1,395</td></tr>
+      <tr><td>Net paid to franchisor</td><td class="num">7,905</td></tr>
+    </table>
+    <div class="je"><span class="acct-debit">Dr</span> Royalty Expense (P&amp;L)                  9,300
+  <span class="acct-credit">Cr</span> Royalty Payable — Franchisor               9,300
+
+<span style="color:#999">On payment:</span>
+  <span class="acct-debit">Dr</span> Royalty Payable — Franchisor              9,300
+  <span class="acct-credit">Cr</span> WHT Payable — ZATCA                         1,395
+  <span class="acct-credit">Cr</span> Bank                                          7,905
+
+<span style="color:#999">On monthly WHT remittance to ZATCA:</span>
+  <span class="acct-debit">Dr</span> WHT Payable — ZATCA                       1,395
+  <span class="acct-credit">Cr</span> Bank                                          1,395</span></div>
+  </div>
+
+  <div class="callout">
+    <span class="label">Talking point</span>
+    Contrast this directly with Kuwait when asked: in KSA there's <strong>no pending liability account waiting on a certificate</strong> — WHT is remitted and the matter is closed each month, unless treaty relief is later claimed (which would typically apply prospectively, not retroactively, once the franchisor provides a valid Certificate of Tax Residence). That's a materially simpler cash mechanic than Kuwait's retention, even though the headline rate is higher.
+  </div>
+
+  <a class="backtotop" href="#top">↑ back to top</a>
+</section>
+
+<!-- ============ 6. KSA ZAKAT ============ -->
+<section id="ksa-zakat">
+  <h2><span class="num">06</span> KSA Zakat — Full Mechanics</h2>
+  <p><strong>The concept:</strong> Saudi/GCC-owned entities (or the Saudi/GCC-owned portion of a mixed-ownership entity) operating in KSA are subject to Zakat instead of corporate income tax on that ownership share, calculated on a Zakat base broadly built from net worth/equity-style adjustments — not on net profit the way income tax is.</p>
+
+  <h3>Why this matters for a One PM KSA entity</h3>
+  <p>If the KSA operating entity is wholly or partly owned by GCC nationals/entities (plausible, given One PM's Kuwaiti ownership under Al-Sayer Franchising), the GCC-owned equity portion is subject to <strong>Zakat</strong>, while any non-GCC foreign ownership portion (if any) would be subject to <strong>corporate income tax</strong> instead. A mixed-ownership structure means both regimes can apply simultaneously, split by ownership percentage.</p>
+
+  <div class="example">
+    <span class="label">Worked example — simplified Zakat base calculation</span>
+    <table>
+      <tr><th>Item</th><th class="num">Amount (SAR)</th></tr>
+      <tr><td>Shareholders' equity (opening, per audited financials)</td><td class="num">2,400,000</td></tr>
+      <tr><td>Add: long-term liabilities financing fixed assets</td><td class="num">350,000</td></tr>
+      <tr><td>Less: net book value of fixed assets &amp; investments</td><td class="num">(1,100,000)</td></tr>
+      <tr><td>Less: deductions (e.g., certain provisions, per ZATCA rules)</td><td class="num">(80,000)</td></tr>
+      <tr class="subtotal"><td>Zakat base</td><td class="num">1,570,000</td></tr>
+      <tr><td>Zakat rate</td><td class="num">2.5%</td></tr>
+      <tr class="total"><td>Zakat payable (on the GCC-owned % of equity)</td><td class="num">39,250</td></tr>
+    </table>
+    <p style="margin-bottom:0;">If the entity is, say, 100% Kuwaiti (GCC)-owned, the full SAR 39,250 applies as Zakat with no separate corporate income tax layer. If there were a 20% non-GCC foreign shareholder, that 20% slice of profit would instead be taxed at the standard KSA corporate income tax rate (20%), while the 80% GCC-owned slice carries Zakat.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">Talking point</span>
+    You don't need the exact ownership split memorised — what matters is showing you know <strong>Zakat is base-driven (equity-style), not profit-driven</strong>, which surprises people coming from a pure income-tax background, and that it runs in parallel with — not instead of — the WHT mechanics on franchisor payments covered in Section 5. The two are unrelated: Zakat taxes the KSA entity's own ownership structure; WHT taxes payments flowing out to the foreign franchisor.
+  </div>
+
+  <a class="backtotop" href="#top">↑ back to top</a>
+</section>
+
+<!-- ============ 7. CONSOLIDATION ============ -->
+<section id="consolidation">
+  <h2><span class="num">07</span> Multi-Entity Consolidation — Kuwait + KSA</h2>
+  <p><strong>The concept:</strong> with operating entities in two countries under one master franchise, group reporting requires combining both into a single consolidated view — translating KSA's SAR results into KWD, eliminating any intercompany balances, and presenting a combined P&amp;L and balance sheet for One PM Holding (or whatever the top entity is).</p>
+
+  <h3>Core mechanics</h3>
+  <ul>
+    <li><strong>Currency translation</strong> — KSA's SAR P&amp;L translated at average rate for the period; balance sheet at closing rate; resulting translation difference parked in a Foreign Currency Translation Reserve within equity, not run through the P&amp;L</li>
+    <li><strong>Intercompany eliminations</strong> — if Kuwait charges KSA (or vice versa) for shared services, management fees, or central procurement, those balances and the related revenue/expense must be eliminated on consolidation so the group doesn't double-count</li>
+    <li><strong>Uniform accounting policies</strong> — both entities should apply the same revenue recognition, inventory valuation, and depreciation policies before consolidation; reconcile any local statutory adjustments back to group policy</li>
+  </ul>
+
+  <div class="example">
+    <span class="label">Worked example — simplified consolidation</span>
+    <table>
+      <tr><th>Line</th><th class="num">Kuwait (KWD)</th><th class="num">KSA (SAR)</th><th class="num">KSA Translated (KWD @ 0.082)</th><th class="num">Consolidated (KWD)</th></tr>
+      <tr><td>Net sales</td><td class="num">280,000</td><td class="num">155,000</td><td class="num">12,710</td><td class="num">292,710</td></tr>
+      <tr><td>Royalty expense</td><td class="num">16,800</td><td class="num">9,300</td><td class="num">763</td><td class="num">17,563</td></tr>
+      <tr><td>Less: intercompany management fee (Kuwait charges KSA)</td><td class="num">(4,500)</td><td class="num">4,500*</td><td class="num">369</td><td class="num">0 (eliminated)</td></tr>
+      <tr class="subtotal"><td>Store EBITDA (illustrative)</td><td class="num">61,000</td><td class="num">28,400</td><td class="num">2,329</td><td class="num">63,329</td></tr>
+    </table>
+    <p style="margin-bottom:0;font-size:13px;color:var(--muted);">*Shown as the SAR-equivalent of the KWD 4,500 management fee Kuwait charges KSA — eliminated on consolidation so it doesn't appear as both Kuwait income and KSA expense in the group numbers. Illustrative FX rate used: 1 SAR ≈ 0.082 KWD.</p>
+  </div>
+
+  <h3>What to be ready to discuss</h3>
+  <ul>
+    <li>Whether Kuwait and KSA run on a single ERP instance or separate systems requiring a manual consolidation workbook — directly affects how much of this is automated vs. manual reconciliation work</li>
+    <li>Segment reporting — management likely wants Kuwait and KSA shown separately (not just blended) given they're at different maturity stages</li>
+    <li>How royalty, marketing fund, and tax treatment differences between the two markets are reconciled into one set of group management accounts without losing market-level visibility</li>
+  </ul>
+
+  <a class="backtotop" href="#top">↑ back to top</a>
+</section>
+
+<!-- ============ 8. FX ============ -->
+<section id="fx">
+  <h2><span class="num">08</span> FX Exposure &amp; Currency Pegs</h2>
+
+  <table>
+    <caption>The Currency Picture</caption>
+    <tr><th>Currency</th><th>Peg Mechanism</th><th>Practical Implication</th></tr>
+    <tr><td>KWD (Kuwait)</td><td>Pegged to an undisclosed basket of currencies, USD-weighted but not fixed 1:1</td><td>KWD/USD moves in a narrow but non-zero band — small, gradual drift rather than a hard peg</td></tr>
+    <tr><td>SAR (KSA)</td><td>Hard-pegged to USD at 3.75 SAR = 1 USD since 1986</td><td>SAR/USD is effectively fixed — no meaningful FX risk on USD-denominated transactions in KSA</td></tr>
+    <tr><td>GBP (royalty obligations)</td><td>Free-floating</td><td>The real exposure — both KWD/GBP and SAR/GBP move with the pound, and KWD's basket peg means it doesn't track GBP the same way SAR/USD tracks the dollar</td></tr>
+  </table>
+
+  <div class="example">
+    <span class="label">Worked example — FX impact on a GBP royalty obligation</span>
+    <table>
+      <tr><th>Scenario</th><th class="num">GBP/KWD Rate</th><th class="num">Royalty Due (GBP 8,000)</th><th class="num">KWD Cost</th></tr>
+      <tr><td>Budget rate</td><td class="num">0.385</td><td class="num">8,000</td><td class="num">3,080</td></tr>
+      <tr><td>Actual rate (GBP strengthens)</td><td class="num">0.402</td><td class="num">8,000</td><td class="num">3,216</td></tr>
+      <tr class="total"><td>Unfavourable FX variance</td><td></td><td></td><td class="num">136</td></tr>
+    </table>
+  </div>
+
+  <h3>What to be ready to discuss</h3>
+  <ul>
+    <li>A natural hedge argument is weak here — Kuwait/KSA revenue is in KWD/SAR, royalty obligations are in GBP, so there's no offsetting GBP-denominated inflow to net against</li>
+    <li>For a business this size, forward contracts are likely only justified for known, material payment dates (e.g., quarterly royalty settlements) rather than continuous hedging — proportionality matters</li>
+    <li>Budget-rate variance reporting (actual vs. budget FX rate impact, isolated from operational variance) is the practical minimum control even without active hedging</li>
+  </ul>
+
+  <a class="backtotop" href="#top">↑ back to top</a>
+</section>
+
+<!-- ============ 9. STORE P&L ============ -->
+<section id="storepl">
+  <h2><span class="num">09</span> Store-Level P&amp;L — Full Worked Example</h2>
+  <p>This is the core operating model you should be able to sketch from memory. Below is a single shop, monthly, illustrative.</p>
+
+  <div class="example">
+    <span class="label">Worked example — single shop, one month (KWD)</span>
+    <table>
+      <tr><th>Line</th><th class="num">Amount</th><th class="num">% of Net Sales</th></tr>
+      <tr><td>Dine-in &amp; takeaway sales</td><td class="num">38,000</td><td class="num"></td></tr>
+      <tr><td>Delivery channel sales (gross)</td><td class="num">6,500</td><td class="num"></td></tr>
+      <tr class="subtotal"><td>Gross sales</td><td class="num">44,500</td><td class="num"></td></tr>
+      <tr><td>Less: VAT / discounts</td><td class="num">(2,500)</td><td class="num"></td></tr>
+      <tr class="subtotal"><td>Net sales</td><td class="num">42,000</td><td class="num">100.0%</td></tr>
+      <tr><td>Less: COGS (food, coffee, packaging)</td><td class="num">(11,760)</td><td class="num">28.0%</td></tr>
+      <tr class="subtotal"><td>Gross profit</td><td class="num">30,240</td><td class="num">72.0%</td></tr>
+      <tr><td>Less: labour (shop staff, supervisors)</td><td class="num">(9,660)</td><td class="num">23.0%</td></tr>
+      <tr><td>Less: occupancy (base rent + utilities)</td><td class="num">(5,460)</td><td class="num">13.0%</td></tr>
+      <tr><td>Less: delivery aggregator commission</td><td class="num">(1,755)</td><td class="num">4.2%</td></tr>
+      <tr><td>Less: other store opex (consumables, repairs)</td><td class="num">(1,260)</td><td class="num">3.0%</td></tr>
+      <tr class="subtotal"><td>Store EBITDA (before franchise costs)</td><td class="num">12,105</td><td class="num">28.8%</td></tr>
+      <tr><td>Less: royalty (6%)</td><td class="num">(2,520)</td><td class="num">6.0%</td></tr>
+      <tr><td>Less: marketing fund (2%)</td><td class="num">(840)</td><td class="num">2.0%</td></tr>
+      <tr><td>Less: franchise fee amortisation (allocated)</td><td class="num">(250)</td><td class="num">0.6%</td></tr>
+      <tr class="total"><td>Store net contribution</td><td class="num">8,495</td><td class="num">20.2%</td></tr>
+    </table>
+    <p style="margin-bottom:0;">A 20% net contribution margin at store level (before corporate overhead allocation) is a healthy, defensible benchmark for mature quick-service F&amp;B in a GCC mall location — useful as your reference point if asked "what margin would you expect."</p>
+  </div>
+
+  <a class="backtotop" href="#top">↑ back to top</a>
+</section>
+
+<!-- ============ 10. COGS ============ -->
+<section id="cogs">
+  <h2><span class="num">10</span> COGS &amp; Food Cost Management</h2>
+  <p><strong>The concept:</strong> in F&amp;B retail, COGS (food, coffee, packaging) is tracked obsessively as a percentage of net sales — "food cost %" — because it's the largest controllable variable cost after labour, and small leakages (waste, portioning, theft) compound quickly across many shops.</p>
+
+  <div class="example">
+    <span class="label">Worked example — food cost variance</span>
+    <table>
+      <tr><th>Item</th><th class="num">Amount (KWD)</th></tr>
+      <tr><td>Net sales</td><td class="num">42,000</td></tr>
+      <tr><td>Target food cost % (per recipe-costed menu)</td><td class="num">26.0%</td></tr>
+      <tr><td>Target COGS</td><td class="num">10,920</td></tr>
+      <tr><td>Actual COGS incurred</td><td class="num">11,760</td></tr>
+      <tr class="total"><td>Unfavourable variance</td><td class="num">840 (2.0 pts)</td></tr>
+    </table>
+    <p style="margin-bottom:0;"><strong>Where to look:</strong> imported coffee/ingredient price inflation, portion control at shop level, waste from unsold perishables (Pret's "made today, sold today" model means unsold stock is donated, not sold down — a deliberate brand commitment that has a real cost trade-off worth understanding), or a shift in sales mix toward higher-cost items.</p>
+  </div>
+
+  <h3>What to be ready to discuss</h3>
+  <ul>
+    <li>Landed cost build-up for imported coffee/ingredients — FOB price + freight + Kuwait/KSA customs duty + clearance costs, all flowing into standard cost</li>
+    <li>The donation-not-discount model (refood partnership in Kuwait) means waste is a fixed cost of the brand promise, not a variable to be optimised away — a nuance worth knowing if asked about margin levers</li>
+  </ul>
+
+  <a class="backtotop" href="#top">↑ back to top</a>
+</section>
+
+<!-- ============ 11. LABOUR ============ -->
+<section id="labour">
+  <h2><span class="num">11</span> Labour Cost &amp; Kuwait Labour Law Basics</h2>
+  <p>This is largely your existing strength from your Kuwait Labour Law work — applied here to a multi-shift, multi-site retail workforce rather than a corporate headcount.</p>
+
+  <table>
+    <caption>Key Cost Components — Kuwait Private Sector</caption>
+    <tr><th>Component</th><th>Mechanic</th></tr>
+    <tr><td>Basic salary</td><td>Base cost; shop staff often on relatively modest base + allowances structure typical of GCC F&amp;B retail</td></tr>
+    <tr><td>Overtime</td><td>Statutory premium for hours beyond standard — relevant given extended shop hours (Pret KSA outlets noted as open late)</td></tr>
+    <tr><td>End-of-service indemnity</td><td>Accrued monthly as a provision (typically based on years of service × final salary formula under Kuwait Labour Law), not just paid on exit — a balance sheet liability that grows with tenure and headcount</td></tr>
+    <tr><td>Leave &amp; passage</td><td>Annual leave accrual and any contractual air ticket/passage allowance, accrued rather than expensed only on payment</td></tr>
+  </table>
+
+  <div class="example">
+    <span class="label">Worked example — monthly indemnity accrual, single shop</span>
+    <table>
+      <tr><th>Item</th><th class="num">Amount (KWD)</th></tr>
+      <tr><td>Shop headcount</td><td class="num">12</td></tr>
+      <tr><td>Average monthly basic salary</td><td class="num">280</td></tr>
+      <tr><td>Indemnity accrual rate (illustrative, ~1 month per year of service basis)</td><td class="num">8.3% of basic</td></tr>
+      <tr class="total"><td>Monthly indemnity provision</td><td class="num">279</td></tr>
+    </table>
+    <div class="je"><span class="acct-debit">Dr</span> Staff Cost — Indemnity Provision (P&amp;L)        279
+  <span class="acct-credit">Cr</span> Provision for End-of-Service Indemnity (BS)        279</div>
+  </div>
+
+  <a class="backtotop" href="#top">↑ back to top</a>
+</section>
+
+<!-- ============ 12. PERCENTAGE RENT ============ -->
+<section id="rent">
+  <h2><span class="num">12</span> Percentage Rent Lease Accounting</h2>
+  <p><strong>The concept:</strong> many GCC mall leases for F&amp;B tenants combine a base (minimum guaranteed) rent with an additional percentage-of-sales rent once the shop's sales exceed a breakpoint — the landlord shares directly in upside.</p>
+
+  <div class="example">
+    <span class="label">Worked example — percentage rent calculation</span>
+    <table>
+      <tr><th>Item</th><th class="num">Amount (KWD)</th></tr>
+      <tr><td>Minimum guaranteed rent (monthly)</td><td class="num">4,000</td></tr>
+      <tr><td>Natural breakpoint (rent ÷ percentage rate)</td><td class="num">—</td></tr>
+      <tr><td>Percentage rent rate above breakpoint</td><td class="num">8%</td></tr>
+      <tr><td>Breakpoint sales level (4,000 ÷ 8%)</td><td class="num">50,000</td></tr>
+      <tr><td>Actual net sales this month</td><td class="num">42,000</td></tr>
+      <tr class="total"><td>Rent payable (sales below breakpoint → minimum applies)</td><td class="num">4,000</td></tr>
+    </table>
+    <p style="margin-bottom:0;">If sales had instead been KWD 58,000: percentage rent = 8% × 58,000 = KWD 4,640, which exceeds the KWD 4,000 minimum, so KWD 4,640 would be payable instead. The higher of the two always applies.</p>
+  </div>
+
+  <h3>What to be ready to discuss</h3>
+  <ul>
+    <li>Under IFRS 16, the minimum guaranteed rent is the fixed lease payment used to calculate the right-of-use asset and lease liability; percentage rent above the minimum is typically treated as variable lease payment, expensed as incurred rather than capitalised into the lease liability</li>
+    <li>Why this matters for store-opening decisions — a high breakpoint protects margin upside in strong locations, but a poorly negotiated breakpoint can mean the landlord captures most of the growth from a shop that outperforms expectations</li>
+  </ul>
+
+  <a class="backtotop" href="#top">↑ back to top</a>
+</section>
+
+<!-- ============ 13. DELIVERY ============ -->
+<section id="delivery">
+  <h2><span class="num">13</span> Delivery Aggregator Commission Impact</h2>
+  <p><strong>The concept:</strong> Talabat and Deliveroo (both confirmed Pret Kuwait delivery channels) typically charge commission in the 15–30% range on order value — a direct margin drag on the delivery sales channel relative to dine-in/takeaway.</p>
+
+  <div class="example">
+    <span class="label">Worked example — channel profitability comparison</span>
+    <table>
+      <tr><th>Item</th><th class="num">Dine-in/Takeaway</th><th class="num">Delivery (Aggregator)</th></tr>
+      <tr><td>Order value</td><td class="num">10.000</td><td class="num">10.000</td></tr>
+      <tr><td>Aggregator commission (27%)</td><td class="num">—</td><td class="num">(2.700)</td></tr>
+      <tr class="subtotal"><td>Net revenue to Pret</td><td class="num">10.000</td><td class="num">7.300</td></tr>
+      <tr><td>COGS (28%, on full order value)</td><td class="num">(2.800)</td><td class="num">(2.800)</td></tr>
+      <tr class="total"><td>Contribution before labour/occupancy</td><td class="num">7.200 (72.0%)</td><td class="num">4.500 (45.0% of order value)</td></tr>
+    </table>
+    <p style="margin-bottom:0;">The same KWD 10 order is worth roughly 60% as much in contribution terms through an aggregator as it is dine-in — a critical number when discussing channel mix strategy or evaluating whether to push delivery growth.</p>
+  </div>
+
+  <h3>What to be ready to discuss</h3>
+  <ul>
+    <li>Whether COGS is priced into the menu differently for delivery (some operators build a delivery surcharge or higher menu price on aggregator platforms specifically to offset commission)</li>
+    <li>Whether the franchise agreement's royalty/marketing fund % applies to gross order value or net-of-commission revenue — meaningfully changes the delivery channel's true contribution</li>
+  </ul>
+
+  <a class="backtotop" href="#top">↑ back to top</a>
+</section>
+
+<!-- ============ 14. CAPEX ============ -->
+<section id="capex">
+  <h2><span class="num">14</span> Capex &amp; Payback Analysis</h2>
+
+  <div class="example">
+    <span class="label">Worked example — new shop payback</span>
+    <table>
+      <tr><th>Item</th><th class="num">Amount (KWD)</th></tr>
+      <tr><td>Shop fit-out &amp; kitchen equipment capex</td><td class="num">180,000</td></tr>
+      <tr><td>Initial franchise fee (capitalised separately, Section 2)</td><td class="num">30,000</td></tr>
+      <tr class="subtotal"><td>Total upfront investment</td><td class="num">210,000</td></tr>
+      <tr><td>Projected annual store net contribution (Section 9 logic, annualised)</td><td class="num">~102,000</td></tr>
+      <tr class="total"><td>Simple payback period</td><td class="num">~2.1 years</td></tr>
+    </table>
+    <p style="margin-bottom:0;">A payback under 2.5 years is generally an attractive hurdle for GCC quick-service F&amp;B; above 4 years would typically require a strong strategic justification (e.g., flagship/brand-building location) rather than pure unit economics.</p>
+  </div>
+
+  <h3>What to be ready to discuss</h3>
+  <ul>
+    <li>Fit-out capex depreciation period — typically 5–10 years for leasehold improvements, often capped at the lease term if shorter</li>
+    <li>Capex approval governance — likely needs sign-off from One PM leadership and possibly Al-Sayer Franchising group level given the investment size relative to a single-shop P&amp;L</li>
+    <li>Post-opening review — comparing actual months 1–12 performance against the original business case, and what triggers escalation if a shop underperforms</li>
+  </ul>
+
+  <a class="backtotop" href="#top">↑ back to top</a>
+</section>
+
+<!-- ============ 15. WORKING CAPITAL ============ -->
+<section id="workingcap">
+  <h2><span class="num">15</span> Working Capital in F&amp;B Retail</h2>
+  <p>F&amp;B retail is structurally working-capital-light compared to most businesses — cash/card sales mean minimal receivables, but perishable inventory (especially Pret's "made fresh daily, nothing kept overnight" model) means very fast inventory turns and tight supplier terms management.</p>
+
+  <div class="example">
+    <span class="label">Worked example — inventory turn</span>
+    <table>
+      <tr><th>Item</th><th class="num">Amount (KWD)</th></tr>
+      <tr><td>Annual COGS, all Kuwait shops (illustrative)</td><td class="num">988,000</td></tr>
+      <tr><td>Average inventory on hand</td><td class="num">19,000</td></tr>
+      <tr class="total"><td>Inventory turns per year</td><td class="num">~52x (roughly weekly)</td></tr>
+    </table>
+    <p style="margin-bottom:0;">A ~52x annual turn (roughly once a week) reflects perishables — coffee/packaging can carry slightly longer stock cover than fresh sandwich/bakery components, which may turn daily. Worth noting this isn't a single blended number in practice; perishables and shelf-stable inputs should be tracked separately.</p>
+  </div>
+
+  <table>
+    <caption>Working Capital Components</caption>
+    <tr><th>Component</th><th>Typical GCC F&amp;B retail behaviour</th></tr>
+    <tr><td>Receivables</td><td>Minimal — cash/card sales settle quickly; aggregator platforms (Talabat/Deliveroo) typically settle on a short cycle (e.g., weekly/bi-weekly), creating a small but trackable receivable</td></tr>
+    <tr><td>Inventory</td><td>Very fast turn on perishables; longer cover on imported/shelf-stable items (coffee beans, packaging) to manage freight lead times</td></tr>
+    <tr><td>Payables</td><td>Negotiated supplier terms (e.g., 30–60 days) on imported goods provide a natural working capital benefit, partially offsetting the franchisor payment cycle</td></tr>
+  </table>
+
+  <a class="backtotop" href="#top">↑ back to top</a>
+</section>
+
+<!-- ============ 16. GLOSSARY ============ -->
+<section id="glossary">
+  <h2><span class="num">16</span> Glossary / Quick Reference</h2>
+  <dl class="glossary">
+    <dt>NOL (No Liability Certificate)</dt>
+    <dd>KTA-issued certificate confirming a foreign party has no outstanding Kuwait tax liability; required to release amounts retained under Law 2/2008.</dd>
+
+    <dt>ZATCA</dt>
+    <dd>Zakat, Tax and Customs Authority — Saudi Arabia's combined tax/customs/Zakat regulator.</dd>
+
+    <dt>Zakat base</dt>
+    <dd>Equity-style calculation (broadly: equity + long-term liabilities financing fixed assets − net fixed assets − certain deductions) used to compute Zakat, distinct from a profit-based tax base.</dd>
+
+    <dt>Master franchisee</dt>
+    <dd>The entity holding franchise rights for a defined territory, with the ability to operate directly and/or grant sub-franchise rights to others within that territory (as One PM did with Al Mana for Qatar).</dd>
+
+    <dt>Percentage rent breakpoint</dt>
+    <dd>The sales level at which percentage rent (% of sales) equals the minimum guaranteed rent; above this point, percentage rent exceeds the minimum and becomes payable instead.</dd>
+
+    <dt>IFRS 16</dt>
+    <dd>Lease accounting standard requiring most leases to be capitalised as a right-of-use asset and lease liability on the balance sheet, rather than expensed as operating rent.</dd>
+
+    <dt>Translation reserve</dt>
+    <dd>Equity account capturing FX differences from translating a foreign subsidiary's (e.g., KSA's) financial statements into the group's presentation currency (KWD) — does not flow through the P&amp;L.</dd>
+
+    <dt>Natural hedge</dt>
+    <dd>When a business's foreign-currency costs are offset by foreign-currency revenue in the same currency, reducing the need for active hedging — largely absent here, since KWD/SAR revenue doesn't naturally offset a GBP royalty obligation.</dd>
+  </dl>
+
+  <a class="backtotop" href="#top">↑ back to top</a>
+</section>
+
+</div>
+
+<footer>
+  PREPARED FOR PERSONAL USE · NOT FOR DISTRIBUTION · ALL FIGURES ILLUSTRATIVE UNLESS OTHERWISE STATED
+</footer>
+
+<button class="print-btn" onclick="window.print()">↓ Save / Print as PDF</button>
+
+</body>
+</html>

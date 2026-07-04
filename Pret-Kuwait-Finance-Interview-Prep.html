@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pret A Manger Kuwait &amp; KSA — Finance Interview Prep</title>
+<style>
+  :root{
+    --ink:#1c1c1a;
+    --paper:#faf8f4;
+    --panel:#ffffff;
+    --line:#e2ddd2;
+    --accent:#7a3b2e;   /* pret-ish terracotta/maroon, but muted */
+    --accent2:#5c6b4f;  /* olive, nods to "organic" */
+    --muted:#6b6759;
+    --warn-bg:#fbeee9;
+    --warn-line:#d99a7f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family: Georgia, 'Iowan Old Style', serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.55;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px 80px;}
+  header.hero{
+    border-bottom:3px solid var(--ink);
+    padding:48px 24px 28px;
+    margin-bottom:8px;
+  }
+  header.hero .wrap{padding:0;}
+  .eyebrow{
+    font-family: 'Courier New', monospace;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:10px;
+  }
+  h1{
+    font-size:clamp(28px,4.5vw,42px);
+    margin:0 0 8px;
+    line-height:1.1;
+    font-weight:700;
+  }
+  .subtitle{
+    font-size:16px;
+    color:var(--muted);
+    max-width:620px;
+  }
+  .meta-row{
+    display:flex;
+    gap:24px;
+    flex-wrap:wrap;
+    margin-top:20px;
+    font-family:'Courier New', monospace;
+    font-size:12px;
+    color:var(--muted);
+  }
+  nav.toc{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:18px 22px;
+    margin:28px 0 36px;
+  }
+  nav.toc .eyebrow{margin-bottom:8px;}
+  nav.toc ol{margin:0;padding-left:20px;columns:2;column-gap:24px;font-size:14px;}
+  nav.toc li{margin-bottom:6px;break-inside:avoid;}
+  nav.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--muted);}
+  nav.toc a:hover{color:var(--accent);}
+
+  section{margin:44px 0;}
+  section h2{
+    font-size:22px;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:8px;
+    margin-bottom:18px;
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+  }
+  section h2 .num{
+    font-family:'Courier New', monospace;
+    font-size:13px;
+    color:var(--accent);
+    font-weight:normal;
+  }
+  h3{font-size:16px;margin:26px 0 10px;color:var(--accent);}
+  p{margin:0 0 14px;}
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:14px 0 22px;
+    font-size:14.5px;
+    background:var(--panel);
+  }
+  caption{
+    text-align:left;
+    font-family:'Courier New', monospace;
+    font-size:11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:6px;
+  }
+  th, td{
+    text-align:left;
+    padding:10px 12px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  th{
+    background:#f1ede3;
+    font-weight:700;
+    font-size:13px;
+  }
+  tr:last-child td{border-bottom:1px solid var(--ink);}
+
+  ul, ol.steps{margin:0 0 16px;padding-left:22px;}
+  li{margin-bottom:6px;}
+
+  .callout{
+    background:var(--panel);
+    border-left:4px solid var(--accent2);
+    padding:14px 18px;
+    margin:18px 0;
+    font-size:14.5px;
+  }
+  .callout.warn{
+    background:var(--warn-bg);
+    border-left-color:var(--warn-line);
+  }
+  .callout .label{
+    font-family:'Courier New', monospace;
+    font-size:11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:block;
+    margin-bottom:6px;
+  }
+
+  .qa{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:16px 20px;
+    margin-bottom:14px;
+  }
+  .qa .q{font-weight:700;margin-bottom:8px;}
+  .qa .a{color:var(--ink);font-size:14.5px;}
+  .qa .tag{
+    display:inline-block;
+    font-family:'Courier New', monospace;
+    font-size:10.5px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    background:#f1ede3;
+    color:var(--muted);
+    padding:2px 8px;
+    border-radius:10px;
+    margin-bottom:10px;
+  }
+
+  .checklist{
+    list-style:none;
+    padding:0;
+    margin:0 0 18px;
+  }
+  .checklist li{
+    padding:8px 0 8px 28px;
+    position:relative;
+    border-bottom:1px solid var(--line);
+    font-size:14.5px;
+  }
+  .checklist li:last-child{border-bottom:none;}
+  .checklist li::before{
+    content:"□";
+    position:absolute;
+    left:0;
+    color:var(--accent);
+    font-size:16px;
+  }
+
+  footer{
+    margin-top:60px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+    font-family:'Courier New', monospace;
+    font-size:11px;
+    color:var(--muted);
+    text-align:center;
+  }
+
+  .print-btn{
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    background:var(--ink);
+    color:var(--paper);
+    border:none;
+    border-radius:30px;
+    padding:12px 20px;
+    font-family:'Courier New', monospace;
+    font-size:12px;
+    letter-spacing:.05em;
+    cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.2);
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  @media print{
+    .print-btn{display:none;}
+    body{background:#fff;}
+    section{margin:24px 0;page-break-inside:avoid;}
+    nav.toc{display:none;}
+  }
+
+  @media (max-width:600px){
+    nav.toc ol{columns:1;}
+    header.hero{padding:32px 16px 24px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Finance Interview Preparation</div>
+    <h1>Pret A Manger — Kuwait &amp; Saudi Arabia</h1>
+    <div class="subtitle">Master-franchisee finance role, One PM Holding / Al-Sayer Franchising — covering both the Kuwait and Saudi Arabia markets. Structured prep covering company background, ownership, the two-market operating structure, and the technical ground most likely to come up.</div>
+    <div class="meta-row">
+      <span>PREPARED · 30 JUN 2026</span>
+      <span>ROLE TYPE · MASTER-FRANCHISEE FINANCE</span>
+      <span>MARKETS · KUWAIT + KSA</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="toc">
+  <div class="eyebrow">Contents</div>
+  <ol>
+    <li><a href="#global">1. Global Pret — ownership &amp; financials</a></li>
+    <li><a href="#local">2. Kuwait &amp; KSA operating structure</a></li>
+    <li><a href="#team">3. The team — what's known, what to ask</a></li>
+    <li><a href="#model">4. The franchise business model</a></li>
+    <li><a href="#technical">5. Technical areas to prepare</a></li>
+    <li><a href="#retention">6. Kuwait 5% retention vs. KSA WHT/Zakat</a></li>
+    <li><a href="#questions">7. Likely interview questions</a></li>
+    <li><a href="#askthem">8. Questions to ask them</a></li>
+    <li><a href="#redflags">9. Read between the lines</a></li>
+    <li><a href="#checklist">10. Pre-interview checklist</a></li>
+  </ol>
+</nav>
+
+<section id="global">
+  <h2><span class="num">01</span> Global Pret — Ownership &amp; Financials</h2>
+  <p>Pret is a UK-founded sandwich/coffee chain, privately owned, currently going through a leveraged and somewhat strained chapter. This context shapes how the Kuwait franchisee thinks about cost discipline and royalty obligations — worth carrying into the conversation.</p>
+
+  <table>
+    <caption>Group Snapshot</caption>
+    <tr><th>Item</th><th>Detail</th></tr>
+    <tr><td>Founded</td><td>1983 (London); relaunched 1986 by Julian Metcalfe &amp; Sinclair Beecham</td></tr>
+    <tr><td>Current owner</td><td>JAB Holding — investment vehicle of Germany's Reimann family, based in Luxembourg. Acquired Pret from Bridgepoint in 2018 for £1.5bn (~90% stake)</td></tr>
+    <tr><td>Footprint</td><td>717 locations across 19 countries (Sep 2025) — 474 in UK, 67 in US, plus Kuwait, Qatar, UAE, Saudi, India, and others via franchise/master-franchise structures</td></tr>
+    <tr><td>FY2024 revenue</td><td>£1.1bn group sales, +20% YoY — ~25% from international markets</td></tr>
+    <tr><td>FY2024 adjusted profit</td><td>£166m adjusted profit</td></tr>
+    <tr><td>FY2024 statutory result</td><td>£451.5m operating <strong>loss</strong>, driven by a £553m goodwill impairment — UK wage and NI cost inflation cited as the driver</td></tr>
+    <tr><td>Debt / liquidity</td><td>Net debt roughly £500m+. JAB injected £250m in the year to Jan 2025, partly to pay down debt and rebuild headroom to ~£100m cash/facilities</td></tr>
+    <tr><td>Strategic direction</td><td>JAB has engaged advisers on options including a minority stake sale ahead of a possible IPO; JAB is publicly shifting focus away from consumer brands (Pret, Krispy Kreme) toward financial services</td></tr>
+  </table>
+
+  <div class="callout">
+    <span class="label">Why this matters</span>
+    The UK parent is leveraged and under review by its own owner. A franchisor in that position tends to push harder on royalty collection, brand-standard compliance, and reporting discipline from its franchisees — and may also be less flexible on terms if you ever need to renegotiate. Don't be surprised if the interview touches on "how do you manage the relationship/obligations with an overseas franchisor under financial pressure."
+  </div>
+</section>
+
+<section id="local">
+  <h2><span class="num">02</span> Kuwait &amp; KSA Operating Structure</h2>
+  <p><strong>Correction to earlier framing:</strong> this is not a Kuwait-only franchise role. One PM Holding is the <strong>Master Franchisee for Pret across Kuwait, Saudi Arabia, and Qatar</strong>. Qatar has since been sub-franchised out to Al Mana Holding, but Kuwait and KSA sit directly under One PM. That's the real scope of this hire.</p>
+
+  <table>
+    <caption>Local Entity</caption>
+    <tr><th>Item</th><th>Detail</th></tr>
+    <tr><td>Master franchisee</td><td>One PM Holding / One PM Franchising Company for Food Services — master franchise rights for Pret A Manger in Kuwait, Saudi Arabia, and (originally) Qatar</td></tr>
+    <tr><td>Parent group</td><td>Al-Sayer Franchising Co. W.L.L. (KIPCO Tower, Kuwait City) — founded 2005 by the sons of Bader Al-Sayer</td></tr>
+    <tr><td>Group portfolio</td><td>Caribou Coffee, Five Guys, Pret A Manger — 280–300+ stores group-wide across Kuwait, UAE, Bahrain, Oman, Saudi, Lebanon, Turkey, Qatar, Egypt</td></tr>
+    <tr><td>Kuwait Pret shops</td><td>7 branches (Al Hamra Tower, Assima Mall, Salmiya, GUST, Sabah Al Salem / Al-Arjan, Messila, Baitak Tower)</td></tr>
+    <tr><td>KSA Pret shops</td><td>One PM's own KSA rollout under the master franchise — separate from the Jeddah airport store (see note below). Confirm current store count and cities in the interview; not reliably public</td></tr>
+    <tr><td>Qatar</td><td>Sub-franchised to Al Mana Holding (2023) — not part of One PM's direct operating scope, though it sits under the same master franchise umbrella</td></tr>
+    <tr><td>First Kuwait opening</td><td>October 2022, Al Hamra Business Tower</td></tr>
+  </table>
+
+  <div class="callout warn">
+    <span class="label">Don't conflate these two Saudi stories</span>
+    There are <strong>two unrelated Pret presences in Saudi Arabia</strong>:
+    <ul style="margin-bottom:0;">
+      <li><strong>One PM's KSA market entry</strong> — under the same master franchise as Kuwait. This is your scope.</li>
+      <li><strong>SSP Group's Jeddah airport store</strong> (King Abdulaziz International Airport) — a completely separate travel-concession franchise deal, unrelated to One PM. Don't reference this as "your" Saudi footprint in the interview.</li>
+    </ul>
+  </div>
+
+  <div class="callout">
+    <span class="label">Scope question for you</span>
+    Confirm whether the role has direct financial responsibility for both markets (Kuwait + KSA consolidated), or whether KSA has its own local finance lead and this role is a regional oversight/consolidation layer. That distinction changes whether you're closing two sets of books or one.
+  </div>
+</section>
+
+<section id="team">
+  <h2><span class="num">03</span> The Team — What's Known, What to Ask</h2>
+  <p>No public org chart exists for One PM's finance function specifically. Here's what's confirmed, and what's genuinely a gap you should close in the interview rather than assume.</p>
+
+  <table>
+    <caption>Known Leadership</caption>
+    <tr><th>Name</th><th>Role</th></tr>
+    <tr><td>Hamad Al-Sayer</td><td>Chairman, One PM Franchising / Al-Sayer Franchising</td></tr>
+    <tr><td>Nabil Al-Ghoul</td><td>General Manager, One PM Franchising</td></tr>
+  </table>
+
+  <p>One PM Franchising shows roughly 31 employees in third-party data sources — almost certainly the corporate/franchising layer rather than store staff, but finance headcount within that isn't broken out anywhere public.</p>
+
+  <div class="callout">
+    <span class="label">Ask directly — this is fair game</span>
+    <ul style="margin-bottom:0;">
+      <li>Team size and structure — is finance centralised for Kuwait + KSA, or does each market have its own finance lead reporting into this role?</li>
+      <li>Who currently owns KSA finance, and is this a newly created consolidated position or a restructuring?</li>
+      <li>Direct reports — accountants, store-level finance/controllers, or a shared services model with Al-Sayer Franchising group finance?</li>
+      <li>Reporting line — does this role report to Nabil Al-Ghoul, to group finance at Al-Sayer Franchising, or directly to the Chairman's office?</li>
+    </ul>
+  </div>
+</section>
+
+<section id="model">
+  <h2><span class="num">04</span> The Franchise Business Model — What Drives the P&amp;L</h2>
+  <p>Standard international F&amp;B master-franchise economics. You won't have the exact Kuwait contract terms, but you should be able to speak fluently to the structure and the levers.</p>
+
+  <table>
+    <caption>Typical Cost &amp; Revenue Structure</caption>
+    <tr><th>Line</th><th>Driver</th></tr>
+    <tr><td>Revenue</td><td>Store-level sales — dine-in, takeaway, delivery aggregators (Talabat, Deliveroo — commission drag relevant here)</td></tr>
+    <tr><td>Royalty fee</td><td>Typically a % of net sales payable to the franchisor (Pret UK / Pret Asia entity) — recurring, GBP or USD-denominated outflow against KWD revenue</td></tr>
+    <tr><td>Marketing/brand fund</td><td>Often a separate % contribution, sometimes ring-fenced for regional or local marketing spend</td></tr>
+    <tr><td>Initial franchise fee</td><td>One-off per shop, capitalised and amortised over the franchise term</td></tr>
+    <tr><td>COGS</td><td>Coffee (organic arabica — imported), bakery/sandwich inputs, packaging. Watch FX and customs duty on imported components</td></tr>
+    <tr><td>Labour</td><td>Largest controllable opex in F&amp;B retail — Kuwaiti labour law overtime, indemnity (end of service), and shift-pattern costs apply here</td></tr>
+    <tr><td>Occupancy</td><td>Mall vs. tower vs. standalone — percentage rent clauses common in GCC mall leases, worth flagging as a modelling consideration</td></tr>
+    <tr><td>Capex</td><td>Shop fit-out, kitchen equipment — capitalised, payback period tracked per unit</td></tr>
+  </table>
+
+  <h3>Unit economics framing to have ready</h3>
+  <ul>
+    <li>Revenue per shop vs. fit-out capex → implied payback period</li>
+    <li>Store-level EBITDA margin target range for quick-service/food-to-go in GCC malls (typically high teens to mid-20s% in mature locations)</li>
+    <li>Delivery-aggregator commission impact on margin (10–30% commission is standard, materially dilutes delivery-channel profitability)</li>
+    <li>How percentage-rent lease clauses behave at low vs. high sales volumes</li>
+  </ul>
+</section>
+
+<section id="technical">
+  <h2><span class="num">05</span> Technical Areas to Prepare</h2>
+
+  <table>
+    <caption>Likely Focus Areas, Ranked by Probability</caption>
+    <tr><th>Area</th><th>What to be ready to discuss</th></tr>
+    <tr><td>Franchise accounting</td><td>Royalty accrual mechanics, franchise fee amortisation, marketing fund accounting (gross vs. net presentation), brand-standard audit/compliance reporting to franchisor</td></tr>
+    <tr><td>Cross-border &amp; cross-market tax</td><td>Kuwait's 5% retention vs. KSA's WHT/Zakat regime — two different compliance frameworks for the same franchisor relationship (see Section 6). This is your strongest ground</td></tr>
+    <tr><td>Two-market consolidation</td><td>Kuwait + KSA combined reporting, possibly plus Caribou/Five Guys if scope includes the wider Al-Sayer portfolio — intercompany eliminations, segment reporting by market and brand</td></tr>
+    <tr><td>FX exposure</td><td>KWD and SAR functional currencies (SAR is USD-pegged, KWD is basket-pegged — they don't move identically) vs. GBP royalty obligations and possibly USD/EUR-denominated imports</td></tr>
+    <tr><td>Store-level reporting</td><td>Daily sales reconciliation, POS-to-GL tie-out, cash handling controls across multiple physical locations in two countries</td></tr>
+    <tr><td>Capex governance</td><td>New shop approval process, payback hurdle rate, post-opening review — likely more active in KSA given it's the newer, growing market</td></tr>
+    <tr><td>Working capital</td><td>Inventory turns on perishable goods (coffee, bakery), supplier payment terms on imports, minimal receivables (cash/card retail model)</td></tr>
+    <tr><td>ERP/systems</td><td>Likely SAP or a mid-market ERP plus a POS system — ask whether Kuwait and KSA run on a single instance or separate systems requiring manual consolidation</td></tr>
+  </table>
+</section>
+
+<section id="retention">
+  <h2><span class="num">06</span> Kuwait 5% Retention vs. KSA WHT/Zakat — Your Strongest Card</h2>
+  <p>This is genuinely your differentiator in this interview, and it's stronger now that the role spans two markets — they need someone who can hold both compliance frameworks in their head simultaneously, not just one.</p>
+
+  <table>
+    <caption>Two Different Regimes, Same Franchisor Relationship</caption>
+    <tr><th>Aspect</th><th>Kuwait</th><th>Saudi Arabia</th></tr>
+    <tr><td>Regime</td><td>5% tax retention, Law No. 2/2008</td><td>Withholding Tax (WHT) under ZATCA — rate varies by payment type (royalties typically 15%, services 5–15% depending on classification), plus separate Zakat on Saudi/GCC-owned capital</td></tr>
+    <tr><td>Applies to</td><td>Payments to any non-Kuwaiti contractor/service provider, including royalties to the UK/Asia franchisor</td></tr>
+    <tr><td>Mechanics</td><td>Retain 5% of contract value until a No Liability Certificate (NOL) is obtained from KTA; retention released on clearance</td><td>WHT deducted at source on each payment to the non-resident franchisor and remitted to ZATCA monthly; no separate "retention pending clearance" concept — it's a direct withholding</td></tr>
+    <tr><td>Registration</td><td>KTA registration for the contracting Kuwaiti entity</td><td>ZATCA registration; if One PM's KSA entity has any Saudi/GCC ownership, Zakat filing applies on top of WHT for the locally-owned portion</td></tr>
+    <tr><td>Treaty relief</td><td>Generally limited — Kuwait's retention regime applies regardless of treaty in most practical cases unless specific clearance obtained</td><td>UK-Saudi double tax treaty may reduce royalty WHT rates if properly documented and certificate of residence obtained</td></tr>
+  </table>
+
+  <div class="callout warn">
+    <span class="label">Be ready to articulate, unprompted if needed</span>
+    <ul style="margin-bottom:0;">
+      <li>You understand both regimes apply to the <em>same underlying relationship</em> (royalty/fee payments to the Pret franchisor entity) but produce very different cash flow timing and compliance mechanics in each market</li>
+      <li>Kuwait: retention payable as a liability until NOL obtained; KSA: WHT is a point-in-time deduction at payment, no clearance-pending state</li>
+      <li>If One PM's KSA entity has mixed Saudi/foreign ownership, Zakat (on the Saudi-owned equity portion) and corporate income tax (on the foreign-owned portion) may both apply — worth flagging this nuance even if you don't have the exact ownership split</li>
+      <li>Whether the franchise agreement quotes royalty gross or net of local withholding in each jurisdiction — this affects who economically bears the tax cost</li>
+    </ul>
+  </div>
+
+  <p>If they don't ask about this directly, look for an opening to raise it — contrasting the two regimes in the same breath signals genuine cross-market GCC tax fluency, not just textbook Kuwait knowledge.</p>
+</section>
+
+<section id="questions">
+  <h2><span class="num">07</span> Likely Interview Questions</h2>
+
+  <div class="qa">
+    <span class="tag">Technical</span>
+    <div class="q">How would you structure the accounting and tax treatment for royalty payments to an overseas franchisor — across both Kuwait and KSA?</div>
+    <div class="a">Lead with the contrast: Kuwait's 5% retention/NOL mechanic vs. KSA's point-in-time WHT under ZATCA, plus possible Zakat exposure depending on KSA entity ownership. Tie back to franchise agreement terms (gross vs. net royalty quoting) in each market.</div>
+  </div>
+
+  <div class="qa">
+    <span class="tag">Operational</span>
+    <div class="q">Walk me through how you'd build a store-level P&amp;L for a multi-unit F&amp;B operation across two countries.</div>
+    <div class="a">Revenue by channel (dine-in/takeaway/delivery) → direct COGS → controllable opex (labour, utilities) → occupancy (incl. percentage rent if applicable) → store EBITDA → allocate franchise royalty/marketing fund → corporate overhead allocation → net contribution. Then layer market-level consolidation: Kuwait and KSA roll up separately before combining, given different currencies, tax regimes, and labour law.</div>
+  </div>
+
+  <div class="qa">
+    <span class="tag">Strategic</span>
+    <div class="q">Pret's UK parent took a large impairment and is exploring a sale/IPO. How does that affect your thinking as the Kuwait/KSA master franchisee's finance lead?</div>
+    <div class="a">Honest framing: parent-level leverage doesn't directly burden the local entities' balance sheets, but it can affect royalty rate negotiations, brand investment support, and supply chain terms if the parent tightens group-wide cost discipline. Worth monitoring franchise agreement renewal terms and any pass-through cost changes — more relevant now given a two-market master franchise has more at stake in that relationship than a single shop count would suggest.</div>
+  </div>
+
+  <div class="qa">
+    <span class="tag">FX/Treasury</span>
+    <div class="q">How do you manage FX exposure across KWD and SAR functional currencies against GBP/USD obligations?</div>
+    <div class="a">KWD is basket-pegged (USD-weighted but not 1:1), SAR is hard-pegged to USD — so the two markets don't carry identical FX risk even though both ultimately reference USD. Forward cover for known royalty payment dates if material; otherwise budget-rate monitoring and variance flagging by market.</div>
+  </div>
+
+  <div class="qa">
+    <span class="tag">Scope</span>
+    <div class="q">Tell me about your multi-entity consolidation experience.</div>
+    <div class="a">Direct strength — draw on your current/recent holding-group experience across multiple P&amp;Ls and subsidiaries. Frame it generically (no employer naming) around consolidation mechanics, intercompany eliminations, and management reporting layered over a legal-entity structure — directly transferable to a Kuwait+KSA consolidation.</div>
+  </div>
+</section>
+
+<section id="askthem">
+  <h2><span class="num">08</span> Questions to Ask Them</h2>
+  <ul>
+    <li>Does this role carry direct financial responsibility for both Kuwait and KSA, or is KSA locally led with this role consolidating at a regional level?</li>
+    <li>Team size and structure — centralised finance across both markets, or a finance lead in each country reporting into this role?</li>
+    <li>What's the current royalty and marketing fund structure with Pret's franchisor entity — fixed, or under renegotiation given the parent's financial position?</li>
+    <li>Is the finance function shared services across Al-Sayer Franchising's other brands (Caribou, Five Guys), or dedicated to One PM/Pret specifically?</li>
+    <li>What ERP/POS systems are in place in each market, and are Kuwait and KSA on a single instance or separate systems?</li>
+    <li>What's driving this hire — KSA growth, a gap from departure, or a new consolidated layer across the two markets?</li>
+    <li>Who does this role report to — Nabil Al-Ghoul, group finance at Al-Sayer Franchising, or elsewhere?</li>
+  </ul>
+</section>
+
+<section id="redflags">
+  <h2><span class="num">09</span> Read Between the Lines</h2>
+  <div class="callout">
+    <span class="label">Things to probe, not assume</span>
+    <ul style="margin-bottom:0;">
+      <li>A combined "Kuwait + KSA" mandate with a relatively small Kuwait base (7 shops) suggests KSA growth is the real reason for this hire — confirm current and planned KSA store count, since that's where the workload will actually sit</li>
+      <li>Don't assume KSA finance/compliance is already built out — if it's a newer market for One PM, you may be establishing ZATCA/WHT/Zakat processes from scratch rather than inheriting them</li>
+      <li>Franchise groups in Kuwait often run lean, multi-brand shared finance teams — confirm whether you'd be the sole finance lead across both markets or part of a larger Al-Sayer Franchising finance function</li>
+      <li>Given the parent's financial stress, ask plainly whether there's any pressure on franchisee royalty terms or brand investment support — a direct question, consistent with how you like to operate</li>
+    </ul>
+  </div>
+</section>
+
+<section id="checklist">
+  <h2><span class="num">10</span> Pre-Interview Checklist</h2>
+  <ul class="checklist">
+    <li>Confirm exact role title, seniority, and reporting line before the interview if not already known</li>
+    <li>Confirm whether this role has direct P&amp;L/consolidation responsibility for both Kuwait and KSA, or oversight of a locally-led KSA team</li>
+    <li>Prepare a 60–90 second articulation contrasting Kuwait's 5% retention/NOL mechanic with KSA's WHT/Zakat regime — your strongest differentiator now that both markets are in scope</li>
+    <li>Prepare a generic (no employer-named) summary of your multi-entity consolidation experience</li>
+    <li>Have 2–3 sharp questions ready from Section 8 — don't ask all of them, pick what fits the conversation</li>
+    <li>Know the headline numbers: £1.1bn group revenue, £166m adjusted profit, 717 shops globally, JAB ownership, 7 Kuwait shops, One PM as master franchisee for Kuwait/KSA/Qatar (Qatar sub-franchised to Al Mana)</li>
+    <li>Decide your honest answer to "why this move" — consistent with your current situation, no over-explaining</li>
+  </ul>
+</section>
+
+</div>
+
+<footer>
+  PREPARED FOR PERSONAL USE · NOT FOR DISTRIBUTION · SOURCES: PUBLIC PRESS, COMPANY WEBSITES, INDUSTRY REPORTING AS OF JUN 2026
+</footer>
+
+<button class="print-btn" onclick="window.print()">↓ Save / Print as PDF</button>
+
+</body>
+</html>
