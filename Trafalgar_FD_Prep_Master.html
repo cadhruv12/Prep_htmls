@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FD Prep File — Trafalgar Luxury Group (Combined Volumes)</title>
+<style>
+:root{
+  --bg:#FAF8F3;
+  --card:#FFFFFF;
+  --ink:#1E1E1B;
+  --ink-soft:#5B5650;
+  --gold:#9B7A1E;
+  --gold-soft:#F6F0DC;
+  --teal:#14463F;
+  --teal-soft:#E4EEEC;
+  --amber:#B9852E;
+  --amber-soft:#F6EBD9;
+  --rule:#DDD6C7;
+  --rule-soft:#EDE8DD;
+  --plum:#5C3A52;
+  --plum-soft:#EFE5EC;
+  --slate:#33526B;
+  --slate-soft:#E7EEF3;
+  --coffee:#6B4226;
+  --coffee-soft:#F0E6DD;
+  --green:#1D5C3A;
+  --green-soft:#E2F0E8;
+  --navy:#1C3557;
+  --navy-soft:#E3EAF1;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+  line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:900px;margin:0 auto;padding:48px 28px 100px;}
+.mono{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;}
+
+.cover{border:1px solid var(--rule);border-radius:2px;padding:36px 36px 28px;background:var(--card);position:relative;margin-bottom:24px;}
+.stamp{position:absolute;top:24px;right:28px;font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:10.5px;letter-spacing:.12em;color:var(--amber);
+  border:1px solid var(--amber);padding:4px 9px;border-radius:2px;text-transform:uppercase;}
+.fileref{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;font-size:11.5px;color:var(--ink-soft);letter-spacing:.04em;margin-bottom:14px;}
+h1.title{font-family:Georgia,"Iowan Old Style","Palatino Linotype","Book Antiqua",serif;font-size:30px;font-weight:600;margin:0 0 6px;line-height:1.18;max-width:520px;}
+.subtitle{font-size:15px;color:var(--ink-soft);margin-bottom:22px;}
+.metarow{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft);padding-top:16px;}
+.metaitem{flex:1 1 220px;padding-right:18px;margin-bottom:10px;}
+.metaitem .label{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:3px;}
+.metaitem .val{font-size:13.5px;}
+.volnote{font-size:12.5px;color:var(--amber);border-top:1px solid var(--rule-soft);padding-top:14px;}
+
+.quickref{background:var(--card);border:1px solid var(--rule);border-radius:2px;padding:24px 28px;margin-bottom:18px;}
+.quickref h2{font-family:Georgia,serif;font-size:17px;margin:0 0 14px;}
+table.qr{width:100%;border-collapse:collapse;font-size:13.5px;}
+table.qr td{padding:6px 10px 6px 0;vertical-align:top;border-bottom:1px solid var(--rule-soft);}
+table.qr td.k{width:150px;color:var(--teal);font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.03em;text-transform:uppercase;padding-top:8px;}
+table.qr tr:last-child td{border-bottom:none;}
+
+.howto{font-size:13px;color:var(--ink-soft);background:var(--teal-soft);border-left:3px solid var(--teal);
+  padding:12px 16px;margin-bottom:38px;border-radius:0 2px 2px 0;}
+.howto b{color:var(--teal);}
+
+.round-head{display:flex;align-items:baseline;gap:14px;margin:50px 0 18px;border-bottom:2px solid var(--ink);padding-bottom:10px;}
+.round-num{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;color:var(--ink-soft);letter-spacing:.06em;}
+.round-head h2{font-family:Georgia,serif;font-size:21px;margin:0;flex:1;}
+.round-who{font-size:12px;font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink-soft);}
+
+.sec-head{display:flex;align-items:baseline;gap:14px;margin:50px 0 18px;border-bottom:2px solid var(--ink);padding-bottom:10px;}
+.sec-num{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;color:var(--ink-soft);}
+.sec-head h2{font-family:Georgia,serif;font-size:21px;margin:0;flex:1;}
+.sec-intro{font-size:14.5px;color:var(--ink-soft);margin:14px 0 22px;max-width:760px;}
+
+details.qcard{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--teal);border-radius:2px;margin-bottom:12px;padding:0;}
+details.qcard.ceo{border-left-color:var(--amber);}
+details.qcard summary{list-style:none;cursor:pointer;padding:16px 20px;display:flex;gap:12px;align-items:flex-start;}
+details.qcard summary::-webkit-details-marker{display:none;}
+.qnum{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;font-size:11.5px;color:var(--teal);flex:0 0 auto;padding-top:2px;min-width:38px;}
+.ceo .qnum{color:var(--amber);}
+.tag{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;background:var(--teal-soft);color:var(--teal);padding:2px 7px;border-radius:9px;flex:0 0 auto;height:fit-content;margin-top:2px;}
+.ceo .tag{background:var(--amber-soft);color:var(--amber);}
+.qtext{font-size:15px;font-weight:500;flex:1;}
+summary .chev{font-size:12px;color:var(--ink-soft);flex:0 0 auto;margin-top:3px;}
+details[open] summary .chev::after{content:"▲";}
+summary .chev::after{content:"▼";}
+.answer{padding:0 20px 22px 70px;}
+.why{font-size:12.5px;color:var(--ink-soft);font-style:italic;margin:0 0 14px;padding-bottom:10px;border-bottom:1px solid var(--rule-soft);}
+.approach{margin-bottom:14px;}
+.approach h4{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--teal);margin:0 0 5px;font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;}
+.ceo .approach h4{color:var(--amber);}
+.approach p{margin:0;font-size:14px;}
+.anchor{margin-top:14px;padding:10px 14px;background:var(--bg);border-radius:2px;font-size:13.5px;font-style:italic;border:1px dashed var(--rule);}
+.anchor b{font-style:normal;font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:4px;}
+
+.concept{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--teal);border-radius:2px;padding:18px 22px;margin-bottom:22px;}
+.concept h3{font-family:Georgia,serif;font-size:15.5px;margin:0 0 8px;color:var(--teal);}
+.concept p{margin:0 0 10px;font-size:14px;}
+.concept p:last-child{margin-bottom:0;}
+.concept .ref{font-size:11.5px;color:var(--ink-soft);font-style:italic;margin-top:8px;}
+
+.worked{background:#FFFDF8;border:1px solid var(--amber);border-radius:2px;padding:18px 22px;margin-bottom:22px;}
+.worked h3{font-family:Georgia,serif;font-size:14.5px;margin:0 0 4px;color:var(--amber);text-transform:uppercase;letter-spacing:.03em;}
+.worked .setup{font-size:13.5px;margin:6px 0 14px;color:var(--ink-soft);}
+
+table.calc{width:100%;border-collapse:collapse;font-size:13.5px;margin-bottom:10px;}
+table.calc th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);border-bottom:1px solid var(--ink);padding:6px 8px;}
+table.calc td{padding:6px 8px;border-bottom:1px solid var(--rule-soft);}
+table.calc td.num{text-align:right;font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;}
+table.calc tr.total td{border-top:1.5px solid var(--ink);border-bottom:none;font-weight:600;}
+table.calc tr.plug td{background:var(--amber-soft);}
+table.calc tr.good td{background:var(--teal-soft);}
+table.calc tr.warn td{background:#FBF3EE;}
+
+.takeaway{font-size:13.5px;background:var(--teal-soft);padding:10px 14px;border-radius:2px;margin-top:8px;}
+.takeaway b{color:var(--teal);}
+
+table.ledger{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0;font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;}
+table.ledger th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);border-bottom:1px solid var(--ink);padding:5px 8px;font-family:-apple-system,sans-serif;}
+table.ledger td{padding:5px 8px;border-bottom:1px dotted var(--rule);}
+table.ledger td.dr,table.ledger td.cr{text-align:right;width:110px;}
+table.ledger tr.step-label td{padding-top:12px;font-family:-apple-system,sans-serif;font-size:12px;font-weight:600;color:var(--amber);border-bottom:none;}
+
+.layman{background:var(--slate-soft);border:1px solid #C9D8E2;border-radius:2px;padding:16px 20px;margin-bottom:16px;}
+.layman .eyebrow{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);font-weight:700;margin-bottom:6px;}
+.layman p{margin:0;font-size:14px;color:var(--ink);}
+
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px;}
+.compare .col{background:var(--card);border:1px solid var(--rule);border-radius:2px;padding:16px 18px;}
+.compare .col h4{font-family:Georgia,serif;font-size:14px;margin:0 0 8px;color:var(--navy);}
+.compare .col ul{margin:0;padding-left:18px;font-size:13.5px;}
+.compare .col li{margin-bottom:5px;}
+
+.playbook{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:14px;}
+.playbook th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);border-bottom:1px solid var(--ink);padding:8px 10px;}
+.playbook td{padding:10px;border-bottom:1px solid var(--rule-soft);vertical-align:top;}
+.playbook td.step{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;color:var(--slate);font-weight:700;width:36px;}
+
+ul.dontsay{list-style:none;margin:0 0 36px;padding:0;}
+ul.dontsay li{background:#FBF3EE;border:1px solid #E8CBB8;border-left:4px solid #B9542E;border-radius:2px;padding:11px 16px;margin-bottom:8px;font-size:13.5px;}
+ul.dontsay li b{color:#B9542E;font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.04em;margin-right:6px;}
+
+.anchorgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:36px;}
+.anchorgrid .acard{background:var(--card);border:1px solid var(--rule);border-radius:2px;padding:14px 16px;font-size:13.5px;font-style:italic;}
+
+ul.tttable{list-style:none;margin:0;padding:0;}
+ul.tttable li{background:var(--card);border:1px solid var(--rule);border-radius:2px;padding:13px 16px;margin-bottom:9px;font-size:14px;}
+ul.tttable li b{color:var(--teal);}
+
+.checklist{background:var(--card);border:1px solid var(--rule);border-radius:2px;padding:20px 24px;margin-bottom:20px;}
+.checklist label{display:flex;align-items:flex-start;gap:10px;font-size:14px;margin-bottom:10px;}
+.checklist input{margin-top:3px;}
+
+.toolbar{display:flex;gap:10px;margin-bottom:30px;}
+.btn{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--teal);color:var(--teal);background:transparent;padding:8px 14px;border-radius:2px;cursor:pointer;}
+.btn:hover{background:var(--teal);color:#fff;}
+
+footer{text-align:center;font-size:11.5px;color:var(--ink-soft);margin-top:50px;font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;}
+
+@media print{body{background:#fff;} .toolbar,.stamp{display:none;} details.qcard{break-inside:avoid;border-color:#ccc;} .wrap{max-width:100%;padding:10px;}}
+@media(max-width:640px){.answer{padding-left:18px;} h1.title{font-size:22px;} table.calc,.playbook{font-size:12px;} .compare{grid-template-columns:1fr;}}
+
+/* Per-volume accent overrides */
+#tab-vol1 details.qcard{border-left-color:var(--teal);}
+#tab-vol1 details.qcard .qnum{color:var(--teal);}
+#tab-vol1 details.qcard.ceo{border-left-color:var(--amber);}
+#tab-vol1 details.qcard.ceo .qnum{color:var(--amber);}
+#tab-vol1 .approach h4{color:var(--teal);}
+#tab-vol1 .ceo .approach h4{color:var(--amber);}
+#tab-vol2 details.qcard{border-left-color:var(--plum);}
+#tab-vol2 details.qcard .qnum{color:var(--plum);}
+#tab-vol2 .approach h4{color:var(--plum);}
+#tab-vol2 .concept{border-left-color:var(--plum);} #tab-vol2 .concept h3{color:var(--plum);}
+#tab-vol3 details.qcard{border-left-color:var(--slate);}
+#tab-vol3 details.qcard .qnum{color:var(--slate);}
+#tab-vol3 .approach h4{color:var(--slate);}
+#tab-vol3 .concept{border-left-color:var(--slate);} #tab-vol3 .concept h3{color:var(--slate);}
+#tab-vol4 details.qcard{border-left-color:var(--coffee);}
+#tab-vol4 details.qcard .qnum{color:var(--coffee);}
+#tab-vol4 .approach h4{color:var(--coffee);}
+#tab-vol4 .concept{border-left-color:var(--coffee);} #tab-vol4 .concept h3{color:var(--coffee);}
+#tab-vol5 details.qcard{border-left-color:var(--green);}
+#tab-vol5 details.qcard .qnum{color:var(--green);}
+#tab-vol5 .approach h4{color:var(--green);}
+#tab-vol5 .concept{border-left-color:var(--green);} #tab-vol5 .concept h3{color:var(--green);}
+#tab-vol6 details.qcard{border-left-color:var(--navy);}
+#tab-vol6 details.qcard .qnum{color:var(--navy);}
+#tab-vol6 .approach h4{color:var(--navy);}
+#tab-vol6 .concept{border-left-color:var(--navy);} #tab-vol6 .concept h3{color:var(--navy);}
+
+/* Tab navigation */
+.tabbar{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--rule);display:flex;gap:0;padding:0;margin-bottom:0;}
+.tabbar-inner{max-width:900px;margin:0 auto;display:flex;width:100%;}
+.tabbtn{flex:1;text-align:center;padding:16px 10px;font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);background:transparent;border:none;border-bottom:3px solid transparent;cursor:pointer;}
+.tabbtn .tlabel{display:block;font-family:Georgia,serif;text-transform:none;font-size:14px;letter-spacing:0;color:var(--ink);margin-top:3px;}
+.tabbtn.active{border-bottom-color:var(--ink);}
+.tabbtn.active .tlabel{font-weight:600;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+.mastercover{max-width:900px;margin:36px auto 0;padding:0 28px;}
+.mastercover .mc-card{border:1px solid var(--rule);border-radius:2px;padding:26px 30px;background:var(--card);}
+.mastercover h1{font-family:Georgia,serif;font-size:24px;margin:0 0 8px;}
+.mastercover p{font-size:13.5px;color:var(--ink-soft);margin:0;max-width:640px;}
+@media(max-width:640px){.tabbtn{font-size:10px;padding:12px 4px;} .tabbtn .tlabel{font-size:12px;}}
+</style>
+</head>
+<body>
+
+<div class="mastercover">
+  <div class="mc-card">
+    <h1>Finance Director — Trafalgar Luxury Group Prep File</h1>
+    <p>Combined reference: interview preparation, luxury retail finance mechanics, IFRS technical deep-dive, brand concession accounting, multi-country tax/treasury, and CEO roleplay scenarios. Six volumes — use the tabs to switch. Each volume has its own expand/collapse controls for self-test mode.</p>
+  </div>
+</div>
+
+<div class="tabbar"><div class="tabbar-inner">
+  <button class="tabbtn active" data-tab="vol1" onclick="switchTab('vol1')">Interview<span class="tlabel">Interview Prep</span></button>
+  <button class="tabbtn" data-tab="vol2" onclick="switchTab('vol2')">Retail Finance<span class="tlabel">Luxury Retail Mechanics</span></button>
+  <button class="tabbtn" data-tab="vol3" onclick="switchTab('vol3')">IFRS<span class="tlabel">IFRS Deep-Dive</span></button>
+  <button class="tabbtn" data-tab="vol4" onclick="switchTab('vol4')">Brand Acct<span class="tlabel">Brand &amp; Concession Acctg</span></button>
+  <button class="tabbtn" data-tab="vol5" onclick="switchTab('vol5')">Tax &amp; FX<span class="tlabel">Tax, FX &amp; Treasury</span></button>
+  <button class="tabbtn" data-tab="vol6" onclick="switchTab('vol6')">CEO Roleplay<span class="tlabel">CEO Roleplay &amp; Close</span></button>
+</div></div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- VOL 1 — INTERVIEW PREPARATION -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vol1">
+<div class="wrap">
+
+  <div class="cover">
+    <div class="stamp">FD-TLG-2026 · Vol 1 of 6</div>
+    <div class="fileref">FD-TLG-2026-V1 · Interview Preparation · Confidential</div>
+    <h1 class="title">Finance Director Interview Preparation — Trafalgar Luxury Group</h1>
+    <div class="subtitle">Direct report to CEO Amer Al Ansari · Kuwait HQ · Luxury Retail, Watches, Jewellery, Fashion, Technology</div>
+    <div class="metarow">
+      <div class="metaitem"><div class="label">Role</div><div class="val">Finance Director</div></div>
+      <div class="metaitem"><div class="label">Reports to</div><div class="val">Amer Al Ansari, Managing Partner / CEO</div></div>
+      <div class="metaitem"><div class="label">Group scale</div><div class="val">55+ stores · 5 countries · 40+ brands · 500+ employees</div></div>
+      <div class="metaitem"><div class="label">Verticals</div><div class="val">Watches &amp; Jewellery · Fashion · Technology (Apple / Gait)</div></div>
+      <div class="metaitem"><div class="label">Legal entity</div><div class="val">Trafalgar General Trading Co. — Partnership structure, Kuwait</div></div>
+    </div>
+  </div>
+
+  <div class="quickref">
+    <h2>60-Second Recall — Before You Walk In</h2>
+    <table class="qr">
+      <tr><td class="k">Founded</td><td>1972, Salmiya Kuwait, by Yahya &amp; Heidi Al Ansari. Now led by son Amer Al Ansari (Managing Partner/CEO) and wife Christiane.</td></tr>
+      <tr><td class="k">Structure</td><td>Partnership (not listed). HQ: Salmiya View Tower, Kuwait. Regional HQ: Dubai Design District (D3) — established 2022.</td></tr>
+      <tr><td class="k">Countries</td><td>Kuwait (HQ, 26+ POS), Saudi Arabia (Riyadh HQ, 10+ stores), UAE (Dubai D3), Bahrain, Qatar. Total 55+ stores.</td></tr>
+      <tr><td class="k">Brands</td><td>Chopard (since 1972), Patek Philippe, Bvlgari, Harry Winston, TAG Heuer, Dior, Gucci, Versace, Aigner, Furla, Fendi, Apple (Gait). 40+ total.</td></tr>
+      <tr><td class="k">3 Verticals</td><td><b>1.</b> Watches &amp; Jewellery — ultra-premium to prestige. <b>2.</b> Fashion — Aigner, Furla, Fendi, Bimba Y Lola, Stella McCartney. <b>3.</b> Technology — Gait (Apple Premium Reseller).</td></tr>
+      <tr><td class="k">Concepts</td><td>Alma (ultra-premium multi-brand showroom), La Maison du Luxe, TimeVallée (Richemont concept), itsluxury.com (e-commerce, launched 2020, Kuwait + KSA).</td></tr>
+      <tr><td class="k">Revenue</td><td>Kuwait entity est. ~USD 36M. Group-level est. USD 750M (third-party data — unaudited). Privately held, no public financials.</td></tr>
+      <tr><td class="k">Leadership</td><td>Amer Al Ansari (CEO/MP), Wael Shorbaji (COO), Nicholas Welch (Chief Retail Officer), Emad Khemane (CHRO, 15+ yrs). Finance previously under Sweta Chipra — clarify at interview.</td></tr>
+      <tr><td class="k">2022 restructure</td><td>Rebranded from Trafalgar → Trafalgar Luxury Group. 3 vertical structure formalised. New leadership team. Dubai D3 regional HQ announced. This role is a product of that restructuring.</td></tr>
+      <tr><td class="k">Your bridge</td><td>Fantasy World Toys retail experience is your direct retail credential. Multi-entity holding group consolidation maps exactly to their 5-country, 3-vertical structure.</td></tr>
+      <tr><td class="k">Do NOT confuse</td><td>Trafalgar General Trading Co. (this role) is a Kuwait-domiciled partnership. Trafalgar Luxury Group is the brand name. They are the same operating entity.</td></tr>
+    </table>
+  </div>
+
+  <div class="howto">
+    <b>How to use this file:</b> every card below is closed by default — a self-test. Read the question, say your answer out loud, then click to reveal and compare. Cards are colour-coded: <span style="color:var(--teal)">teal = CEO / general</span>, <span style="color:var(--amber)">amber = CEO-direct / strategic</span>. Print this page for an offline copy — all cards expand automatically in print view.
+  </div>
+
+  <div class="toolbar">
+    <button class="btn" onclick="document.querySelectorAll('#tab-vol1 details').forEach(d=>d.open=true)">Expand all</button>
+    <button class="btn" onclick="document.querySelectorAll('#tab-vol1 details').forEach(d=>d.open=false)">Collapse all (self-test mode)</button>
+  </div>
+
+  <!-- ROUND 1 -->
+  <div class="round-head">
+    <span class="round-num">ROUND 1</span>
+    <h2>The CEO Opens — Scope, Credibility, Sector Fit</h2>
+    <span class="round-who">Amer Al Ansari</span>
+  </div>
+
+  <details class="qcard">
+    <summary><span class="qnum">Q1.1</span><span class="tag">CEO</span><span class="qtext">Walk me through the finance function you currently run — not a job description, the actual shape of what you own.</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why he's asking:</b> Separating finance directors who own the function from finance managers who supervise it. He wants to know if you've sat at a CEO's table before.</p>
+      <div class="approach"><h4>Approach A — Lead with structure and ownership</h4>
+        <p>State the shape of your remit precisely: Head of Finance for a multi-entity Kuwait holding group, personal ownership of monthly close, board reporting, bank relationships, covenant compliance, and cash management across all entities. A finance team spanning FM, financial analysis, and credit/inventory control under direct line management. Not a support role — the person the CEO calls when a number doesn't add up. Be specific about what "ownership" means: last signature on the management pack, the person who briefs the board, the one whose name is on the bank facility documentation.</p>
+      </div>
+      <div class="approach"><h4>Approach B — If he presses for numbers</h4>
+        <p>Offer ranges rather than refuse — revenue band, entity count, headcount — enough to show real scale without breaching your confidentiality obligation. Frame it as discretion, not evasion: "I'll share the full picture at offer stage, but I can tell you this is a multi-entity structure in KWD across a holding group with material consolidated revenue."</p>
+      </div>
+      <div class="anchor"><b>Anchor line</b>"I don't sign off on anything I haven't personally reviewed. That's been true across multiple entities for twenty years, and it's the standard I'd bring here."</div>
+    </div>
+  </details>
+
+  <details class="qcard">
+    <summary><span class="qnum">Q1.2</span><span class="tag">CEO</span><span class="qtext">You come from distribution. Why should I trust you to run finance for a luxury retailer?</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why he's asking:</b> This is the first real test. He's not actually dismissing you — he wants to see if you defend your ground or fold. The right answer doesn't apologise; it reframes.</p>
+      <div class="approach"><h4>Approach A — Lead with Fantasy World Toys, not theory</h4>
+        <p>"I ran finance for Fantasy World Toys, which operated retail stores — store-level P&amp;Ls, consumer inventory, seasonal buying cycles, footfall-to-conversion economics. Distribution and retail share the same fundamental finance muscle: margin management, working capital, supplier terms, and multi-location reporting. The luxury layer adds brand relationship complexity and concession accounting — that's a domain I've studied specifically for this opportunity and can speak to technically right now."</p>
+      </div>
+      <div class="approach"><h4>Approach B — Reframe the question</h4>
+        <p>The deeper point is that a Finance Director's job in luxury retail is not about product knowledge — it's about controlling multi-entity P&amp;Ls, managing currency exposure, building brand-level reporting frameworks, and giving the CEO clean numbers fast. That function is transferable. The Finance Director who's spent fifteen years only in luxury retail but can't consolidate five currencies or build a coherent management reporting layer is more dangerous to you than someone with multi-sector depth.</p>
+      </div>
+      <div class="anchor"><b>Anchor line</b>"The finance discipline is identical. What I'm adding is twenty years of multi-entity control experience and a retail credential. The luxury context is a layer on top — not a wall in front."</div>
+    </div>
+  </details>
+
+  <details class="qcard">
+    <summary><span class="qnum">Q1.3</span><span class="tag">CEO</span><span class="qtext">We have a CFO-level person already. What does a Finance Director add that isn't already covered?</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why he's asking:</b> A real structural question about role clarity — and a potential early signal that you need to probe the org chart before assuming what the role involves.</p>
+      <div class="approach"><h4>Approach A — Turn it into a clarifying question first</h4>
+        <p>"That's actually a question I want to understand better from you — the 2022 restructuring brought in a new finance leadership structure across three verticals. I want to make sure I understand exactly where this FD role sits relative to what already exists, because my answer about what I add depends on where the current gaps are. Can you tell me more about the current finance structure?" This earns respect and buys information.</p>
+      </div>
+      <div class="approach"><h4>Approach B — If he wants your view first</h4>
+        <p>A Chief Financial Officer in a luxury group of this size and regional ambition typically operates at the strategic and principal-relationship level. A Finance Director is the engine room: brand-level P&amp;L ownership, management reporting cadence, ERP integrity, multi-country close management, and the day-to-day financial governance across 55+ stores. That's the gap a strong FD fills — not competing with a CFO but making the CFO's strategy executable.</p>
+      </div>
+      <div class="anchor"><b>Anchor line</b>"CFOs set direction. Finance Directors make it land. My job is to make sure every number you see reflects what actually happened — fast, clean, and with no surprises."</div>
+    </div>
+  </details>
+
+  <details class="qcard ceo">
+    <summary><span class="qnum">Q1.4</span><span class="tag">CEO</span><span class="qtext">We are expanding regionally and fast. What's your role in an expansion decision versus just reporting on it after the fact?</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why he's asking:</b> He wants a Finance Director who leads, not one who tallies up what the business decisions already made. This is the test of whether you're a business partner or a bookkeeper.</p>
+      <div class="approach"><h4>Approach A — Finance leads, not follows</h4>
+        <p>"Finance leads expansion decisions, not just validates them after the fact. My role is to build the investment case before the lease is signed: store CAPEX model, lease affordability analysis — lease cost as a percentage of projected revenue is the critical test — brand fit, gross margin by category, payback period, and the tax and corporate structure for the new jurisdiction. If KSA is the expansion target, I need Zakat provisioning, VAT registration, and GAZT compliance ready before day one, not after the first quarterly close."</p>
+      </div>
+      <div class="approach"><h4>Approach B — The specific tool</h4>
+        <p>Describe the framework: four-wall store EBITDA model for every new opening — revenue assumptions, rent cost, staff cost, brand royalty (where applicable), depreciation of fit-out, central overhead allocation. A store that looks positive on gross margin can still destroy value if the lease-cost-to-revenue ratio exceeds 18–20%. That's the number I'd be protecting in every expansion discussion, not the store count.</p>
+      </div>
+      <div class="anchor"><b>Anchor line</b>"I'd rather tell you a store doesn't work before you sign the lease than produce a variance analysis six months later explaining why it doesn't."</div>
+    </div>
+  </details>
+
+  <!-- ROUND 2 -->
+  <div class="round-head">
+    <span class="round-num">ROUND 2</span>
+    <h2>Luxury Retail Technicals — Where the Bluffing Gets Caught</h2>
+    <span class="round-who">Amer Al Ansari / Finance Panel</span>
+  </div>
+
+  <details class="qcard">
+    <summary><span class="qnum">Q2.1</span><span class="tag">CEO</span><span class="qtext">Tell me what you actually know about how luxury retail finance differs from holding company or distribution finance.</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why he's asking:</b> Testing real domain knowledge versus willingness to learn. Don't conflate the two in your answer. He will know immediately if you're pattern-matching textbook answers.</p>
+      <div class="approach"><h4>Approach A — Show the specific mechanics</h4>
+        <p>Luxury retail finance is fundamentally different in five ways: (1) Inventory is the largest asset and the biggest risk — high unit values, long turn cycles for watches, very low turn for Apple products — and the provisioning policy is a major judgment call. (2) Every store is a P&amp;L centre — four-wall EBITDA per location is the CEO's operating tool. (3) Brand agreements drive the accounting — whether inventory is on your balance sheet depends entirely on whether the arrangement is outright purchase or consignment, and that determination flows through to COGS, revenue recognition, and working capital. (4) Lease cost is a structural constraint — IFRS 16, 55+ leases, and mall rents in GCC markets are among the highest in the world relative to retail turnover. (5) The blended margin across three verticals — Watches at 40–60%, Fashion at 55–65%, Apple at 3–8% — makes the management reporting architecture critical. You can't run this group on one consolidated P&amp;L number.</p>
+      </div>
+      <div class="approach"><h4>Approach B — Bridge from what you already know</h4>
+        <p>Multi-entity consolidation, intercompany elimination, currency management, and management pack design are already your daily practice. The luxury retail layer adds brand-specific mechanics on top of a discipline you already own.</p>
+      </div>
+      <div class="anchor"><b>Anchor line</b>"In luxury retail, the income statement is driven by brand agreements and store leases — two things I've studied specifically because they're structurally different from what I run today."</div>
+    </div>
+  </details>
+
+  <details class="qcard">
+    <summary><span class="qnum">Q2.2</span><span class="tag">CEO</span><span class="qtext">Most of our watch brands invoice in Swiss Francs or Euros. Walk me through the FX risk management framework you'd put in place.</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why he's asking:</b> Treasury thinking specific to a luxury import model. Generic textbook hedging answers won't land — he wants applied judgment.</p>
+      <div class="approach"><h4>Approach A — Identify the real exposure first</h4>
+        <p>KWD is pegged to a USD basket, so USD payables carry minimal economic risk. The real exposure is CHF and EUR — which is exactly where the high-value brands sit: Chopard, Patek Philippe, TAG Heuer, all CHF-priced at origin. I'd quantify the open exposure each quarter: brand payables plus committed purchase orders in CHF and EUR, then assess P&amp;L sensitivity per 1% move. Natural hedging through the selling price is limited because some brands set GCC retail prices centrally — that's where Trafalgar's margin gets squeezed when CHF strengthens.</p>
+      </div>
+      <div class="approach"><h4>Approach B — The specific instrument approach</h4>
+        <p>For material committed exposures — a large seasonal order for a Swiss brand — short-tenor forward cover through NBK or Gulf Bank makes sense. I wouldn't hedge the full book speculatively; that's cost without certainty. The first tool is contract-level: negotiate any price-lock or FX protection clauses in the brand distribution agreement before the order is placed. The forward is a secondary, tactical layer on what's already committed and unprotectable.</p>
+      </div>
+      <div class="anchor"><b>Anchor line</b>"Cover the committed exposure, not the speculative one — and protect the margin in the brand contract, not just on the treasury desk."</div>
+    </div>
+  </details>
+
+  <details class="qcard">
+    <summary><span class="qnum">Q2.3</span><span class="tag">CEO</span><span class="qtext">Gait is an Apple Premium Reseller. The margin structure is completely different to the watch business. How does that affect your reporting and management decisions?</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why he's asking:</b> Testing whether you understand that blending the Technology vertical into group numbers masks the real economics. He wants a Finance Director who insists on vertical-level visibility.</p>
+      <div class="approach"><h4>Approach A — The reporting architecture argument</h4>
+        <p>Apple's authorised reseller margin is roughly 3–8% gross — versus 40–60% on Chopard. Blending those into a single group gross margin number produces a figure that understates performance on the watch side and flatters the Technology vertical. The management reporting architecture needs to isolate each vertical's gross margin, operating cost, and four-wall EBITDA independently. The CEO should never see a blended margin that obscures which vertical is performing and which is subsidising the others.</p>
+      </div>
+      <div class="approach"><h4>Approach B — The working capital dimension</h4>
+        <p>Apple operates on very short payment terms and fast inventory turns — 15–30 days versus 90–180 for watches. The working capital cycle for Gait is fundamentally different: rapid inventory throughput, tight Apple receivables discipline, strong warranty/after-sales revenue. Treasury needs to manage the two cash cycles separately — the watch business can carry aged stock; the Apple business cannot.</p>
+      </div>
+      <div class="anchor"><b>Anchor line</b>"If I see a blended group gross margin that rolls up watches and Apple into one number, my first job is to disaggregate it — because that blended number is managing to the average of two completely different businesses."</div>
+    </div>
+  </details>
+
+  <details class="qcard">
+    <summary><span class="qnum">Q2.4</span><span class="tag">CEO</span><span class="qtext">Give me one real example where you caught a financial control gap before it became a P&amp;L problem.</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why he's asking:</b> Behavioural proof question. Needs a specific, credible story — not a principle. Every senior finance candidate claims to be "proactive." He wants the story that proves it.</p>
+      <div class="approach"><h4>Approach A — The compensation restructuring example</h4>
+        <p>"A proposed compensation restructuring was presented as cost-neutral. Cross-checking it against Kuwait Labour Law obligations revealed it created both legal exposure and understated liabilities. I escalated it in writing with the legal basis clearly stated before implementation. The proposal was revised before any harm was done." The key detail to add: it went up in writing — because oral warnings disappear; written ones create accountability.</p>
+      </div>
+      <div class="approach"><h4>Approach B — The COA remediation example</h4>
+        <p>"Rebuilding a client's chart of accounts, I found close to 400 legacy accounts with no clear ownership and no reconciliation trail — a material misstatement waiting to happen. Rather than patch the existing structure, I rebuilt on a clean 465-account schema with explicit ownership before go-live. The auditors flagged zero chart-of-accounts findings in the first post-implementation audit."</p>
+      </div>
+      <div class="anchor"><b>Anchor line</b>"I don't report problems — I surface them before they're problems, in writing, with a proposed fix attached."</div>
+    </div>
+  </details>
+
+  <!-- ROUND 3 -->
+  <div class="round-head">
+    <span class="round-num">ROUND 3</span>
+    <h2>Stakeholder Scenarios — The Family Business Test</h2>
+    <span class="round-who">Amer Al Ansari</span>
+  </div>
+
+  <details class="qcard ceo">
+    <summary><span class="qnum">Q3.1</span><span class="tag">CEO</span><span class="qtext">We're a family business. The owner makes decisions fast and not always through a process. How do you operate in that environment?</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why he's asking:</b> He wants to know if you'll create bureaucratic friction that slows the business, or if you can operate with speed while maintaining the controls he knows he needs. The wrong answer is a lecture on process.</p>
+      <div class="approach"><h4>Approach A — Acknowledge the culture, define your role in it</h4>
+        <p>"I've spent my entire career in family businesses in Kuwait and the GCC. I understand how they work: speed, trust, and relationships are the operating model — and that's a strength, not a weakness. My role isn't to slow that down with approvals and committees. My role is to make sure that when you move fast, you have clean numbers in your hand before you move — not a variance report six weeks later. The finance function I'd build here is designed for speed, not control theatre."</p>
+      </div>
+      <div class="approach"><h4>Approach B — The specific commitment</h4>
+        <p>Give a concrete example of how this looks in practice: a new brand acquisition conversation starts on a Sunday — I have the investment case model on the CEO's desk by Tuesday, with bear/base/bull scenarios, a payback period, and a one-paragraph flag on any structural risk. Not a 40-page deck. Not next week. That's what "finance as business partner" actually means.</p>
+      </div>
+      <div class="anchor"><b>Anchor line</b>"Family businesses are where Finance Directors add the most value — and I've spent twenty years earning that trust, not creating friction against it."</div>
+    </div>
+  </details>
+
+  <details class="qcard ceo">
+    <summary><span class="qnum">Q3.2</span><span class="tag">CEO</span><span class="qtext">You're a Head of Finance stepping into a Finance Director title at a different group. Is this a step down, sideways, or are you chasing a title?</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why he's asking:</b> Checking for flight risk and whether you're desperate or deliberate. The wrong answer is to over-explain. The right answer is direct and shows you've thought it through.</p>
+      <div class="approach"><h4>Approach A — Scope over title, stated plainly</h4>
+        <p>"Titles vary by group size and structure — what I look at is scope and trajectory. This role reports directly to you across a 5-country, 40-brand, 3-vertical operation in active regional expansion. The commercial and technical scope is comparable to, and in some dimensions larger than, what I run today. More importantly, it's in a sector I've deliberately chosen to move deeper into. I'm not chasing a title. I'm looking for the right seat at the right time."</p>
+      </div>
+      <div class="approach"><h4>Approach B — If he presses on the move</h4>
+        <p>Be honest about the strategic logic: twenty years in Kuwait holding company and distribution finance is a strong foundation. The next stage of your career is building sector-specific depth — luxury retail, with a regional group in active expansion, is exactly that move. A Group CFO title somewhere will follow from doing this role well — and that trajectory is more valuable than defending a current title.</p>
+      </div>
+      <div class="anchor"><b>Anchor line</b>"I look at scope and trajectory, not the four words on a business card."</div>
+    </div>
+  </details>
+
+  <details class="qcard">
+    <summary><span class="qnum">Q3.3</span><span class="tag">CEO</span><span class="qtext">What do you do in the first 90 days?</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why he's asking:</b> The 90-day plan is the single most-asked question in Finance Director interviews. The wrong answer is generic. The right one is specific to Trafalgar's actual complexity.</p>
+      <div class="approach"><h4>Approach A — Month by month, specific to this group</h4>
+        <p><b>Days 1–30 (Diagnose):</b> Understand the existing finance structure — chart of accounts, ERP setup, brand agreement terms and the accounting treatment currently applied, current management reporting pack, and last audit findings. Meet each vertical head (Watches &amp; Jewellery, Fashion, Technology) and the country finance leads. Map the intercompany structure across 5 entities. Understand where the current P&amp;L reporting is granular and where it's consolidated away.<br><br><b>Days 31–60 (Fix fundamentals):</b> Is reporting timely? Are brand-level P&amp;Ls isolated or blended? Has IFRS 16 been fully applied across all 55+ leases? Is inventory aging properly provisioned by category — a Patek Philippe that's sat 18 months needs a different provision treatment than a Gait iPhone that's aged 60 days? Are itsluxury.com revenues and returns recognised correctly under IFRS 15?<br><br><b>Days 61–90 (Build and present):</b> Finance Transformation Roadmap to you — reporting calendar, KPI framework, structural fixes to the management pack, and a 12-month improvement plan. Not a 40-page document — a one-page playbook with clear priorities and timelines.</p>
+      </div>
+      <div class="anchor"><b>Anchor line</b>"Month one I diagnose. Month two I fix what's broken. Month three I show you what finance can look like when it's working properly."</div>
+    </div>
+  </details>
+
+  <!-- CLOSING -->
+  <div class="round-head">
+    <span class="round-num">CLOSE</span>
+    <h2>Things to Never Say</h2>
+  </div>
+
+  <ul class="dontsay">
+    <li><b>Don't say →</b> "I don't have luxury retail experience, but I'm a fast learner." — It's passive and apologetic. Lead with Fantasy World Toys and the multi-entity skill instead.</li>
+    <li><b>Don't say →</b> "I'll need some time to understand the luxury sector before I can comment." — In an interview. Comment now. You prepared. Show it.</li>
+    <li><b>Don't say →</b> "What ERP do you use?" — You don't know what system they run. Research this before the interview or ask it as a specific, informed question: "I understand your regional entities likely run on different platforms — are you moving toward a unified group ERP?"</li>
+    <li><b>Don't say →</b> "I'm currently in a difficult political situation at my employer." — Never volunteer this. If asked why you're leaving, it's simply: "I'm ready for the right next move, and this role matches exactly where I want to take my career."</li>
+    <li><b>Don't say →</b> "I'd need to see the full financials before I can tell you." — When asked about a financial problem or scenario. Give your framework and assumptions first. You can always refine with real data.</li>
+  </ul>
+
+  <div class="round-head"><span class="round-num">CLOSE</span><h2>Your 5 Anchor Lines — Memorise These</h2></div>
+  <div class="anchorgrid">
+    <div class="acard">"I don't sign off on anything I haven't personally reviewed — that's been true across multiple entities for twenty years."</div>
+    <div class="acard">"Finance leads expansion decisions, not validates them after the fact. I want to be in the conversation before the lease is signed."</div>
+    <div class="acard">"If I see a blended group gross margin that rolls up Apple and Chopard into one number, my first job is to break it apart."</div>
+    <div class="acard">"Family businesses are where Finance Directors add the most value — and I've spent twenty years earning that trust, not creating friction against it."</div>
+    <div class="acard">"The luxury context is a layer on top. The finance discipline underneath it — consolidation, controls, currency, multi-entity P&amp;L — I already own."</div>
+  </div>
+
+  <footer>FD-TLG-2026 &nbsp;·&nbsp; Volume 1 of 6 &nbsp;·&nbsp; Confidential — not for distribution</footer>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- VOL 2 — LUXURY RETAIL FINANCE MECHANICS -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-vol2">
+<div class="wrap">
+
+  <div class="cover">
+    <div class="stamp">FD-TLG-2026 · Vol 2 of 6</div>
+    <div class="fileref">FD-TLG-2026-V2 · Luxury Retail Finance Mechanics · Confidential</div>
+    <h1 class="title">Luxury Retail Finance — How the Business Model Works</h1>
+    <div class="subtitle">Business model types · Store economics · KPIs the CEO will test you on · Inventory mechanics</div>
+  </div>
+
+  <div class="howto"><b>This volume</b> covers the four business model types Trafalgar operates, the store economics framework (four-wall EBITDA), the 12 retail KPIs every Finance Director must own, and the inventory management mechanics specific to luxury. Use the expand button to open all concept cards at once for a first read-through.</div>
+
+  <div class="toolbar">
+    <button class="btn" onclick="document.querySelectorAll('#tab-vol2 details').forEach(d=>d.open=true)">Expand all</button>
+    <button class="btn" onclick="document.querySelectorAll('#tab-vol2 details').forEach(d=>d.open=false)">Collapse all</button>
+  </div>
+
+  <!-- Business Models -->
+  <div class="sec-head"><span class="sec-num">BM1</span><h2>The Four Business Models Trafalgar Operates</h2></div>
+  <p class="sec-intro">Trafalgar is not a single-format retailer. Finance treatment differs materially across these four structures — and the CEO expects you to know which model applies to which brand.</p>
+
+  <div class="layman">
+    <div class="eyebrow">Plain English First</div>
+    <p>Think of it this way: for some brands, Trafalgar owns the watches outright and takes all the risk and all the margin. For others, the brand owns the stock and Trafalgar just sells it for a commission. For Gait/Apple, Trafalgar buys Apple products at a price Apple sets and sells them at a price Apple sets — the margin is razor-thin. Each of these arrangements has a completely different accounting treatment.</p>
+  </div>
+
+  <div class="concept">
+    <h3>Model 1 — Mono-brand Boutique (Outright Purchase)</h3>
+    <p><b>How it works:</b> Trafalgar licenses the brand right from the principal (e.g. Chopard, TAG Heuer), buys inventory directly, and owns all stock risk. Revenue is 100% Trafalgar's. Gross margin on prestige watches typically 40–60%; ultra-premium (Patek Philippe, Harry Winston) lower due to limited edition pricing constraints.</p>
+    <p><b>Finance implications:</b> Inventory appears on Trafalgar's balance sheet at cost (IAS 2). COGS hits P&amp;L when sold. Slow-moving or aged stock requires NRV provision. Store fit-out CAPEX shared or borne by Trafalgar — capitalised as PPE, depreciated over lease term. IFRS 16 lease recognised on all boutiques.</p>
+    <p class="ref">Standards: IAS 2 (inventory), IFRS 16 (lease), IAS 16 (fit-out PPE)</p>
+  </div>
+
+  <div class="concept">
+    <h3>Model 2 — Multi-brand Showroom (Alma / La Maison du Luxe)</h3>
+    <p><b>How it works:</b> Trafalgar-owned concept hosting multiple brand principals in one space. Mixed ownership — some brands may be outright, others consignment. Common costs (lease, staff, fit-out) must be allocated across brands.</p>
+    <p><b>Finance implications:</b> Complex creditor ledger with multiple principals. Allocation of common costs is a management reporting judgment — basis could be revenue%, floor area, or SKU count. Brand-by-brand profitability tracking within one location is essential. The Finance Director must insist on a cost allocation methodology and apply it consistently, or brand P&amp;Ls become meaningless.</p>
+    <p class="ref">Standards: IAS 2 (per brand inventory), IAS 38 (intangible brand rights if applicable), management reporting design</p>
+  </div>
+
+  <div class="concept">
+    <h3>Model 3 — Franchise / Concession</h3>
+    <p><b>How it works:</b> Common for fashion partners (Furla, Bimba Y Lola). Either: (a) brand pays Trafalgar a commission on sales from space Trafalgar controls, or (b) brand operates its own inventory in Trafalgar's space. Trafalgar earns a percentage without owning the stock.</p>
+    <p><b>Finance implications:</b> Under IFRS 15, the key question is whether Trafalgar is the <em>principal</em> or the <em>agent</em>. If Trafalgar controls the goods before transferring them to the customer: gross revenue. If the brand controls the goods and Trafalgar arranges the sale: net commission revenue only. The wrong classification overstates revenue. No inventory on Trafalgar's balance sheet under a pure agent model.</p>
+    <p class="ref">Standards: IFRS 15 (principal vs. agent, paragraphs B34–B38), IAS 2 (if goods are controlled)</p>
+  </div>
+
+  <div class="concept">
+    <h3>Model 4 — Apple Premium Reseller (Gait)</h3>
+    <p><b>How it works:</b> Apple authorises Trafalgar (Gait) to sell Apple products at Apple-set retail prices. Margin is structurally determined by Apple — resellers typically earn 3–8% gross on hardware. Volume is the only lever; margin compression is a structural reality, not a negotiation point.</p>
+    <p><b>Finance implications:</b> Gait is a high-turnover, low-margin business. Days inventory outstanding: 15–30 days. Strong after-sales, repair, and accessories revenue streams (higher margin than hardware). Apple payment terms are tight. Working capital cycle is fast and must be managed separately from the jewellery/watch business. Blending Gait into group margin numbers is the single biggest management reporting mistake this group could make.</p>
+    <p class="ref">Key distinction: Trafalgar bears inventory risk in the Gait model (outright purchase from Apple) — so gross revenue recognition is correct. Not an agent arrangement.</p>
+  </div>
+
+  <!-- Four-Wall EBITDA -->
+  <div class="sec-head"><span class="sec-num">BM2</span><h2>Four-Wall Store EBITDA — The Operating Framework</h2></div>
+  <p class="sec-intro">Every store in Trafalgar's network should be run against a four-wall EBITDA — the store's own P&amp;L excluding any central overhead allocation. This is the tool for store-level performance management, expansion decisions, and lease renewal negotiations.</p>
+
+  <div class="worked">
+    <h3>Four-Wall EBITDA — Illustrative Structure (KWD, Single Store)</h3>
+    <p class="setup">A standalone Chopard boutique in The Avenues, Kuwait. Annual view. Numbers are illustrative — the structure is what matters.</p>
+    <table class="calc">
+      <tr><th>Line Item</th><th>Notes</th><th class="num">KWD 000</th></tr>
+      <tr><td>Gross sales revenue</td><td>Customer sales, net of returns</td><td class="num">480</td></tr>
+      <tr><td>Less: COGS (watch cost)</td><td>Outright purchase model — 45% COGS ratio</td><td class="num">(216)</td></tr>
+      <tr class="good"><td><b>Gross Profit</b></td><td><b>55% gross margin</b></td><td class="num"><b>264</b></td></tr>
+      <tr><td>Store staff cost</td><td>Sales consultants, SA manager, 5–6 heads</td><td class="num">(62)</td></tr>
+      <tr><td>Lease cost — IFRS 16 depreciation component</td><td>ROU Asset depreciated over lease term</td><td class="num">(38)</td></tr>
+      <tr><td>Lease cost — interest component</td><td>Unwinding of lease liability</td><td class="num">(11)</td></tr>
+      <tr><td>Store fit-out depreciation</td><td>Capex amortised over lease term</td><td class="num">(15)</td></tr>
+      <tr><td>Direct marketing (local events, clienteling)</td><td>Brand co-op may offset some of this</td><td class="num">(18)</td></tr>
+      <tr><td>After-sales service / repair centre allocation</td><td>Chopard watches — service cost centre</td><td class="num">(8)</td></tr>
+      <tr><td>Store utilities and insurance</td><td>Mall service charges included</td><td class="num">(12)</td></tr>
+      <tr class="total"><td><b>Four-Wall EBITDA</b></td><td><b>Excludes central overhead, HQ finance, IT</b></td><td class="num"><b>100</b></td></tr>
+      <tr class="plug"><td>Four-Wall EBITDA %</td><td>Target for a mature luxury boutique: 18–22%</td><td class="num">20.8%</td></tr>
+      <tr><td colspan="2">Lease cost as % of gross revenue (critical ratio)</td><td class="num">10.2%</td></tr>
+      <tr class="warn"><td colspan="2">⚑ Alert threshold: if lease cost exceeds 15–18% of revenue, store is structurally marginal</td><td class="num"></td></tr>
+    </table>
+    <div class="takeaway"><b>The FD's job in this model:</b> produce four-wall EBITDA for every store, every month. The CEO should be able to look at a table of 55 stores and immediately see which ones are performing, which ones are marginal, and which ones need a lease renegotiation or exit conversation. If the management pack doesn't show this, that's the first thing you fix.</div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="sec-head"><span class="sec-num">BM3</span><h2>The 12 Retail KPIs the CEO Will Test You On</h2></div>
+
+  <details class="qcard">
+    <summary><span class="qnum">KPI.1</span><span class="tag">RETAIL</span><span class="qtext">Like-for-Like (LFL) Revenue Growth — definition and why it matters more than total revenue</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>What it measures:</b> Revenue growth from existing stores only — excluding the effect of new openings or closures. It's the only honest test of organic trading performance.</p>
+      <div class="approach"><h4>Why it matters here</h4>
+        <p>Trafalgar opened 8 new stores in Kuwait and Bahrain in January 2022 alone. Total revenue growth that year looks impressive. But if LFL growth is flat or negative — meaning the existing stores are declining — the expansion is masking a performance problem, not creating one. The CEO needs both numbers. Presenting only total revenue growth to ownership is a finance control failure.</p>
+      </div>
+      <div class="anchor"><b>Calculation</b>Revenue from stores open for the same period in both years ÷ prior year same-store revenue − 1. A store opened mid-year is excluded from LFL until it has a full 12-month comparable period.</div>
+    </div>
+  </details>
+
+  <details class="qcard">
+    <summary><span class="qnum">KPI.2</span><span class="tag">RETAIL</span><span class="qtext">Average Transaction Value (ATV) — how you segment it and what it tells you</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>What it measures:</b> Total revenue ÷ number of transactions. In luxury, one Patek Philippe Grand Complications sale equals the revenue of 200 Furla handbags. The ATV is meaningless unless segmented.</p>
+      <div class="approach"><h4>The segmentation imperative</h4>
+        <p>ATV must be tracked by: (1) vertical — Watches &amp; Jewellery vs. Fashion vs. Technology; (2) brand; (3) store concept — Alma (ultra-premium) vs. multi-brand Trafalgar showroom vs. standalone boutique. The Alma showroom should have a dramatically higher ATV than a TAG Heuer boutique. If Alma's ATV is declining, it's a signal that the client mix is shifting away from ultra-premium — a strategic alert, not just a commercial one.</p>
+      </div>
+      <div class="anchor"><b>Finance Director action</b>Build ATV tracking into the monthly management pack, segmented by vertical and concept. Flag month-on-month ATV decline as a leading indicator before it hits revenue.</div>
+    </div>
+  </details>
+
+  <details class="qcard">
+    <summary><span class="qnum">KPI.3</span><span class="tag">RETAIL</span><span class="qtext">Inventory Days / Inventory Turnover — and why the benchmark varies violently across Trafalgar's verticals</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>What it measures:</b> Average inventory days = (Average Inventory ÷ COGS) × 365. Measures how long stock sits before it's sold.</p>
+      <div class="approach"><h4>The vertical benchmarks</h4>
+        <p>Ultra-premium watches (Patek Philippe, Harry Winston): 180–365 days is normal. These are made-to-order or extremely limited — a piece sitting in the Alma showroom for six months is not a slow-moving problem, it's the business model. Prestige watches (TAG Heuer, Dior): 90–180 days, reasonable. Fashion (Aigner, Furla): 60–90 days — seasonal collections mean aged stock is genuinely a margin risk. Technology — Gait/Apple: 15–30 days. Anything longer signals demand miss or Apple oversupply — margin erosion risk immediately as Apple refreshes its product cycle.</p>
+      </div>
+      <div class="anchor"><b>Finance Director action</b>Never report a single "inventory days" KPI across the group. The number is meaningless blended. Produce it by category, set category-specific aging thresholds, and flag deviations from category norms — not from a group average.</div>
+    </div>
+  </details>
+
+  <details class="qcard">
+    <summary><span class="qnum">KPI.4</span><span class="tag">RETAIL</span><span class="qtext">Sell-Through Rate — what it is and how it drives your open-to-buy planning</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>What it measures:</b> Units sold ÷ units received (for a given period or collection). For fashion seasonal collections, it's the primary buying discipline tool.</p>
+      <div class="approach"><h4>Application at Trafalgar</h4>
+        <p>Aigner and Furla operate on SS (Spring/Summer) and AW (Autumn/Winter) collection cycles. At the end of each season, the sell-through rate tells you: what percentage of the intake was sold at full price. A 70–75% sell-through at full price, plus 15–20% in end-of-season markdown, is a healthy fashion cycle. Below 60% at full price signals a buying error — too much inventory, wrong mix, wrong price points. The Finance Director's role is to build the sell-through analysis that drives the next season's Open-to-Buy (OTB) budget — connecting the buying decision to the financial outcome.</p>
+      </div>
+      <div class="anchor"><b>Finance Director action</b>Produce a sell-through report by brand and by collection at season end. Feed it into the OTB sign-off process — the buyer should not commit next season's intake without the FD's sell-through analysis from the current season.</div>
+    </div>
+  </details>
+
+  <details class="qcard">
+    <summary><span class="qnum">KPI.5</span><span class="tag">RETAIL</span><span class="qtext">Lease Cost as % of Revenue — the single most important structural ratio in retail finance</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>What it measures:</b> Total occupancy cost (rent, service charges) as a percentage of store revenue. The key test of whether a store's location economics are viable long-term.</p>
+      <div class="approach"><h4>GCC context</h4>
+        <p>GCC prime mall rents — The Avenues Kuwait, Mall of the Emirates, Nakheel Mall Qatar — are among the highest globally. A 150 sqm Chopard boutique in a prime Kuwait mall can cost KWD 80,000–120,000 per annum in rent plus service charges. If the store is generating KWD 480,000 revenue, lease-cost-to-revenue is 22–25% — at the outer limit of viability even at a 55% gross margin. At the FD level, this ratio is the first thing you run on every existing store and every expansion location before any lease discussion is entered into. Industry target for luxury: below 15–18%.</p>
+      </div>
+      <div class="anchor"><b>Finance Director action</b>No expansion recommendation goes to the CEO without lease cost % of projected revenue clearly stated. If the model only pencils out at optimistic revenue, say so.</div>
+    </div>
+  </details>
+
+  <footer>FD-TLG-2026 &nbsp;·&nbsp; Volume 2 of 6 &nbsp;·&nbsp; Confidential — not for distribution</footer>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- VOL 3 — IFRS DEEP-DIVE -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-vol3">
+<div class="wrap">
+
+  <div class="cover">
+    <div class="stamp">FD-TLG-2026 · Vol 3 of 6</div>
+    <div class="fileref">FD-TLG-2026-V3 · IFRS Technical Deep-Dive · Confidential</div>
+    <h1 class="title">IFRS Standards — Applied to Trafalgar's Business</h1>
+    <div class="subtitle">IFRS 15 · IAS 2 · IFRS 16 · IAS 21 · IAS 36 · IFRS 9 — all applied to the specific facts of this business</div>
+  </div>
+
+  <div class="howto"><b>This volume</b> is the technical backbone. Each standard is explained in plain English first, then applied specifically to Trafalgar's business model. The Q&amp;A cards at the end of each section are interview-grade technical questions you could be asked. Self-test mode: read the question, answer before clicking.</div>
+
+  <div class="toolbar">
+    <button class="btn" onclick="document.querySelectorAll('#tab-vol3 details').forEach(d=>d.open=true)">Expand all</button>
+    <button class="btn" onclick="document.querySelectorAll('#tab-vol3 details').forEach(d=>d.open=false)">Collapse all</button>
+  </div>
+
+  <!-- IFRS 15 -->
+  <div class="sec-head"><span class="sec-num">IFRS 15</span><h2>Revenue from Contracts with Customers</h2></div>
+  <p class="sec-intro">The most complex standard for Trafalgar because the group's revenue streams span four completely different business models, each with different recognition points, principal/agent considerations, and variable consideration elements.</p>
+
+  <div class="layman">
+    <div class="eyebrow">Plain English First</div>
+    <p>IFRS 15 says: recognise revenue when you've done what you promised to do for the customer — not when you issue the invoice or collect the cash. For a luxury watch sold in the Chopard boutique, that's simple: revenue at point of sale. But for consignment stock, concession arrangements, gift cards, loyalty points, and repair services, the "when you've done what you promised" question gets complicated fast.</p>
+  </div>
+
+  <div class="concept">
+    <h3>The 5-Step Model — Trafalgar Application</h3>
+    <p><b>Step 1 — Identify the contract:</b> A brand distribution agreement + customer purchase transaction. Most of Trafalgar's revenue is retail POS — the contract with the customer is simple. The complexity is in the brand agreement structure that sits behind it.</p>
+    <p><b>Step 2 — Identify performance obligations:</b> For a watch sale: (1) transfer of the watch, (2) after-sales warranty service. These may be separate obligations. For a Gait Apple purchase: hardware delivery + extended warranty are typically separate. Revenue must be allocated across each obligation.</p>
+    <p><b>Step 3 — Determine transaction price:</b> Watch price including any seasonal discount, less any variable consideration. Loyalty points issued = a reduction in transaction price (not a marketing expense).</p>
+    <p><b>Step 4 — Allocate to performance obligations:</b> If a watch includes a two-year service as a bundled offer: allocate transaction price between the watch (revenue at sale) and the service (deferred, recognised over service period).</p>
+    <p><b>Step 5 — Recognise when obligation satisfied:</b> Physical goods: at transfer of control (POS for retail). Services: over time (repair, after-sales). E-commerce: at delivery to customer — not at dispatch.</p>
+  </div>
+
+  <details class="qcard">
+    <summary><span class="qnum">Q3.1</span><span class="tag">IFRS 15</span><span class="qtext">Trafalgar sells Chopard watches on a consignment basis — the brand retains title until the customer buys. How does revenue recognition differ from an outright purchase model?</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why it matters:</b> This is the single most important technical distinction in luxury retail revenue recognition — and the one most likely to be misapplied.</p>
+      <div class="approach"><h4>Consignment Model</h4>
+        <p>If Chopard retains the risks and rewards of ownership until the end customer buys, this is a consignment arrangement. Trafalgar is the agent. Revenue recognised = net commission only (the margin earned), not the gross watch price. Inventory is not on Trafalgar's balance sheet — it remains Chopard's asset until sold. The key IFRS 15 test: does Trafalgar control the goods before transferring them to the customer? If no — agent model, net revenue.</p>
+      </div>
+      <div class="approach"><h4>Outright Purchase Model</h4>
+        <p>Trafalgar buys watches from Chopard, takes ownership, and bears the inventory risk. Revenue = gross selling price at POS. COGS = original purchase price. Inventory on Trafalgar's balance sheet until sold (IAS 2). If the watch doesn't sell, the loss is Trafalgar's.</p>
+      </div>
+      <div class="anchor"><b>The Finance Director's job</b>Know, for every brand, which model applies. The answer is in the brand distribution agreement — not in the accounting system. Misclassifying a consignment brand as outright purchase overstates both revenue and assets. Auditors will test this.</div>
+    </div>
+  </details>
+
+  <details class="qcard">
+    <summary><span class="qnum">Q3.2</span><span class="tag">IFRS 15</span><span class="qtext">Trafalgar's itsluxury.com platform sells watches online and offers a 14-day return window. How do you handle revenue recognition and returns provisioning?</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why it matters:</b> E-commerce revenue recognition has two specific complications that in-store sales don't — delivery timing and returns.</p>
+      <div class="approach"><h4>Revenue recognition point</h4>
+        <p>Revenue is recognised at the point of control transfer — for e-commerce, that's delivery to the customer (confirmed by courier scan), not dispatch from warehouse. For Kuwait orders, the gap between dispatch and delivery is typically 1–2 days, but for KSA cross-border orders, it can be 3–5 days. The month-end cut-off must capture in-transit orders in the correct period — this is a frequent audit adjustment.</p>
+      </div>
+      <div class="approach"><h4>Returns provision</h4>
+        <p>Luxury online returns can reach 15–25% of orders, particularly for jewellery and fashion. IFRS 15 requires a variable consideration adjustment — estimate expected returns based on historical data and reduce revenue accordingly, creating a refund liability. The returned goods are recognised as a separate "right of return" asset at cost. If the returned goods can be resold at original price — fine. If they need markdown or reconditioning — the asset may need to be held below cost.</p>
+      </div>
+      <div class="anchor"><b>Anchor line</b>"E-commerce revenue is recognised at delivery, not dispatch. The return provision is not a contingency — it's a mandatory variable consideration adjustment under IFRS 15."</div>
+    </div>
+  </details>
+
+  <!-- IFRS 16 -->
+  <div class="sec-head"><span class="sec-num">IFRS 16</span><h2>Leases — Critical for a 55+ Store Retailer</h2></div>
+  <p class="sec-intro">IFRS 16 is arguably the most impactful standard for Trafalgar financially — 55+ mall leases, each recognised as a Right-of-Use Asset and a Lease Liability, has transformed the balance sheet and income statement compared to the old IAS 17 operating lease treatment.</p>
+
+  <div class="worked">
+    <h3>Worked Example — IFRS 16 for a Trafalgar Kuwait Boutique Lease</h3>
+    <p class="setup">New standalone Furla boutique in 360 Mall, Kuwait. Lease term: 5 years. Annual rent: KWD 40,000. No renewal option assumed reasonably certain. Implicit rate not determinable; incremental borrowing rate: 6% p.a. No variable rent component. Illustrative numbers.</p>
+    <table class="calc">
+      <tr><th>Step</th><th>Item</th><th class="num">KWD</th></tr>
+      <tr><td>1</td><td>Present value of lease payments (annuity, 5 yrs, 6%)</td><td class="num">168,494</td></tr>
+      <tr class="good"><td></td><td><b>Right-of-Use Asset (opening balance)</b></td><td class="num"><b>168,494</b></td></tr>
+      <tr class="good"><td></td><td><b>Lease Liability (opening balance)</b></td><td class="num"><b>168,494</b></td></tr>
+      <tr><td colspan="3" style="padding-top:12px;font-weight:600;font-size:12px;color:var(--slate)">Year 1 Income Statement Impact</td></tr>
+      <tr><td>2</td><td>Depreciation of ROU Asset (168,494 ÷ 5 yrs)</td><td class="num">33,699</td></tr>
+      <tr><td>3</td><td>Interest on lease liability (168,494 × 6%)</td><td class="num">10,110</td></tr>
+      <tr class="plug"><td></td><td>Total charge to P&amp;L — Year 1</td><td class="num">43,809</td></tr>
+      <tr><td colspan="3" style="padding-top:12px;font-weight:600;font-size:12px;color:var(--slate)">Under old IAS 17, the charge would have been straight rent: KWD 40,000</td></tr>
+      <tr class="warn"><td></td><td>Difference — IFRS 16 vs old rent-straight-lining</td><td class="num">+3,809 higher</td></tr>
+    </table>
+    <div class="takeaway"><b>Key impact at group level:</b> with 55+ leases, the cumulative ROU Assets and Lease Liabilities are material on Trafalgar's balance sheet. EBITDA improves under IFRS 16 (rent is replaced by depreciation + interest, both below EBITDA line) but net profit is slightly lower in early lease years due to front-loading of interest. This must be clearly explained to ownership when presenting EBITDA improvements — "EBITDA is up, but partly because IFRS 16 reclassified our rent."</div>
+  </div>
+
+  <details class="qcard">
+    <summary><span class="qnum">Q3.3</span><span class="tag">IFRS 16</span><span class="qtext">Several Trafalgar boutiques in GCC malls have a variable rent component — base rent plus a percentage of monthly sales. How does IFRS 16 handle the variable element?</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why it matters:</b> Variable lease payments that depend on sales performance are excluded from the lease liability calculation under IFRS 16. But they're still a real cost — and they need to be tracked and provisioned separately.</p>
+      <div class="approach"><h4>The IFRS 16 treatment</h4>
+        <p>Lease payments that depend on a performance metric (revenue, footfall) that was not fixed at lease commencement are excluded from the initial lease liability measurement. They're expensed as incurred — as rent expense, period by period. The lease liability is calculated only on the fixed, in-substance-fixed components. This means the income statement has two components: (1) depreciation + interest from the fixed component (IFRS 16), and (2) variable rent expense as it accrues (P&amp;L charge, not balance sheet). Failing to separate these gives a misleading EBITDA picture.</p>
+      </div>
+      <div class="anchor"><b>Finance Director action</b>Review every lease agreement — particularly GCC mall leases — for variable rent clauses. The management pack should separately disclose IFRS 16 depreciation/interest and variable lease charges, so the real occupancy cost is visible.</div>
+    </div>
+  </details>
+
+  <!-- IAS 2 -->
+  <div class="sec-head"><span class="sec-num">IAS 2</span><h2>Inventories — The Largest Asset and Biggest Risk</h2></div>
+
+  <div class="concept">
+    <h3>IAS 2 Applied to Trafalgar's Inventory Categories</h3>
+    <p><b>Valuation principle:</b> Lower of cost and net realisable value (NRV). For most of Trafalgar's inventory, cost is the relevant measure — but the NRV test becomes critical for aged or slow-moving stock.</p>
+    <p><b>Cost method by category:</b> Ultra-premium watches and bespoke jewellery (Patek Philippe, Harry Winston): specific identification — each piece tracked individually by serial number. Prestige watches and fashion (TAG Heuer, Furla): weighted average cost is acceptable given higher volume. Apple products: FIFO or weighted average — Apple refreshes product cycles aggressively, so older models have genuine NRV risk below cost.</p>
+    <p><b>Gold and precious metals content:</b> Some jewellery items contain precious metals whose commodity value fluctuates. If gold price declines materially after purchase, the NRV of high-gold-content jewellery may fall below cost — requiring a provision. This is an area where the Finance Director needs to monitor commodity prices, not just inventory aging.</p>
+    <p class="ref">Standards: IAS 2, paragraphs 9–33</p>
+  </div>
+
+  <details class="qcard">
+    <summary><span class="qnum">Q3.4</span><span class="tag">IAS 2</span><span class="qtext">How would you establish an inventory provisioning policy for a group that holds ultra-premium watches, fashion accessories, and Apple products simultaneously?</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why it matters:</b> A single blanket provisioning policy across all inventory categories is indefensible to auditors and misleading to management. The FD needs to build and defend a category-specific policy.</p>
+      <div class="approach"><h4>Category-specific aging thresholds</h4>
+        <p><b>Ultra-premium watches (Patek Philippe, Harry Winston, Chopard ultra):</b> No provision for 0–24 months. 10% provision at 24–36 months. 25% at 36–48 months. These pieces are collectible — NRV often exceeds cost even after several years. Individual piece assessment required for items aged 48+ months.<br><br><b>Prestige watches and jewellery (TAG Heuer, Dior, Versace):</b> No provision 0–12 months. 10% provision 12–18 months. 25% at 18–24 months. 50%+ or write-off at 24+ months depending on brand desirability and any price support from the principal.<br><br><b>Fashion (Aigner, Furla — seasonal collections):</b> Provision at 50% immediately after the relevant selling season. Full provision or markdown to NRV within 18 months. Fashion aged inventory has very limited resale value in luxury retail.<br><br><b>Apple / Gait (technology):</b> No provision 0–30 days. 25% provision 30–60 days post-Apple product refresh cycle. 50%+ at 60–90 days. Apple refreshes its lineup annually — older model NRV can drop rapidly.</p>
+      </div>
+      <div class="anchor"><b>Finance Director action</b>Document the policy formally, get CEO and auditor sign-off, apply it consistently. The auditor's single biggest inventory challenge in retail is inconsistent provisioning methodology — having a written, board-approved policy removes that discussion.</div>
+    </div>
+  </details>
+
+  <footer>FD-TLG-2026 &nbsp;·&nbsp; Volume 3 of 6 &nbsp;·&nbsp; Confidential — not for distribution</footer>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- VOL 4 — BRAND & CONCESSION ACCOUNTING -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-vol4">
+<div class="wrap">
+
+  <div class="cover">
+    <div class="stamp">FD-TLG-2026 · Vol 4 of 6</div>
+    <div class="fileref">FD-TLG-2026-V4 · Brand &amp; Concession Accounting · Confidential</div>
+    <h1 class="title">Brand Agreement Accounting — The FD's Most Specialist Territory</h1>
+    <div class="subtitle">Consignment vs. outright · IFRS 15 principal/agent · Fit-out CAPEX · Franchise fees · Brand co-op marketing</div>
+  </div>
+
+  <div class="howto"><b>This volume</b> covers the accounting for Trafalgar's brand relationships — the area that is most specific to luxury retail and most likely to contain unresolved issues in the current finance function. A new Finance Director who masters this area gains credibility with both auditors and brand principals.</div>
+
+  <div class="toolbar">
+    <button class="btn" onclick="document.querySelectorAll('#tab-vol4 details').forEach(d=>d.open=true)">Expand all</button>
+    <button class="btn" onclick="document.querySelectorAll('#tab-vol4 details').forEach(d=>d.open=false)">Collapse all</button>
+  </div>
+
+  <div class="sec-head"><span class="sec-num">BA1</span><h2>The Key Questions for Every Brand Agreement</h2></div>
+  <p class="sec-intro">Before determining the accounting treatment for any brand relationship, these 9 questions must be answered. The answers determine everything that follows: revenue recognition, inventory classification, balance sheet treatment, and disclosure.</p>
+
+  <div class="concept">
+    <h3>Brand Onboarding Checklist — Finance Director's 9 Questions</h3>
+    <p><b>1. Who owns the inventory?</b> Consignment = brand; outright purchase = Trafalgar. This single answer determines IAS 2 treatment and balance sheet presentation. If consignment, the inventory is a note disclosure, not a balance sheet asset.</p>
+    <p><b>2. Who sets the retail price?</b> If the brand mandates the retail price (Patek Philippe, Apple), Trafalgar's margin is fixed and its exposure is limited to the cost of goods. If Trafalgar sets the price, it bears both upside and downside.</p>
+    <p><b>3. Are there minimum purchase commitments?</b> A take-or-pay clause in a brand distribution agreement is a purchase commitment — disclosed as a contingent liability under IAS 37 or potentially recognised as a financial liability if the commitment is unconditional.</p>
+    <p><b>4. What are the return rights?</b> If Trafalgar can return unsold inventory to the brand at full cost, the inventory write-down risk is dramatically reduced. The return right must be in writing — not assumed from commercial practice.</p>
+    <p><b>5. Is there a royalty or franchise fee?</b> A recurring fee for brand rights use is typically expensed as incurred (period cost). An upfront fee for a long-term distribution right may require capitalisation as an intangible asset and amortisation over the agreement term.</p>
+    <p><b>6. Who pays for the store fit-out?</b> If Trafalgar pays the full fit-out cost of a branded boutique, it is capitalised as PPE (or leasehold improvements), depreciated over the shorter of the lease term or useful life. If the brand contributes to fit-out cost, the contribution is a reduction of the asset cost, not income.</p>
+    <p><b>7. Are there brand KPI penalties or bonuses?</b> Performance-linked payments to the brand (if Trafalgar doesn't hit sales targets) or from the brand (bonuses for exceeding targets) are variable consideration under IFRS 9/15. Accrue on probability-weighted basis.</p>
+    <p><b>8. What are the termination clauses?</b> If a brand can exit the agreement with 6 months' notice, the remaining lease term on the store becomes a potential impairment trigger — the store's cash flows are only guaranteed to cover the early years of a 5-year IFRS 16 lease. This must be considered in the IAS 36 CGU assessment.</p>
+    <p><b>9. What is the brand co-op marketing contribution?</b> Many luxury brands contribute a fixed percentage of sales to local marketing activities. Should this be presented gross (Trafalgar recognises marketing income and separately expenses marketing) or net (Trafalgar expenses only the net cost)? IFRS 15 has specific guidance — present on a net basis unless Trafalgar provides a distinct marketing service to the brand as a separate performance obligation.</p>
+  </div>
+
+  <div class="sec-head"><span class="sec-num">BA2</span><h2>Accounting Treatment — The Decision Matrix</h2></div>
+
+  <div class="worked">
+    <h3>Accounting Treatment by Brand Arrangement Type</h3>
+    <p class="setup">Reference matrix for Finance Director onboarding. Apply to each of Trafalgar's 40+ brand relationships within the first 30 days.</p>
+    <table class="calc">
+      <tr><th>Arrangement Type</th><th>Balance Sheet</th><th>P&amp;L Treatment</th><th>Standard</th></tr>
+      <tr><td><b>Outright purchase — boutique</b></td><td>Inventory at cost (IAS 2)</td><td>Revenue at POS; COGS at cost</td><td>IAS 2, IFRS 15</td></tr>
+      <tr><td><b>Consignment from brand</b></td><td>No inventory; disclosure in notes only</td><td>Net commission revenue at point of sale</td><td>IFRS 15 (agent)</td></tr>
+      <tr><td><b>Concession — Trafalgar controls goods</b></td><td>Inventory on B/S until sold</td><td>Gross revenue — Trafalgar is principal</td><td>IFRS 15 (principal)</td></tr>
+      <tr><td><b>Concession — brand controls goods</b></td><td>No inventory; commission receivable</td><td>Net commission only</td><td>IFRS 15 (agent)</td></tr>
+      <tr><td><b>Store fit-out CAPEX (Trafalgar pays)</b></td><td>PPE / leasehold improvement</td><td>Depreciation over lease term</td><td>IAS 16</td></tr>
+      <tr><td><b>Brand contribution to fit-out</b></td><td>Reduces PPE cost; not income</td><td>Lower depreciation charge</td><td>IAS 16, IAS 20</td></tr>
+      <tr><td><b>Upfront franchise / licence fee</b></td><td>Intangible asset if >1 yr benefit</td><td>Amortisation over agreement term</td><td>IAS 38</td></tr>
+      <tr><td><b>Recurring royalty / brand fee</b></td><td>Accrual (prepaid or payable)</td><td>Period expense as incurred</td><td>IAS 37 / contract</td></tr>
+      <tr><td><b>Store lease (IFRS 16)</b></td><td>ROU Asset + Lease Liability</td><td>Depreciation + interest (not rent)</td><td>IFRS 16</td></tr>
+      <tr><td><b>FX payable to brand (EUR/CHF)</b></td><td>Monetary liability — retranslated at closing rate</td><td>Unrealised FX gain/loss P&amp;L</td><td>IAS 21</td></tr>
+      <tr class="warn"><td><b>Consignment misclassified as outright</b></td><td>Overstated inventory asset</td><td>Overstated revenue and COGS</td><td>Material misstatement risk</td></tr>
+    </table>
+    <div class="takeaway"><b>The single most impactful action in the first 30 days:</b> map every brand relationship to this matrix. The current accounting may have assumed "outright purchase" for arrangements that are actually consignment — a common error in luxury retail finance functions that haven't had a technically strong FD applying the tests rigorously. Auditors will identify this. The FD should identify it first.</div>
+  </div>
+
+  <details class="qcard">
+    <summary><span class="qnum">Q4.1</span><span class="tag">BRAND ACCT</span><span class="qtext">Chopard contributes KWD 80,000 toward the fit-out of a new boutique that costs Trafalgar KWD 350,000 total. How is the contribution accounted for?</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why it matters:</b> Brand fit-out contributions are commonly misclassified as income — which overstates revenue and understates the true cost of the asset.</p>
+      <div class="approach"><h4>The correct treatment</h4>
+        <p>Chopard's KWD 80,000 contribution reduces the cost of the leasehold improvement asset, not recognise as income. Trafalgar capitalises the boutique fit-out at its gross cost (KWD 350,000), then deducts the Chopard contribution, giving a net asset of KWD 270,000 for depreciation purposes. The rationale: the brand contribution is a cost-sharing arrangement for an asset that will generate economic benefits for Trafalgar — it's not a revenue-generating activity. Recognising it as income and simultaneously depreciating the full KWD 350,000 double-counts the benefit.</p>
+      </div>
+      <div class="anchor"><b>Anchor line</b>"A brand fit-out contribution is not income — it's a reduction of the asset cost. Capitalise net. This affects depreciation from day one of the boutique's life."</div>
+    </div>
+  </details>
+
+  <details class="qcard">
+    <summary><span class="qnum">Q4.2</span><span class="tag">BRAND ACCT</span><span class="qtext">Trafalgar signs a 10-year distribution agreement with a new European fashion brand and pays an upfront exclusivity fee of KWD 120,000. How is this treated?</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why it matters:</b> Upfront fees for distribution rights are sometimes expensed immediately, which is incorrect if the fee provides a benefit over future periods.</p>
+      <div class="approach"><h4>IAS 38 application</h4>
+        <p>The KWD 120,000 exclusivity fee provides an identifiable asset — the right to be the exclusive retailer of this brand in the GCC for 10 years. It meets the IAS 38 recognition criteria: identifiable (contractually separable), controlled by Trafalgar (via the exclusivity clause), and expected to generate future economic benefits (sales). Capitalise as an intangible asset and amortise over the 10-year agreement term: KWD 12,000 per annum amortisation charge.</p>
+      </div>
+      <div class="approach"><h4>The impairment test</h4>
+        <p>If the brand relationship is terminated early (brand pulls out, Trafalgar underperforms), the remaining unamortised intangible is an impairment trigger under IAS 36. The CGU is the brand business — test the remaining intangible value against the recoverable amount. Don't wait for the auditor to raise this at year-end.</p>
+      </div>
+      <div class="anchor"><b>Anchor line</b>"An upfront distribution right fee is an intangible asset, not a period expense. Amortise it over the agreement term. If the relationship ends early, impair immediately."</div>
+    </div>
+  </details>
+
+  <footer>FD-TLG-2026 &nbsp;·&nbsp; Volume 4 of 6 &nbsp;·&nbsp; Confidential — not for distribution</footer>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- VOL 5 — TAX, FX & TREASURY -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-vol5">
+<div class="wrap">
+
+  <div class="cover">
+    <div class="stamp">FD-TLG-2026 · Vol 5 of 6</div>
+    <div class="fileref">FD-TLG-2026-V5 · Multi-Country Tax, FX &amp; Treasury · Confidential</div>
+    <h1 class="title">5-Country Tax, FX &amp; Treasury — The GCC Finance Director's Complexity Layer</h1>
+    <div class="subtitle">Kuwait · Saudi Arabia · UAE · Bahrain · Qatar · IAS 21 · Currency management · Treasury framework</div>
+  </div>
+
+  <div class="howto"><b>This volume</b> covers the five-jurisdiction tax and regulatory framework, the IAS 21 foreign currency translation mechanics, and the treasury management framework. This is where the Finance Director adds disproportionate value in a regionally expanding group — because getting these wrong is expensive.</div>
+
+  <div class="toolbar">
+    <button class="btn" onclick="document.querySelectorAll('#tab-vol5 details').forEach(d=>d.open=true)">Expand all</button>
+    <button class="btn" onclick="document.querySelectorAll('#tab-vol5 details').forEach(d=>d.open=false)">Collapse all</button>
+  </div>
+
+  <div class="sec-head"><span class="sec-num">TX1</span><h2>5-Country Tax &amp; Regulatory Matrix</h2></div>
+
+  <table class="calc">
+    <tr><th>Country</th><th>Corp Tax</th><th>VAT</th><th>Zakat</th><th>Withholding</th><th>Key Filing / Risk</th></tr>
+    <tr><td><b>🇰🇼 Kuwait</b></td><td>0% (domestic cos.)</td><td>None</td><td>No</td><td>5% — foreign contractors (Law 2/2008)</td><td>KFAS 1% levy; NLST 2.5%; Manpower Support Fund; KTA registration for WHT compliance</td></tr>
+    <tr><td><b>🇸🇦 KSA</b></td><td>20% (foreign); Zakat 2.5%</td><td>15%</td><td>Yes — on net assets</td><td>5–20% by service type</td><td>GAZT filing; WAM certification; GOSI; most complex jurisdiction in the group</td></tr>
+    <tr><td><b>🇦🇪 UAE</b></td><td>9% (from Jun 2023, &gt;AED 375K profit)</td><td>5%</td><td>No (federal)</td><td>None</td><td>FTA registration; transfer pricing docs now required for intra-group transactions</td></tr>
+    <tr><td><b>🇧🇭 Bahrain</b></td><td>0% (non-oil)</td><td>10% (2022)</td><td>No</td><td>None</td><td>NBR filing; social insurance; relatively straightforward</td></tr>
+    <tr><td><b>🇶🇦 Qatar</b></td><td>10%</td><td>None (currently)</td><td>Yes — Qatari-owned portion</td><td>5–7%</td><td>QFC option; RACA licensing for retail; compliance relatively newer for Trafalgar</td></tr>
+  </table>
+
+  <div class="takeaway"><b>Priority action:</b> Saudi Arabia is the most complex and highest-risk jurisdiction. Trafalgar's Riyadh HQ and 10+ KSA stores are the group's most significant international operation by store count and by regulatory complexity. The Finance Director must ensure a qualified local finance/tax resource is in place in Riyadh — and that the Kuwait FD has direct visibility into KSA VAT returns, Zakat calculations, and GAZT filing status at all times.</div>
+
+  <details class="qcard">
+    <summary><span class="qnum">Q5.1</span><span class="tag">TAX — KSA</span><span class="qtext">Trafalgar charges the Saudi entity a management fee from Kuwait for central services. What are the transfer pricing implications?</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why it matters:</b> Intercompany management fees across GCC borders are a primary GAZT audit target in Saudi Arabia. Getting this wrong creates both tax and penalty exposure.</p>
+      <div class="approach"><h4>The arm's-length principle</h4>
+        <p>Under Saudi Arabia's transfer pricing rules (effective from 2019), all controlled transactions between related parties must be priced on an arm's-length basis. A management fee from the Kuwait parent to the Saudi entity must be: (1) documented in a formal intercompany service agreement; (2) priced at a rate that an independent party would accept; (3) supported by a transfer pricing study if the fee is material. Typical approach: cost-plus method — Kuwait's central cost base (finance, IT, HR, legal) allocated to the Saudi entity based on revenue%, headcount%, or floor area%, with a mark-up of 5–10%.</p>
+      </div>
+      <div class="approach"><h4>The documentation requirement</h4>
+        <p>GAZT can and does challenge undocumented or poorly documented management fees — reclassifying them as taxable income in the Saudi entity or disallowing the deduction. The Finance Director must ensure: formal agreement, annual update to the TP study, and clear evidence that the services were actually rendered (email trails, project logs, time sheets if applicable).</p>
+      </div>
+      <div class="anchor"><b>Anchor line</b>"In KSA, a management fee without a documented transfer pricing study is a tax risk. I'd have the TP documentation in place before the first intercompany invoice is raised."</div>
+    </div>
+  </details>
+
+  <!-- IAS 21 -->
+  <div class="sec-head"><span class="sec-num">TX2</span><h2>IAS 21 — Multi-Currency Consolidation for 5 Entities</h2></div>
+  <p class="sec-intro">Trafalgar operates in 5 GCC currencies: KWD, SAR, AED, BHD, QAR. The Kuwait entity also purchases inventory in EUR and CHF from European brand principals. IAS 21 governs how foreign currency transactions and foreign operations are translated.</p>
+
+  <div class="concept">
+    <h3>IAS 21 — The Two Translation Problems</h3>
+    <p><b>Problem 1 — Transactional (within an entity):</b> A Trafalgar Kuwait purchase invoice from Chopard is denominated in CHF. On the invoice date, it's translated at the spot rate to KWD. On the payment date, the rate may have changed. The difference = a realised FX gain or loss, recognised in P&amp;L (IAS 21, para 28). Between invoice and payment — the outstanding payable is retranslated at each reporting date, generating unrealised gains/losses in P&amp;L.</p>
+    <p><b>Problem 2 — Translational (group consolidation):</b> The Saudi subsidiary prepares accounts in SAR. When consolidating into the group in KWD: (1) Balance sheet items translated at closing rate (period-end). (2) P&amp;L items translated at average rate for the period. (3) The difference between these two rates generates a translation reserve — recorded in Other Comprehensive Income (OCI), not P&amp;L. This reserve moves every period as rates change.</p>
+    <p><b>Practical implication:</b> Because all GCC currencies are pegged to the USD (KWD to a basket, SAR/AED/QAR/BHD directly to USD), the intercompany translational exposure across GCC entities is minimal. The real FX risk is transactional: EUR and CHF brand payables sitting on the Kuwait balance sheet between order placement and payment.</p>
+  </div>
+
+  <div class="worked">
+    <h3>Worked Example — CHF Brand Payable, FX Movement (KWD)</h3>
+    <p class="setup">Trafalgar Kuwait orders CHF 200,000 of Chopard watches. Invoice date: 1 November. Payment date: 31 January. Closing reporting date: 31 December. Illustrative rates.</p>
+    <table class="ledger">
+      <tr class="step-label"><td colspan="3">Step 1 — Invoice date (1 Nov): Translate CHF 200,000 at 1 CHF = KWD 0.3350</td></tr>
+      <tr><th>Account</th><th class="dr">Debit</th><th class="cr">Credit</th></tr>
+      <tr><td>Inventory — Chopard watches (IAS 2)</td><td class="dr">67,000</td><td class="cr"></td></tr>
+      <tr><td>Accounts payable — Chopard (CHF)</td><td class="dr"></td><td class="cr">67,000</td></tr>
+      <tr class="step-label"><td colspan="3">Step 2 — 31 December close: retranslate CHF 200,000 at closing rate 1 CHF = KWD 0.3400 (CHF strengthened)</td></tr>
+      <tr><th>Account</th><th class="dr">Debit</th><th class="cr">Credit</th></tr>
+      <tr><td>FX loss — P&amp;L (IAS 21 monetary retranslation)</td><td class="dr">1,000</td><td class="cr"></td></tr>
+      <tr><td>Accounts payable — Chopard (CHF)</td><td class="dr"></td><td class="cr">1,000</td></tr>
+      <tr class="step-label"><td colspan="3">Step 3 — 31 January payment: CHF 200,000 at 1 CHF = KWD 0.3380</td></tr>
+      <tr><th>Account</th><th class="dr">Debit</th><th class="cr">Credit</th></tr>
+      <tr><td>Accounts payable — Chopard</td><td class="dr">68,000</td><td class="cr"></td></tr>
+      <tr><td>Cash (KWD equivalent)</td><td class="dr"></td><td class="cr">67,600</td></tr>
+      <tr><td>FX gain — P&amp;L (rate moved back slightly)</td><td class="dr"></td><td class="cr">400</td></tr>
+    </table>
+    <div class="takeaway"><b>Key point for the interview:</b> The inventory remains at the original translated cost (KWD 67,000) — IAS 2 prohibits retranslating inventory. Only the monetary liability (the payable) is retranslated at each period end. The FX P&amp;L effect is purely on the financing leg, not the asset value. This is a distinction examiners love to test.</div>
+  </div>
+
+  <details class="qcard">
+    <summary><span class="qnum">Q5.2</span><span class="tag">IAS 21 / FX</span><span class="qtext">If you wanted to hedge the CHF exposure on a seasonal watch order placed in August for delivery in December, what would the instrument be and how is it accounted for?</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why it matters:</b> Treasury hedging instruments are tested in senior finance interviews. The accounting differs significantly depending on whether hedge accounting is applied.</p>
+      <div class="approach"><h4>The instrument: forward contract</h4>
+        <p>A forward foreign exchange contract with a Kuwait bank (NBK, Gulf Bank) locks in a specific KWD/CHF rate for the August-to-December period. Trafalgar agrees today to buy CHF 200,000 at KWD 0.3360 in December, regardless of where the spot rate is at that point. Cost of the forward is the forward point premium embedded in the quoted rate.</p>
+      </div>
+      <div class="approach"><h4>Accounting — without hedge accounting (simpler, but more P&amp;L volatility)</h4>
+        <p>The forward contract is measured at fair value through P&amp;L (FVTPL) under IFRS 9. Each period, the change in fair value of the forward generates a P&amp;L gain or loss — which partially offsets (but doesn't perfectly offset) the retranslation gain/loss on the underlying payable. The accounting mismatch creates noise in the P&amp;L. For Trafalgar, given it's not a listed entity and the forward book is not enormous, FVTPL is likely the practical approach rather than formal hedge accounting documentation.</p>
+      </div>
+      <div class="anchor"><b>Anchor line</b>"Forward contract on the CHF exposure, measured at FVTPL under IFRS 9. For a private group at this scale, the P&amp;L noise from FVTPL is manageable and avoids the formal documentation burden of hedge accounting designation."</div>
+    </div>
+  </details>
+
+  <footer>FD-TLG-2026 &nbsp;·&nbsp; Volume 5 of 6 &nbsp;·&nbsp; Confidential — not for distribution</footer>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- VOL 6 — CEO ROLEPLAY & CLOSING -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-vol6">
+<div class="wrap">
+
+  <div class="cover">
+    <div class="stamp">FD-TLG-2026 · Vol 6 of 6</div>
+    <div class="fileref">FD-TLG-2026-V6 · CEO Roleplay &amp; Closing Material · Confidential</div>
+    <h1 class="title">CEO Roleplay, Strategic Questions &amp; Day-Before Checklist</h1>
+    <div class="subtitle">Hard scenarios · Questions to ask Amer Al Ansari · Final memorisation checklist</div>
+  </div>
+
+  <div class="howto"><b>This volume</b> is for the final 24–48 hours. It contains the hardest scenario questions you could face, the strategic questions you should ask the CEO, and the complete day-before memorisation checklist. Work through it in self-test mode — read each card, speak your answer before clicking.</div>
+
+  <div class="toolbar">
+    <button class="btn" onclick="document.querySelectorAll('#tab-vol6 details').forEach(d=>d.open=true)">Expand all</button>
+    <button class="btn" onclick="document.querySelectorAll('#tab-vol6 details').forEach(d=>d.open=false)">Collapse all (self-test mode)</button>
+  </div>
+
+  <!-- Hard Scenarios -->
+  <div class="round-head">
+    <span class="round-num">HARD SCENARIOS</span>
+    <h2>The Scenarios That Catch Candidates Off Guard</h2>
+    <span class="round-who">Amer Al Ansari</span>
+  </div>
+
+  <details class="qcard ceo">
+    <summary><span class="qnum">S1</span><span class="tag">CEO</span><span class="qtext">We're about to add a major new brand to our portfolio. How do you evaluate the financial case and what do you need from me before you can recommend it?</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why he's asking:</b> This is a "Finance Director as business partner" test. The wrong answer is a generic due diligence list. The right answer shows you understand the specific economics of a brand addition in luxury retail.</p>
+      <div class="approach"><h4>What I'd need to model it properly</h4>
+        <p><b>The business case inputs:</b> (1) Brand agreement type — outright purchase or consignment? This determines working capital requirements. (2) Minimum purchase commitment — how much inventory am I forced to hold? (3) Brand gross margin — what percentage does the brand expect me to mark up? Fixed by brand or negotiable? (4) Store format requirement — standalone boutique or counter in existing multi-brand? If standalone: new lease, new CAPEX, new lease liability under IFRS 16. (5) Revenue ramp assumptions — how long before this brand reaches break-even at the store level? 12–18 months is typical for a new luxury concept in Kuwait. (6) Existing brand competition — does this brand cannabalise Trafalgar's existing portfolio in the same category?</p>
+      </div>
+      <div class="approach"><h4>The financial model output</h4>
+        <p>A three-scenario model (bear/base/bull) showing: Year 1–5 four-wall EBITDA by store, cumulative cash investment (CAPEX + working capital), payback period, and IRR. A specific break-even analysis: at what revenue level does this brand become EBITDA-positive at the store level? And a go/no-go recommendation — including my honest view on whether the bear case is survivable if it materialises.</p>
+      </div>
+      <div class="anchor"><b>Anchor line</b>"Give me the brand agreement, the proposed locations, and access to the brand's track record in comparable markets. I'll have a three-scenario investment case on your desk within a week."</div>
+    </div>
+  </details>
+
+  <details class="qcard ceo">
+    <summary><span class="qnum">S2</span><span class="tag">CEO</span><span class="qtext">A Chopard boutique in The Avenues has been underperforming for 18 months. The brand is pushing us to renew the lease for 5 more years. What do you recommend?</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why he's asking:</b> This is the hardest commercial finance judgment call in retail — when to stay and when to walk. He wants to see if you'll give a real recommendation or hedge with "it depends."</p>
+      <div class="approach"><h4>The analytical framework</h4>
+        <p>The recommendation depends on three numbers: (1) Current four-wall EBITDA — is the store covering its occupancy costs, or is it burning cash? If burning cash: is the loss structural (location wrong) or cyclical (post-COVID recovery, temporary)? (2) Lease cost as % of current revenue versus projected renewal revenue. If lease cost exceeds 18% of realistic revenue at renewal, the economics don't work. (3) Exit cost — what does walking away cost? Remaining ROU Asset impairment, potential brand penalty, staff redundancy. Compare exit cost to the PV of future losses if we stay.</p>
+      </div>
+      <div class="approach"><h4>My recommendation structure</h4>
+        <p>If the analysis shows structural underperformance: recommend exit. Negotiate with Chopard on a transition — can we consolidate Chopard into the Alma showroom, maintaining the brand relationship without a standalone boutique commitment? This protects the brand partnership while eliminating the loss-making lease structure. If the analysis shows cyclical underperformance with genuine recovery trajectory: negotiate rent reduction with the mall landlord as a condition of renewal. No rent reduction, no renewal.</p>
+      </div>
+      <div class="anchor"><b>Anchor line</b>"I won't recommend a lease renewal without a three-year revenue projection that shows the store can cover its occupancy cost. If it can't — the brand needs to help us find a different format."</div>
+    </div>
+  </details>
+
+  <details class="qcard">
+    <summary><span class="qnum">S3</span><span class="tag">CEO</span><span class="qtext">Explain how you would structure the finance function for this group — team design, reporting lines, and what you'd change from day one.</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why he's asking:</b> He wants to understand your instinct about how finance should be structured in a multi-country luxury retail group — not just what you'd do in your 90 days.</p>
+      <div class="approach"><h4>The target operating model</h4>
+        <p><b>Group level (Kuwait HQ):</b> Finance Director (you) — owns consolidation, management reporting, treasury, FX, banking, audit, and board/CEO reporting. Group finance team: 2–3 finance managers covering consolidation, financial planning, and commercial finance. Reporting rhythm: monthly management pack to CEO within 5 working days of month-end.<br><br><b>Country level:</b> Each of the 5 countries needs a finance lead — Kuwait (senior FM), KSA (dedicated finance manager given complexity), UAE/Bahrain/Qatar can share a regional resource initially. Country leads own local compliance (VAT, WHT, local audit) and feed into group consolidation.<br><br><b>Vertical level:</b> A commercial finance analyst embedded with each of the 3 verticals — Watches &amp; Jewellery, Fashion, Technology. Their job is brand-level P&amp;L, four-wall EBITDA, and KPI pack for the vertical head. This is the layer that drives operational decisions, not just records them.</p>
+      </div>
+      <div class="anchor"><b>Anchor line</b>"The finance function I'd build here has three layers: group for strategy and control, country for compliance and local reporting, and vertical for brand-level commercial intelligence. Each layer has a clear owner and a clear output."</div>
+    </div>
+  </details>
+
+  <details class="qcard">
+    <summary><span class="qnum">S4</span><span class="tag">CEO</span><span class="qtext">What do you know about our e-commerce business — itsluxury.com — and what financial challenges does adding it create?</span><span class="chev"></span></summary>
+    <div class="answer">
+      <p class="why"><b>Why he's asking:</b> This is a "did you do your homework" test — and a genuine technical question about omnichannel retail finance complexity.</p>
+      <div class="approach"><h4>What I know</h4>
+        <p>itsluxury.com launched in June 2020, initially Kuwait and expanded to Saudi Arabia — selling luxury watches, jewellery, and accessories with a VIP service proposition. It operates as part of the Trafalgar family, not as a standalone entity — meaning e-commerce revenue and costs flow through the Trafalgar P&amp;L. A separate digital team was established at the Dubai D3 HQ overseeing e-commerce across Aigner, Charriol, TimeVallée, and La Maison du Luxe brands.</p>
+      </div>
+      <div class="approach"><h4>The financial complexity it adds</h4>
+        <p>(1) Revenue recognition at delivery (not POS) with returns provision required. (2) Cross-border sales (Kuwait → KSA) create customs and VAT complications — 15% Saudi VAT applies on luxury goods delivered in KSA. (3) Logistics cost: last-mile delivery in GCC for high-value luxury is expensive and must be tracked as a distinct P&amp;L line (not buried in COGS). (4) Customer acquisition cost: digital advertising spend to drive e-commerce traffic is a separate marketing investment with a different ROI calculation than in-store clienteling. (5) Inventory allocation: the same Chopard watch can be on display in the boutique and listed on itsluxury.com — inventory visibility and allocation between channels must be real-time to avoid double-selling.</p>
+      </div>
+      <div class="anchor"><b>Anchor line</b>"E-commerce adds a P&amp;L layer that needs its own reporting lines — revenue at delivery, returns provision, logistics cost, digital marketing ROI, and cross-border tax treatment. If those aren't tracked separately, the online channel's true economics are invisible."</div>
+    </div>
+  </details>
+
+  <!-- Questions to Ask -->
+  <div class="round-head">
+    <span class="round-num">YOUR TURN</span>
+    <h2>Questions to Ask Amer Al Ansari — Show Strategic Thinking</h2>
+  </div>
+
+  <p class="sec-intro">These questions signal that you've done serious research, understand the business at a strategic level, and are thinking about the role as a Finance Director — not a candidate. Ask 3–4 maximum; don't rush through all of them.</p>
+
+  <ul class="tttable">
+    <li><b>On role clarity:</b> "Trafalgar had a finance leader appointed in the 2022 restructuring. Can you help me understand how the Finance Director role is positioned relative to that structure — and whether there's a CFO-level layer above this role or whether this role effectively leads the group finance function?"</li>
+    <li><b>On the business:</b> "The Apple Premium Reseller (Gait) business operates on fundamentally different unit economics to the watch and jewellery business. Do you see Gait as a long-term strategic vertical for the group, or primarily a footfall and adjacency play in the short term?"</li>
+    <li><b>On expansion:</b> "Saudi Arabia appears to be the most significant growth market in the expansion pipeline. What's the current finance and compliance infrastructure in KSA, and where do you feel the biggest gap is that this role would address?"</li>
+    <li><b>On reporting:</b> "What does the current management reporting pack look like — and if I could give you one thing you don't have today that you wish you had, what would it be?"</li>
+    <li><b>On the finance function:</b> "Is the current finance team structured to support brand-level and store-level profitability reporting, or is this an area where you'd expect significant change under a new Finance Director?"</li>
+    <li><b>On itsluxury.com:</b> "The e-commerce business covers Kuwait and KSA and is expanding. Is it currently managed as a separate P&amp;L, or is it consolidated into the existing entity reporting — and what's the medium-term vision for its scale?"</li>
+    <li><b>On the 3-vertical structure:</b> "Since the 2022 restructuring into three distinct verticals, how integrated is the finance function across them — does each vertical have dedicated finance support, or is it a centralised function serving all three?"</li>
+  </ul>
+
+  <!-- Day-before checklist -->
+  <div class="round-head">
+    <span class="round-num">DAY BEFORE</span>
+    <h2>Final Memorisation Checklist</h2>
+  </div>
+
+  <div class="checklist">
+    <label><input type="checkbox"> <span><b>Founded:</b> 1972, Salmiya Kuwait, by Yahya &amp; Heidi Al Ansari. Now led by Amer Al Ansari (Managing Partner / CEO) and wife Christiane.</span></label>
+    <label><input type="checkbox"> <span><b>Leadership:</b> Amer Al Ansari (CEO/MP), Wael Shorbaji (COO), Nicholas Welch (Chief Retail Officer), Emad Khemane (CHRO, 15+ yrs). Clarify finance reporting structure at interview.</span></label>
+    <label><input type="checkbox"> <span><b>Scale:</b> 55+ stores, 5 countries (Kuwait, KSA, UAE, Bahrain, Qatar), 40+ brands, 500+ employees, 30+ nationalities.</span></label>
+    <label><input type="checkbox"> <span><b>3 Verticals:</b> (1) Watches &amp; Jewellery — Chopard (1972), Patek Philippe, Bvlgari, Harry Winston, TAG Heuer. (2) Fashion — Aigner, Furla, Fendi, Bimba Y Lola, Stella McCartney. (3) Technology — Gait (Apple Premium Reseller).</span></label>
+    <label><input type="checkbox"> <span><b>Concepts:</b> Alma (ultra-premium showroom), La Maison du Luxe, TimeVallée (Richemont), itsluxury.com (e-comm, Kuwait + KSA).</span></label>
+    <label><input type="checkbox"> <span><b>Revenue:</b> KW entity est. USD 36M; Group est. USD 750M (third-party — unaudited). Privately held.</span></label>
+    <label><input type="checkbox"> <span><b>2022 restructure:</b> Rebranded, 3 verticals formalised, new leadership installed, Dubai D3 regional HQ announced.</span></label>
+    <label><input type="checkbox"> <span><b>Key IFRS:</b> IFRS 15 (revenue/consignment/agent/principal) · IAS 2 (inventory by category, NRV) · IFRS 16 (55+ leases = material ROU Assets) · IAS 21 (5 currencies, EUR/CHF transactional FX) · IAS 36 (CGU impairment per store) · IFRS 9 (FX forwards, ECL on receivables).</span></label>
+    <label><input type="checkbox"> <span><b>Critical KPIs:</b> LFL growth · ATV by vertical · Inventory days by category · Sell-through rate · Lease cost as % of revenue · Four-wall EBITDA per store.</span></label>
+    <label><input type="checkbox"> <span><b>FX risk:</b> KWD pegged to USD basket (USD exposure managed by peg). Real risk = EUR and CHF brand payables for watch principals. Forward cover on committed purchase orders.</span></label>
+    <label><input type="checkbox"> <span><b>Tax complexity:</b> KSA is the most complex (20% corp tax + 15% VAT + Zakat). UAE: 9% corp tax from 2023. Kuwait: 0% domestic but 5% WHT on foreign contractors (Law 2/2008).</span></label>
+    <label><input type="checkbox"> <span><b>Your retail bridge:</b> Fantasy World Toys operated retail stores — store-level P&amp;Ls, consumer inventory, seasonal buying cycles. Lead with this before the CEO raises the distribution-vs-retail point.</span></label>
+    <label><input type="checkbox"> <span><b>90-day plan:</b> Month 1: Diagnose (brand agreements, ERP, management pack, IFRS 16 compliance, inventory provisioning). Month 2: Fix fundamentals. Month 3: Finance Transformation Roadmap to CEO.</span></label>
+    <label><input type="checkbox"> <span><b>5 anchor lines:</b> Know them cold. Don't recite them — let them come naturally when the question creates space for them.</span></label>
+  </div>
+
+  <div class="sec-head"><span class="sec-num">SYN</span><h2>The Single Most Important Distinction — For Every Part of the Interview</h2></div>
+
+  <div class="worked">
+    <h3>Consignment vs. Outright Purchase — Quick Reference</h3>
+    <p class="setup">The question the CEO most wants to know you understand, and the auditor will test hardest.</p>
+    <table class="calc">
+      <tr><th>Dimension</th><th>Outright Purchase</th><th>Consignment</th></tr>
+      <tr><td>Who owns inventory?</td><td>Trafalgar — from delivery</td><td>Brand principal — until end customer buys</td></tr>
+      <tr><td>Balance sheet?</td><td>Inventory asset (IAS 2)</td><td>Note disclosure only — not on B/S</td></tr>
+      <tr><td>Revenue recognition</td><td>Gross (selling price to customer)</td><td>Net (commission earned only)</td></tr>
+      <tr><td>IFRS 15 classification</td><td>Principal</td><td>Agent</td></tr>
+      <tr><td>Inventory write-down risk</td><td>Trafalgar bears 100%</td><td>Brand bears — unless contractually transferred</td></tr>
+      <tr><td>Working capital impact</td><td>Significant — cash tied in stock</td><td>Minimal — no cash in inventory</td></tr>
+      <tr class="warn"><td>Misclassification risk</td><td colspan="2">Treating consignment as outright purchase overstates assets and overstates gross revenue. This is a material misstatement risk that auditors test directly — and the Finance Director must catch it first.</td></tr>
+    </table>
+    <div class="takeaway"><b>The single most impactful day-one action:</b> review each brand distribution agreement and classify each relationship into the correct model. Don't assume the current accounting is right. In luxury retail groups that have grown without a strong technical finance lead, this classification is frequently inconsistent.</div>
+  </div>
+
+  <footer>FD-TLG-2026 &nbsp;·&nbsp; Volume 6 of 6 &nbsp;·&nbsp; Confidential — not for distribution</footer>
+</div>
+</div>
+
+<script>
+function switchTab(id){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tabbtn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  document.querySelector('.tabbtn[data-tab="'+id+'"]').classList.add('active');
+  window.scrollTo({top:0,behavior:'instant'});
+}
+</script>
+</body>
+</html>
