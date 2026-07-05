@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SGH Interview Prep — CA Dhruv Sharma</title>
+<style>
+:root{--bg:#FAF8F3;--card:#FFFFFF;--ink:#1E1E1B;--ink-soft:#5B5650;--teal:#14463F;--teal-soft:#E4EEEC;--amber:#B9852E;--amber-soft:#F6EBD9;--rule:#DDD6C7;--rule-soft:#EDE8DD;--plum:#5C3A52;--plum-soft:#EFE5EC;--slate:#33526B;--slate-soft:#E7EEF3;--green:#1D5C3A;--green-soft:#E2F0E8;--navy:#1C3557;--navy-soft:#E3EAF1;--red:#7B1818;--red-soft:#FBF0EE;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:900px;margin:0 auto;padding:48px 28px 100px;}
+.cover{border:1px solid var(--rule);border-radius:2px;padding:36px 36px 28px;background:var(--card);position:relative;margin-bottom:24px;}
+.stamp{position:absolute;top:24px;right:28px;font-family:"SF Mono",monospace;font-size:10.5px;letter-spacing:.12em;color:var(--amber);border:1px solid var(--amber);padding:4px 9px;border-radius:2px;text-transform:uppercase;}
+.fileref{font-family:"SF Mono",monospace;font-size:11.5px;color:var(--ink-soft);letter-spacing:.04em;margin-bottom:14px;}
+h1.title{font-family:Georgia,serif;font-size:29px;font-weight:600;margin:0 0 6px;line-height:1.2;max-width:560px;}
+.subtitle{font-size:15px;color:var(--ink-soft);margin-bottom:22px;}
+.metarow{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft);padding-top:16px;}
+.metaitem{flex:1 1 200px;padding-right:18px;margin-bottom:10px;}
+.metaitem .label{font-family:"SF Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:3px;}
+.metaitem .val{font-size:13.5px;}
+.toc{background:var(--card);border:1px solid var(--rule);border-radius:2px;padding:20px 26px;margin-bottom:24px;}
+.toc h2{font-family:Georgia,serif;font-size:15px;margin:0 0 12px;}
+.toc .grp{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin:12px 0 6px;}
+.toc ol{margin:0;padding-left:20px;font-size:13.5px;}
+.toc li{margin-bottom:5px;}
+.toc a{color:var(--teal);text-decoration:none;}
+.toc a:hover{text-decoration:underline;}
+.howto{font-size:13px;color:var(--ink-soft);background:var(--teal-soft);border-left:3px solid var(--teal);padding:12px 16px;margin-bottom:38px;border-radius:0 2px 2px 0;}
+.howto b{color:var(--teal);}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin:56px 0 6px;border-bottom:2px solid var(--ink);padding-bottom:10px;}
+.sec-num{font-family:"SF Mono",monospace;font-size:13px;color:var(--ink-soft);}
+.sec-head h2{font-family:Georgia,serif;font-size:21px;margin:0;flex:1;}
+.chip{font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;background:var(--teal-soft);color:var(--teal);padding:3px 9px;border-radius:9px;}
+.chip.amber{background:var(--amber-soft);color:var(--amber);}
+.chip.slate{background:var(--slate-soft);color:var(--slate);}
+.chip.plum{background:var(--plum-soft);color:var(--plum);}
+.chip.red{background:var(--red-soft);color:var(--red);}
+.chip.navy{background:var(--navy-soft);color:var(--navy);}
+.sec-intro{font-size:14.5px;color:var(--ink-soft);margin:14px 0 22px;max-width:760px;}
+.layman{background:var(--slate-soft);border:1px solid #C9D8E2;border-radius:2px;padding:16px 20px;margin-bottom:16px;}
+.layman .eyebrow{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);font-weight:700;margin-bottom:6px;font-family:"SF Mono",monospace;}
+.layman p{margin:0;font-size:14px;}
+.concept{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--teal);border-radius:2px;padding:18px 22px;margin-bottom:18px;}
+.concept.amber{border-left-color:var(--amber);}
+.concept.plum{border-left-color:var(--plum);}
+.concept.slate{border-left-color:var(--slate);}
+.concept.red{border-left-color:var(--red);}
+.concept.navy{border-left-color:var(--navy);}
+.concept.green{border-left-color:var(--green);}
+.concept h3{font-family:Georgia,serif;font-size:15.5px;margin:0 0 8px;color:var(--teal);}
+.concept.amber h3{color:var(--amber);}
+.concept.plum h3{color:var(--plum);}
+.concept.slate h3{color:var(--slate);}
+.concept.red h3{color:var(--red);}
+.concept.navy h3{color:var(--navy);}
+.concept.green h3{color:var(--green);}
+.concept p{margin:0 0 10px;font-size:14px;}
+.concept p:last-child{margin-bottom:0;}
+.worked{background:#FFFDF8;border:1px solid var(--amber);border-radius:2px;padding:18px 22px;margin-bottom:22px;}
+.worked h3{font-family:Georgia,serif;font-size:14.5px;margin:0 0 4px;color:var(--amber);text-transform:uppercase;letter-spacing:.03em;}
+.worked .setup{font-size:13.5px;margin:6px 0 14px;color:var(--ink-soft);}
+table.calc{width:100%;border-collapse:collapse;font-size:13.5px;margin-bottom:10px;}
+table.calc th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);border-bottom:1px solid var(--ink);padding:6px 8px;}
+table.calc td{padding:6px 8px;border-bottom:1px solid var(--rule-soft);}
+table.calc td.num{text-align:right;font-family:"SF Mono",monospace;}
+table.calc tr.total td{border-top:1.5px solid var(--ink);border-bottom:none;font-weight:600;}
+table.calc tr.good td{background:var(--teal-soft);}
+table.calc tr.bad td{background:var(--red-soft);}
+.takeaway{font-size:13.5px;background:var(--teal-soft);padding:10px 14px;border-radius:2px;margin-top:8px;}
+.takeaway b{color:var(--teal);}
+.takeaway.amber{background:var(--amber-soft);}
+.takeaway.amber b{color:var(--amber);}
+details.qcard{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--teal);border-radius:2px;margin-bottom:12px;}
+details.qcard.hr{border-left-color:var(--plum);}
+details.qcard.tech{border-left-color:var(--amber);}
+details.qcard.ifrs{border-left-color:var(--navy);}
+details.qcard summary{list-style:none;cursor:pointer;padding:15px 18px;display:flex;gap:12px;align-items:flex-start;}
+details.qcard summary::-webkit-details-marker{display:none;}
+.qnum{font-family:"SF Mono",monospace;font-size:11px;color:var(--teal);flex:0 0 auto;padding-top:2px;min-width:38px;}
+.hr .qnum{color:var(--plum);}
+.tech .qnum{color:var(--amber);}
+.ifrs .qnum{color:var(--navy);}
+.tag-pill{font-family:"SF Mono",monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;background:var(--teal-soft);color:var(--teal);padding:2px 7px;border-radius:9px;flex:0 0 auto;height:fit-content;margin-top:3px;}
+.hr .tag-pill{background:var(--plum-soft);color:var(--plum);}
+.tech .tag-pill{background:var(--amber-soft);color:var(--amber);}
+.ifrs .tag-pill{background:var(--navy-soft);color:var(--navy);}
+.qtext{font-size:14.5px;font-weight:500;flex:1;}
+summary .chev{font-size:11px;color:var(--ink-soft);flex:0 0 auto;margin-top:3px;}
+details[open] summary .chev::after{content:"▲";}
+summary .chev::after{content:"▼";}
+.answer{padding:0 18px 20px 70px;font-size:14px;}
+.why{font-size:12.5px;color:var(--ink-soft);font-style:italic;margin:0 0 14px;padding-bottom:10px;border-bottom:1px solid var(--rule-soft);}
+.approach{margin-bottom:14px;}
+.approach h4{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--teal);margin:0 0 5px;font-family:"SF Mono",monospace;}
+.hr .approach h4{color:var(--plum);}
+.tech .approach h4{color:var(--amber);}
+.ifrs .approach h4{color:var(--navy);}
+.approach p{margin:0;font-size:14px;}
+.anchor{margin-top:14px;padding:10px 14px;background:var(--bg);border-radius:2px;font-size:13.5px;font-style:italic;border:1px dashed var(--rule);}
+.anchor b{font-style:normal;font-family:"SF Mono",monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:4px;}
+.warn-box{background:var(--red-soft);border-left:4px solid var(--red);border-radius:2px;padding:10px 14px;margin-top:10px;font-size:13px;}
+.warn-box b{color:var(--red);font-family:"SF Mono",monospace;font-size:10px;text-transform:uppercase;letter-spacing:.04em;margin-right:6px;}
+.good-box{background:var(--teal-soft);border-left:4px solid var(--teal);border-radius:2px;padding:10px 14px;margin-top:10px;font-size:13px;}
+.good-box b{color:var(--teal);font-family:"SF Mono",monospace;font-size:10px;text-transform:uppercase;letter-spacing:.04em;margin-right:6px;}
+table.compare{width:100%;border-collapse:collapse;font-size:13.5px;margin:14px 0;}
+table.compare th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);border-bottom:1px solid var(--ink);padding:7px 10px;}
+table.compare td{padding:8px 10px;border-bottom:1px solid var(--rule-soft);vertical-align:top;line-height:1.5;}
+table.compare tr:nth-child(even) td{background:#FAFAF6;}
+table.compare td.conv{background:#EBF2FF;color:#1E3A6B;font-weight:500;}
+table.compare td.shari{background:var(--green-soft);color:var(--green);font-weight:500;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+@media(max-width:600px){.two-col{grid-template-columns:1fr;}.answer{padding-left:18px;}}
+.mini-card{background:var(--card);border:1px solid var(--rule);border-radius:2px;padding:14px 16px;}
+.mini-card .mc-lbl{font-family:"SF Mono",monospace;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft);margin-bottom:6px;}
+.mini-card p{font-size:13.5px;margin:0;line-height:1.55;}
+.number-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0;}
+@media(max-width:580px){.number-grid{grid-template-columns:repeat(2,1fr);}}
+.num-card{background:var(--card);border:1px solid var(--rule);border-radius:2px;padding:14px 16px;text-align:center;}
+.num-card .big{font-family:Georgia,serif;font-size:24px;font-weight:600;color:var(--teal);}
+.num-card .lbl{font-size:12px;color:var(--ink-soft);margin-top:4px;line-height:1.35;}
+.playbook{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:14px;}
+.playbook th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);border-bottom:1px solid var(--ink);padding:8px 10px;}
+.playbook td{padding:9px 10px;border-bottom:1px solid var(--rule-soft);vertical-align:top;}
+.toolbar{display:flex;gap:10px;margin-bottom:30px;flex-wrap:wrap;}
+.btn{font-family:"SF Mono",monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--teal);color:var(--teal);background:transparent;padding:8px 14px;border-radius:2px;cursor:pointer;}
+.btn:hover{background:var(--teal);color:#fff;}
+.btn.amber{border-color:var(--amber);color:var(--amber);}
+.btn.amber:hover{background:var(--amber);color:#fff;}
+.test-card{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--red);border-radius:2px;margin-bottom:14px;}
+.test-q-hd{display:flex;align-items:flex-start;gap:12px;padding:14px 18px;background:var(--red-soft);border-bottom:1px solid var(--rule);}
+.test-opts{padding:12px 18px;display:flex;flex-direction:column;gap:7px;}
+button.test-opt{background:#F8F5F0;border:1.5px solid var(--rule);border-radius:2px;padding:9px 13px;text-align:left;cursor:pointer;font-family:inherit;font-size:13.5px;color:var(--ink);transition:all .15s;line-height:1.4;}
+button.test-opt:hover:not(:disabled){border-color:var(--navy);background:var(--navy-soft);}
+button.test-opt.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);font-weight:600;}
+button.test-opt.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);}
+button.test-opt.reveal{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);opacity:.6;}
+button.test-opt:disabled{cursor:default;}
+.test-expl{background:var(--navy-soft);border-top:2px solid var(--navy);padding:12px 18px;font-size:13px;line-height:1.65;color:#1A2A3A;display:none;}
+.test-expl b{color:var(--navy);}
+.score-panel{display:none;background:var(--card);border:1px solid var(--rule);border-radius:2px;padding:20px 24px;margin:14px 0;}
+.score-panel.show{display:block;}
+.score-big{font-family:Georgia,serif;font-size:36px;font-weight:600;color:var(--teal);text-align:center;}
+.score-msg{text-align:center;font-size:14px;color:var(--ink-soft);margin-top:6px;}
+.checklist label{display:flex;align-items:flex-start;gap:10px;font-size:14px;margin-bottom:10px;cursor:pointer;}
+.checklist input{margin-top:3px;}
+footer{text-align:center;font-size:11.5px;color:var(--ink-soft);margin-top:50px;font-family:"SF Mono",monospace;}
+@media print{body{background:#fff;}.toolbar{display:none;}details{open:true;}}
+</style>
+</head>
+<body><div class="wrap">
+<div class="cover">
+<div class="stamp">Confidential · Personal Use</div>
+<div class="fileref">SGH-PREP-2025 / CA Dhruv Sharma / Group Finance Director</div>
+<h1 class="title">Shuwaikh Gate Holding — Interview Preparation Master File</h1>
+<div class="subtitle">Company intelligence · Islamic finance · IFRS · HR round · Technical round · Financial statements · 25-question test bank</div>
+<div class="metarow">
+<div class="metaitem"><div class="label">Candidate</div><div class="val">CA Dhruv Sharma — ICAI 2009</div></div>
+<div class="metaitem"><div class="label">Role Applied</div><div class="val">Group Finance Director</div></div>
+<div class="metaitem"><div class="label">Company</div><div class="val">Shuwaikh Gate Holding K.S.C.C</div></div>
+<div class="metaitem"><div class="label">Location</div><div class="val">Salhiya Commercial Complex, Kuwait City</div></div>
+<div class="metaitem"><div class="label">Entity Type</div><div class="val">Kuwaiti Closed Shareholding — Sharia-Compliant Holding Company</div></div>
+<div class="metaitem"><div class="label">Sections</div><div class="val">9 sections · Worked examples with numbers · 25-question interactive test</div></div>
+</div>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<div class="grp">Company Intelligence</div>
+<ol><li><a href="#s1">SGH Snapshot — subsidiaries, leadership, portfolio</a></li>
+<li><a href="#s2">Kuwait Company Types — WLL, K.S.C.C, K.S.C and Zakat rules</a></li></ol>
+<div class="grp">Islamic Finance</div>
+<ol start="3"><li><a href="#s3">Core Sharia Principles — the four rules behind every instrument</a></li>
+<li><a href="#s4">Instruments Deep Dive — Murabaha, Ijara, Sukuk, Musharakah, Mudarabah, Wakala, Takaful, IPRS</a></li>
+<li><a href="#s5">Sharia vs Conventional Financial Statements — P&amp;L, BS, terminology</a></li></ol>
+<div class="grp">Interview Preparation</div>
+<ol start="6"><li><a href="#s6">HR Round Q&amp;A — 10 coached questions with Noura Jlassi</a></li>
+<li><a href="#s7">Technical Round Q&amp;A — 6 strategic and technical questions</a></li>
+<li><a href="#s8">IFRS Standards — 8 standards mapped to SGH operations</a></li>
+<li><a href="#s9">Test Bank — 25 interactive trick questions with scoring</a></li></ol>
+</div>
+
+<div class="howto"><b>How to use:</b> Click any question card to expand the coached answer. Use the toolbar to expand all or collapse all. Print (Ctrl+P) for a clean offline copy — all cards print expanded.</div>
+
+<div class="toolbar">
+<button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">Expand All</button>
+<button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">Collapse All</button>
+<button class="btn amber" onclick="window.print()">Print / PDF</button>
+</div>
+
+<div id="s1">
+<div class="sec-head"><span class="sec-num">01</span><h2>SGH Company Snapshot</h2><span class="chip">Intelligence</span></div>
+<p class="sec-intro">Know the four subsidiaries by name. Know the leadership. Know the numbers. Walkin knowing more about SGH than candidates who have worked in real estate for 20 years.</p>
+<div class="two-col">
+<div class="mini-card"><div class="mc-lbl">Entity</div><p>Shuwaikh Gate Holding K.S.C.C — Kuwaiti Closed Shareholding Company. Founded 2004, restructured as holding company 2009.</p></div>
+<div class="mini-card"><div class="mc-lbl">Scale</div><p>KD 200M AUM · 2,000+ leasable units · 5 malls · Kuwait + UAE presence · 51–100 employees (lean holding structure)</p></div>
+<div class="mini-card"><div class="mc-lbl">Sharia Status</div><p>Fully Sharia-compliant across all financing, treasury, and investment. Sharia Supervisory Board certifies all transactions. Zakat obligation on group consolidated basis.</p></div>
+<div class="mini-card"><div class="mc-lbl">Vision</div><p>"Gateway to Excellence" — GCC regional expansion agenda. UAE already active. Broader GCC growth planned.</p></div>
+</div>
+<div class="concept amber"><h3>Leadership — Know by Name Before You Walk In</h3>
+<table class="playbook"><tr><th>Name</th><th>Role</th><th>Your Interaction</th></tr>
+<tr><td>Thamer Manahi Sanha Alosaimi</td><td>Chairman & Managing Director</td><td>Ultimately approves the hire</td></tr>
+<tr><td>Nasser Alotaibi</td><td>Chief Executive Officer</td><td>Your direct line — shapes the GFD mandate</td></tr>
+<tr><td>Fahad Meshal Al Sabah</td><td>Deputy CEO</td><td>Key stakeholder for strategic finance</td></tr>
+<tr><td>Noura Jlassi</td><td>Group HR Director</td><td>Your Round 1 interviewer</td></tr>
+<tr><td>Mohamed Adel</td><td>Chief Accountant</td><td>Your direct report as GFD — build trust fast</td></tr>
+<tr><td>Abdulmohsen Alsulaimi</td><td>Group IT Director</td><td>ERP and BI systems partner</td></tr>
+</table></div>
+<div class="concept"><h3>Four Subsidiaries — Know These Cold</h3>
+<table class="playbook"><tr><th>Subsidiary</th><th>Domain</th><th>Revenue Model</th><th>IFRS Standard</th></tr>
+<tr><td><b>Qurain International Real Estate Co.</b></td><td>Real Estate</td><td>Rental income — 5 malls, 2,000+ units, Kuwait & UAE</td><td>IAS 40 + IFRS 16 (lessor)</td></tr>
+<tr><td><b>Al-Riyada Finance & Investment Co.</b></td><td>Finance</td><td>Murabaha margins, Wakala fees, Mudarabah income</td><td>IFRS 9 (EIR) + IFRS 15 (advisory fees)</td></tr>
+<tr><td><b>Rawsam Engineering & Consulting Bureau</b></td><td>Engineering</td><td>Architecture and engineering contracts</td><td>IFRS 15 (% completion)</td></tr>
+<tr><td><b>Dar Al Shuwaikh Real Estate Co.</b></td><td>Property Management</td><td>Property management fees (under formation)</td><td>IFRS 15</td></tr>
+</table></div>
+<div class="concept slate"><h3>Your 10 Power Numbers — Memorise Before the Interview</h3>
+<div class="number-grid">
+<div class="num-card"><div class="big">20</div><div class="lbl">Years finance experience — Kuwait & GCC</div></div>
+<div class="num-card"><div class="big">13</div><div class="lbl">P&Ls managed at Bustan Group</div></div>
+<div class="num-card"><div class="big">18</div><div class="lbl">Finance team members led</div></div>
+<div class="num-card"><div class="big">200%</div><div class="lbl">Business growth in 18 months at Bustan</div></div>
+<div class="num-card"><div class="big">27%</div><div class="lbl">Reduction in overdue receivables in 6 months</div></div>
+<div class="num-card"><div class="big">USD 13M</div><div class="lbl">Long-outstanding AR — 70% recovered</div></div>
+<div class="num-card"><div class="big">40%</div><div class="lbl">Reporting cycle reduction post-SAP ERP</div></div>
+<div class="num-card"><div class="big">USD 70M+</div><div class="lbl">Treasury managed at ANDS</div></div>
+<div class="num-card"><div class="big">20%</div><div class="lbl">Forecasting accuracy improvement — President's Award</div></div>
+<div class="num-card"><div class="big">7 + 2</div><div class="lbl">Companies + main subsidiaries in current group</div></div>
+</div></div>
+</div>
+
+<div id="s2">
+<div class="sec-head"><span class="sec-num">02</span><h2>Kuwait Company Types & Legal Framework</h2><span class="chip">Intelligence</span></div>
+<p class="sec-intro">Governed by Kuwait Companies Law No. 1 of 2016. SGH is a K.S.C.C. Understanding why that matters — and how it differs from other structures — shows commercial intelligence beyond finance.</p>
+<table class="compare">
+<thead><tr><th>Type</th><th>Full Name</th><th>Min. Capital</th><th>Shares Tradeable?</th><th>Regulated By</th><th>Zakat Applicable?</th><th>Key Characteristic</th></tr></thead>
+<tbody>
+<tr><td><b>W.L.L</b></td><td>With Limited Liability</td><td>KD 1,000</td><td>No — quotas, consent needed</td><td>Ministry of Commerce</td><td>No (personal)</td><td>Most common SME structure. Max 50 partners. No public offering. Most holding subsidiaries are WLLs.</td></tr>
+<tr><td><b>K.S.C.C</b></td><td>Kuwaiti Shareholding — Closed</td><td>KD 100,000</td><td>Transferable, no public market</td><td>Ministry of Commerce</td><td>If Sharia-compliant: Yes</td><td><b>SGH's structure.</b> Board mandatory. Annual GA. MOC filing required. Stricter governance than WLL.</td></tr>
+<tr><td><b>K.S.C</b></td><td>Kuwaiti Shareholding — Public</td><td>KD 1,000,000</td><td>Yes — Boursa Kuwait</td><td>CMA + Ministry of Commerce</td><td>If Islamic: Yes (publicly disclosed)</td><td>KFH, Boubyan Bank. Quarterly filings. Independent directors. Highest governance burden.</td></tr>
+<tr><td><b>General Partnership</b></td><td>Sharikat Al-Tadamun</td><td>None</td><td>No</td><td>MOC</td><td>No (personal)</td><td>Unlimited personal liability for all partners. Used by law firms, professional practices.</td></tr>
+<tr><td><b>Limited Partnership</b></td><td>Sharikat Al-Tawsiya</td><td>None</td><td>No</td><td>MOC</td><td>No (personal)</td><td>GP = unlimited liability + management. LP = capital only, no management role, limited liability.</td></tr>
+<tr><td><b>Joint Venture</b></td><td>Sharikat Al-Muhasasa</td><td>None</td><td>N/A — no shares</td><td>None — contract only</td><td>Each party manages own</td><td>No separate legal personality. Contract between parties. Used for project consortiums, GCC JVs.</td></tr>
+</tbody>
+</table>
+<div class="concept navy"><h3>Zakat — Complete Framework for SGH as GFD</h3>
+<p><b>What it is:</b> Mandatory Islamic wealth tax — 2.5% of zakatable wealth. NOT an income tax. Calculated on asset base, not profit. A loss-making year can still generate Zakat if zakatable assets are significant.</p>
+<p><b>Zakatable assets:</b> Cash and equivalents, trade receivables (net of ECL provisions), development properties held for sale (inventory), short-term Murabaha placements, Wakala deposits.</p>
+<p><b>NOT zakatable:</b> Investment property (IAS 40 — long-term rental asset), PP&E, goodwill, long-term strategic equity investments.</p>
+<p><b>Deductions:</b> Current liabilities due within the year — trade payables, accrued expenses, short-term Murabaha payables.</p>
+<p><b>Formula:</b> (Zakatable assets − Current liabilities due within year) × 2.5% = Zakat payable</p>
+<p><b>Process as GFD:</b> Prepare Zakat workpaper from consolidated balance sheet → categorise every asset/liability → apply formula → present to SSB for certification → include in year-end board pack as part of profit appropriation (alongside dividend and statutory reserve) → disclose as a separate P&L line after PBT.</p>
+<p><b>Statutory Reserve:</b> Separate obligation — 10% of annual PAT must be transferred to a statutory reserve until it reaches 50% of paid-up capital. Non-distributable. Mandatory for all K.S.C.C companies under Kuwait Companies Law.</p>
+</div>
+</div>
+
+<div id="s3">
+<div class="sec-head"><span class="sec-num">03</span><h2>Core Sharia Principles</h2><span class="chip amber">Islamic Finance</span></div>
+<p class="sec-intro">Four principles underpin every Islamic finance instrument. Understand these and the instruments are logical extensions. Misunderstand them and everything looks like a workaround.</p>
+<div class="layman"><div class="eyebrow">The One Sentence That Explains Everything</div><p>In Islamic finance, money is not a commodity that can be rented for a price. Money is only a medium of exchange. To earn a return, you must take real economic risk — by owning an asset, sharing profit and loss, or providing a genuine service.</p></div>
+<div class="concept"><h3>Principle 1 — Prohibition of Riba (Interest) · ربا</h3>
+<p>Riba means "excess." Any predetermined fixed return on money lent — regardless of business outcome — is Riba and is forbidden. The key word is <em>predetermined</em>. If the return is fixed before the economic outcome is known, it is Riba.</p>
+<p><b>Your current world (Bustan/ANDS):</b> Gulf Bank lends KD 5M at 5.5% p.a. Monthly interest = outstanding balance × 5.5% ÷ 12. The bank rents money and earns a guaranteed return. That is Riba.</p>
+<p><b>SGH world:</b> KFH buys the asset SGH needs for KD 5M, sells it to SGH for KD 5.75M payable over 3 years. The KD 750K is a trade profit on a real sale — fixed at inception, never changing. The bank owned the asset and took (brief) ownership risk. Not Riba.</p>
+<p><b>The Murabaha markup is NOT Riba</b> — this is the most important distinction to know. Riba is a return on money. Murabaha profit is a return on a trade. Confusing them is the most common mistake.</p></div>
+<div class="concept amber"><h3>Principle 2 — Profit & Loss Sharing (PLS)</h3>
+<p>To earn a return you must share economic risk. Financer and entrepreneur share actual profits — and losses. This is the spirit of Mudarabah and Musharakah. No guaranteed return either way.</p>
+<p><b>Your analogy:</b> Every capital allocation decision you made at Bustan Group was Mudarabah in economic substance. You (holding company) were the Rab-ul-Maal. The subsidiary GM was the Mudarib. Capital deployed, expertise applied, profits flow back to the holding company. Same economic logic.</p></div>
+<div class="concept slate"><h3>Principle 3 — Asset-Backing Requirement</h3>
+<p>Every transaction must be tied to a real, tangible asset or genuine service. You cannot trade money for money at a markup. The asset must exist first. This is why Islamic banks were far less exposed in 2008 — they could not create synthetic derivatives with no underlying assets.</p>
+<p><b>SGH angle:</b> SGH's 2,000+ units and 5 malls ARE the underlying real assets behind every Sukuk issued, every Murabaha structured, every Ijara charged. The business model is inherently asset-backed at its core.</p></div>
+<div class="concept red"><h3>Principle 4 — Prohibition of Gharar & Maysir · غرر / ميسر</h3>
+<p><b>Gharar</b> = excessive contractual uncertainty about key terms. <b>Maysir</b> = gambling/speculation. Both forbidden. This prohibits speculative derivatives, conventional insurance (replaced by Takaful), and zero-sum contracts.</p>
+<p><b>Important nuance:</b> Normal business risk is NOT Gharar. A Musharakah JV may lose money — that is acceptable. Gharar specifically targets uncertainty about the key contract terms: what is being exchanged, at what price, under what conditions. Construction contracts with clear scope, price, and timeline are fine. Open-ended vague contracts are not.</p></div>
+</div>
+
+<div id="s4">
+<div class="sec-head"><span class="sec-num">04</span><h2>Islamic Finance Instruments — Deep Dive with Numbers</h2><span class="chip amber">Islamic Finance</span></div>
+<p class="sec-intro">Eight instruments. Each explained with your career as the reference point, SGH as the application, and real numbers where they matter most.</p>
+
+<div class="concept"><h3>1. Murabaha — Cost-Plus Sale · مرابحة</h3>
+<p>Bank buys an asset the client needs, sells it at a disclosed markup payable over time. Total profit is fixed at inception — never a running percentage on an outstanding balance. This distinction is everything.</p>
+<p><b>Early settlement trap:</b> In a conventional loan, paying early saves future interest. In Murabaha, the total sale price (e.g. KD 11.4M) is legally owed because it was agreed as a sale price — unless the contract has an Ibra (rebate) clause. Always check your Murabaha contracts for Ibra before planning early settlement.</p>
+<p><b>Al-Riyada context:</b> Al-Riyada buys assets for clients and sells at a markup — that spread is Al-Riyada's primary revenue. Recognised using EIR method under IFRS 9 over the facility life, not upfront.</p></div>
+
+<div class="worked"><h3>Worked Example — Commodity Murabaha Treasury Placement</h3>
+<div class="setup">SGH places KD 2,000,000 for 60 days at 3.8% p.a. via KFH. Broker A earns commission on both legs (~0.15% × 2 = KD 6,000) embedded in pricing — SGH never sees a separate invoice. The 3.8% SGH receives is already net of broker costs.</div>
+<table class="calc">
+<tr><th>Step</th><th>Party</th><th>Transaction</th><th class="num">Amount (KD)</th></tr>
+<tr><td>1</td><td>SGH → Broker A</td><td>SGH buys copper at spot — legal title transfers (metal stays in LME warehouse)</td><td class="num">2,000,000</td></tr>
+<tr><td>2</td><td>SGH → KFH</td><td>SGH sells copper to KFH — deferred payment in 60 days. Price FIXED.</td><td class="num">2,012,548</td></tr>
+<tr><td>3</td><td>KFH → Broker A</td><td>KFH sells copper back to Broker A at spot — position closed same day</td><td class="num">2,000,000</td></tr>
+<tr><td>4</td><td>KFH → SGH</td><td>KFH pays SGH after 60 days — contractually fixed regardless of copper price</td><td class="num">2,012,548</td></tr>
+<tr class="total"><td colspan="3">SGH profit (3.8% p.a. × KD 2M × 60/365)</td><td class="num">12,548</td></tr>
+</table>
+<div class="takeaway amber"><b>Broker A's incentive:</b> Earns commission on both legs embedded in pricing. Zero commodity price risk — both trades happen at same spot price back-to-back. Pure volume-based fee income. SGH has zero copper market risk — the KD 2,012,548 receivable from KFH is contractually fixed from Step 2. LME copper falling 8% does not affect SGH by one fils.</div></div>
+
+<div class="worked"><h3>Worked Example — IPRS (Islamic Profit Rate Swap)</h3>
+<div class="setup">SGH has KD 20M floating Murabaha at KIBOR+1.5% (currently 5.5% = KD 1.1M/year). Enters IPRS with Boubyan to fix cost. Each settlement leg uses back-to-back Murabaha commodity trades — no interest exchange.</div>
+<table class="calc">
+<tr><th>Year</th><th>KIBOR</th><th>SGH Rate</th><th class="num">Without IPRS</th><th class="num">IPRS Receipt/(Pay)</th><th class="num">Effective Cost</th></tr>
+<tr><td>1</td><td>4.0%</td><td>5.5%</td><td class="num">1,100,000</td><td class="num">0</td><td class="num">1,100,000</td></tr>
+<tr><td>2</td><td>5.5%</td><td>7.0%</td><td class="num">1,400,000</td><td class="num">+300,000</td><td class="num">1,100,000</td></tr>
+<tr><td>3</td><td>7.0%</td><td>8.5%</td><td class="num">1,700,000</td><td class="num">+600,000</td><td class="num">1,100,000</td></tr>
+<tr><td>4</td><td>6.0%</td><td>7.5%</td><td class="num">1,500,000</td><td class="num">+400,000</td><td class="num">1,100,000</td></tr>
+<tr><td>5</td><td>4.5%</td><td>6.0%</td><td class="num">1,200,000</td><td class="num">+100,000</td><td class="num">1,100,000</td></tr>
+<tr class="total"><td colspan="3">5-Year Total</td><td class="num">6,900,000</td><td class="num">+1,400,000</td><td class="num">5,500,000</td></tr>
+</table>
+<div class="takeaway"><b>IFRS 9 requirement:</b> Document the hedging relationship formally at inception — designate the IPRS as a cash flow hedge of the KIBOR variability on the Murabaha. No documentation = FVTPL = KD 480K fair value swings straight to P&L every quarter. Day-one documentation is not bureaucracy — it is the entire difference between a clean and a volatile P&L.</div></div>
+
+<div class="concept amber"><h3>2. Ijara — Islamic Lease · إجارة</h3>
+<p>Bank/owner retains ownership of an asset and charges rent for its use. Two variants: pure operating lease (no ownership transfer) and Ijara wa Iqtina (lease-to-own — nominal transfer at maturity).</p>
+<p><b>SGH's core business IS Ijara:</b> Every tenant in SGH's 2,000+ units and 5 malls is in an Ijara arrangement. SGH owns the property (IAS 40), charges rent (100% Halal — rent for use of an owned asset), recognises income straight-line over lease term. SGH's entire primary revenue model is Ijara.</p>
+<p><b>Diminishing Musharakah:</b> KFH and SGH co-own a KD 8M property (KFH 60%, SGH 40%). SGH pays rent on KFH's share AND monthly instalments buying down KFH's share. As KFH's share reduces from 60% to 35%, rent reduces proportionally — charged only on KFH's remaining portion. At the end SGH owns 100%. This is Kuwait's Islamic mortgage, used by KFH and Boubyan Bank.</p></div>
+
+<div class="concept slate"><h3>3. Sukuk — Asset-Backed Certificates · صكوك</h3>
+<p><b>Not bonds.</b> A bond = debt (lend money, receive interest). Sukuk = ownership certificate (own a share of a real asset, receive its income).</p>
+<p><b>Sharia form vs IFRS substance:</b> Under Sharia, Sukuk holders are co-owners (equity-like). Under IFRS IAS 32, if SGH has a contractual obligation to make distributions and redeem at face value at maturity, it is a financial liability — regardless of the co-ownership form. On SGH's consolidated balance sheet: Sukuk = liability. Distributions = Islamic financing charges in P&L, not dividends.</p>
+<p><b>Sukuk income is NOT dividend income:</b> It is Islamic finance income (EIR-based for amortised cost classification). Dividends come from equity instruments. Sukuk investors under IFRS hold debt-like instruments — income is finance income, not equity income. The one exception: Perpetual Sukuk with no redemption obligation — used by Islamic banks for Tier 1 capital — qualifies as equity under IAS 32. Not relevant for SGH's capital structure.</p></div>
+
+<div class="concept plum"><h3>4. Mudarabah — Silent Partnership · مضاربة</h3>
+<p><b>Rab-ul-Maal</b> provides capital. <b>Mudarib</b> provides expertise and management. Profits split at agreed ratio. Losses fall ONLY on capital provider — unless the Mudarib was negligent. Negligence voids the protection entirely and shifts the full loss to the negligent Mudarib.</p>
+<p>Al-Riyada Finance as Rab-ul-Maal deploys KD 2M into a real estate Mudarabah. Developer manages the project. 30% return → split per agreed ratio. Project fails → Al-Riyada loses capital, developer loses time and effort only (unless negligent).</p></div>
+
+<div class="concept navy"><h3>5. Musharakah — Joint Venture · مشاركة</h3>
+<p>Both parties contribute capital AND management. Both share profits AND losses proportionally. Distinguished from Mudarabah by one rule: BOTH parties bear financial losses. This is a genuine equity joint venture.</p>
+<p><b>SGH GCC expansion:</b> SGH contributes KD 10M cash to a Saudi JV, partner contributes land and licences. Both manage. Both share profits 55/45. Both share losses proportionally. This is Musharakah — neither party has a guaranteed return.</p></div>
+
+<div class="concept green"><h3>6. Wakala — Agency Agreement · وكالة</h3>
+<p>Principal appoints agent to invest funds for a fee. Agent targets a specific return — any surplus is the agent's incentive. Return is <em>not guaranteed.</em> If the bank achieves 3.9% against a 4.2% target, SGH receives 3.9%. The target is a benchmark, not a promise. This is the critical operational difference from a conventional fixed deposit.</p></div>
+
+<div class="concept amber"><h3>7. Takaful — Islamic Insurance · تكافل</h3>
+<p>Conventional insurance = Gharar (uncertain payout) + Maysir (speculative). Takaful = mutual contribution pool. Participants donate to a shared fund. Claims paid from the pool. Surplus returned to participants at year end. No one profits from others' misfortune.</p>
+<p>With 5 malls and 2,000+ units, property Takaful premiums are a material SGH cost line. As GFD, ensuring all property and casualty cover is via Takaful providers (Gulf Takaful, Warba Insurance Kuwait) — not conventional insurers — is part of your annual Sharia compliance review. Zero-interest conventional bank accounts are also insufficient — SGH must bank with licensed Islamic banks.</p></div>
+</div>
+
+<div id="s5">
+<div class="sec-head"><span class="sec-num">05</span><h2>Sharia vs Conventional Financial Statements</h2><span class="chip slate">Comparison</span></div>
+<p class="sec-intro">The economics are largely identical. The differences are in structure, labelling, presentation, and compliance. All figures KWD 000 — illustrative.</p>
+
+<div class="concept"><h3>Income Statement — Line by Line Comparison</h3>
+<table class="compare">
+<thead><tr><th>P&amp;L Line</th><th class="conv">Conventional (Your Current World)</th><th class="shari">SGH Sharia World</th><th>Key Distinction</th></tr></thead>
+<tbody>
+<tr><td><b>Primary revenue</b></td><td class="conv">FMCG product sales — IFRS 15</td><td class="shari">Rental income — Ijara / IAS 40 (NOT IFRS 15)</td><td>Rental income is out of IFRS 15 scope. Recognised straight-line over lease term under IAS 40.</td></tr>
+<tr><td><b>Finance income</b></td><td class="conv">Interest income on bank deposits</td><td class="shari">Wakala income / Commodity Murabaha profit / Mudarabah distribution</td><td>Return must trace to real economic activity. Never labelled "interest income."</td></tr>
+<tr><td><b>Finance cost</b></td><td class="conv">Interest expense — term loans</td><td class="shari">Islamic financing charges — Murabaha / Sukuk / Ijara</td><td>IFRS 9 EIR — same amortisation mechanics. Different contract label. Never "interest expense."</td></tr>
+<tr><td><b>Insurance</b></td><td class="conv">Insurance premiums — conventional insurer</td><td class="shari">Takaful contributions — mutual pool</td><td>Conventional insurance = Gharar + Maysir. Takaful mandatory regardless of cost difference.</td></tr>
+<tr><td><b>Wealth tax</b></td><td class="conv">Income tax only (Kuwait NLST if applicable)</td><td class="shari">Zakat (2.5% of zakatable wealth) + income tax</td><td>Appears after PBT. Wealth tax not income tax. Calculated on asset base, not profit.</td></tr>
+<tr><td><b>Non-cash gain</b></td><td class="conv">Not common — FMCG uses IAS 16 cost</td><td class="shari">IAS 40 Fair Value uplift — straight to P&amp;L</td><td>Unlike IAS 16 revaluation (goes to OCI), IAS 40 FV gains/losses hit P&amp;L directly. Major volatility source.</td></tr>
+<tr><td><b>Governance cost</b></td><td class="conv">Does not exist</td><td class="shari">Sharia Supervisory Board annual retainer</td><td>Treat SSB like external auditors — independent, senior, final word on Sharia compliance.</td></tr>
+</tbody>
+</table></div>
+
+<div class="concept amber"><h3>Balance Sheet — Key Differences</h3>
+<table class="compare">
+<thead><tr><th>BS Line</th><th class="conv">Conventional</th><th class="shari">SGH Sharia</th><th>Standard & Rule</th></tr></thead>
+<tbody>
+<tr><td><b>Primary fixed asset</b></td><td class="conv">PP&amp;E — warehouses, trucks (IAS 16)</td><td class="shari">Investment Property — malls, units (IAS 40 Fair Value)</td><td>IAS 40 FV: annual independent RICS valuation mandatory. Gains/losses in P&amp;L.</td></tr>
+<tr><td><b>Debt instrument</b></td><td class="conv">Term loans — bank borrowings</td><td class="shari">Murabaha payable / Sukuk payable (separate line — not grouped with "borrowings")</td><td>IFRS 9 financial liability. EIR amortisation. Presented separately to faithfully represent Islamic structure.</td></tr>
+<tr><td><b>Cash placements</b></td><td class="conv">Fixed deposits at conventional banks</td><td class="shari">Commodity Murabaha / Wakala — Islamic banks only</td><td>Zero-interest accounts at conventional banks are insufficient. Full Islamic bank relationship required.</td></tr>
+<tr><td><b>Equity reserve</b></td><td class="conv">Retained earnings — no mandatory reserve</td><td class="shari">Statutory reserve — 10% of PAT until 50% of capital; non-distributable</td><td>Kuwait Cos Law mandatory for K.S.C.C companies.</td></tr>
+<tr><td><b>Wealth obligation</b></td><td class="conv">No equivalent</td><td class="shari">Zakat payable — current liability until paid</td><td>Appears in both P&amp;L (charge after PBT) and balance sheet (current liability).</td></tr>
+</tbody>
+</table></div>
+
+<div class="concept navy"><h3>20 Terminology Differences — Quick Reference</h3>
+<table class="compare">
+<thead><tr><th>#</th><th class="conv">Conventional Term</th><th class="shari">SGH Sharia Term</th><th>Critical Distinction</th></tr></thead>
+<tbody>
+<tr><td>1</td><td class="conv">Interest expense</td><td class="shari">Islamic financing charges / Murabaha profit payable</td><td>Fixed at inception — not a running % on outstanding balance</td></tr>
+<tr><td>2</td><td class="conv">Interest income on deposits</td><td class="shari">Wakala income / Commodity Murabaha profit</td><td>Return from real economic activity — not money rental</td></tr>
+<tr><td>3</td><td class="conv">Bank loan / term facility</td><td class="shari">Murabaha payable</td><td>Bank must own the asset before selling — no money transfer</td></tr>
+<tr><td>4</td><td class="conv">Corporate bond / coupon payment</td><td class="shari">Sukuk / profit distribution to certificate holders</td><td>Investors own asset slice — return is income share, not interest coupon</td></tr>
+<tr><td>5</td><td class="conv">Mortgage / property finance interest</td><td class="shari">Diminishing Musharakah rent on bank's remaining share</td><td>Rent only charged on bank's portion — reduces as SGH buys bank's share down</td></tr>
+<tr><td>6</td><td class="conv">Fixed deposit / money market</td><td class="shari">Commodity Murabaha (Tawarruq) / Wakala deposit</td><td>Three-party commodity trade or agency — no interest</td></tr>
+<tr><td>7</td><td class="conv">Insurance premium</td><td class="shari">Takaful contribution</td><td>Mutual pool — surplus returned; no insurer profit from others' loss</td></tr>
+<tr><td>8</td><td class="conv">Interest rate swap</td><td class="shari">Islamic Profit Rate Swap (IPRS)</td><td>Murabaha commodity series — same hedge outcome, no interest exchange</td></tr>
+<tr><td>9</td><td class="conv">Income tax (on profit)</td><td class="shari">Zakat (2.5% of zakatable wealth) + income tax</td><td>Zakat = wealth tax on asset base, not income-based</td></tr>
+<tr><td>10</td><td class="conv">Dividend on Sukuk</td><td class="shari">Islamic finance income (EIR-based) — NOT dividend</td><td>Sukuk income is finance income under IFRS 9, not equity dividend. Only Perpetual Sukuk distributions = dividends.</td></tr>
+</tbody>
+</table></div>
+</div>
+
+<div id="s6">
+<div class="sec-head"><span class="sec-num">06</span><h2>HR Round — Questions & Coached Answers</h2><span class="chip plum">Round 1 · Noura Jlassi</span></div>
+<p class="sec-intro">The HR round decides three things: are you who your CV says you are, are you a cultural and values fit for a Sharia-compliant Kuwaiti holding company, and are you genuinely motivated for this specific role. Treat Noura Jlassi as an intelligent business professional — not a gatekeeper.</p>
+<div class="layman"><div class="eyebrow">Four Golden Rules for This Round</div><p><b>1. Person first, professional second</b> — connect genuinely, not performatively. <b>2. Specific always beats generic</b> — "At Bustan Group with 13 P&Ls..." not "I have strong leadership skills." <b>3. Confidence + humility</b> — walk in as a peer, not a supplicant. <b>4. Every answer lands on SGH</b> — close each response with a connection to this specific role.</p></div>
+
+<details class="qcard hr"><summary><span class="qnum">HR·01</span><span class="tag-pill">Opener</span><span class="qtext">Tell me about yourself.</span><span class="chev"></span></summary>
+<div class="answer"><div class="why">The first 90 seconds sets the entire tone. HR judges communication clarity, confidence, and whether your story is coherent. This is your controlled narrative — don't waste it.</div>
+<div class="approach"><h4>Your Answer</h4><p>"I am a Chartered Accountant with 20 years of finance leadership experience — the last decade entirely in Kuwait and the GCC, across FMCG, distribution, and multi-entity holding structures. Currently I serve as Group Finance Director at a Kuwaiti holding company where I oversee 13 P&Ls across 7 companies, lead an 18-person finance team, and am responsible for everything from IFRS consolidation and board reporting to treasury, ERP implementation, and capital allocation. My career has been built on one consistent thread: taking complex, multi-entity environments and building finance functions that give leadership the clarity they need to make better decisions faster. I am drawn to SGH specifically because the combination of real estate, finance, and Sharia-compliant operations represents the kind of multi-dimensional finance leadership challenge I want to grow into at GFD level."</p></div>
+<div class="anchor"><b>Coach Note</b>Practise until it is fluent, not recited. 90 seconds maximum. End on SGH — not on yourself.</div></div></details>
+
+<details class="qcard hr"><summary><span class="qnum">HR·02</span><span class="tag-pill">Motivation</span><span class="qtext">Why are you leaving your current role? Why now?</span><span class="chev"></span></summary>
+<div class="answer"><div class="why">Three hidden fears: were you pushed out, is this purely about salary, will you leave SGH in 14 months too? Your Bustan tenure is only ~14 months — the interviewer will notice. Address it proactively, not defensively.</div>
+<div class="approach"><h4>Standard Answer</h4><p>"My reason is genuinely forward-looking. At my current group I was brought in to build the finance infrastructure — SAP implementation, consolidation framework, board reporting standardisation. That build phase is substantially complete. The role has shifted from building to maintaining — and I am honest enough to know that maintenance is not where I do my best work. I am a builder. SGH represents the opposite situation — a finance function with significant room to evolve alongside an active GCC expansion agenda and a Sharia-compliant framework I find genuinely compelling. I have no negative relationship with my current employer."</p></div>
+<div class="approach"><h4>If Challenged Directly on 14 Months</h4><p>"Fair observation — 14 months is shorter than my usual tenure and I want to address it directly. The role was positioned as a transformation mandate during recruitment. In practice, the restructuring context meant it became a stabilisation role — legitimate work, but not what I do best. I delivered what was asked. I am not leaving a problem. I am moving toward a better fit. SGH is where I want to do the most meaningful work of the next 10 years."</p></div>
+<div class="warn-box"><b>Never say:</b> "Better growth opportunities" (meaningless). "My boss and I have different styles" (signals conflict). "The salary wasn't keeping pace" (save for offer stage).</div>
+<div class="good-box"><b>Always include:</b> "I have no negative relationship with my current employer." Neutralises the hidden fear before they voice it.</div></div></details>
+
+<details class="qcard hr"><summary><span class="qnum">HR·03</span><span class="tag-pill">Authenticity</span><span class="qtext">What specifically attracted you to SGH over other companies?</span><span class="chev"></span></summary>
+<div class="answer"><div class="why">The authenticity test. Generic answers fail here. SGH wants a GFD who chose them — not someone who applied to 20 companies.</div>
+<div class="approach"><h4>Your Answer — Name Specific Entities</h4><p>"Three things. First, SGH's business model — Qurain International Real Estate with 2,000+ units and 5 malls alongside Al-Riyada Finance as an active investment subsidiary is exactly the multi-revenue-stream, asset-heavy holding structure I want to work in. It is more complex and more strategically interesting than a single-sector group. Second, the Sharia-compliant operating model — I have prepared specifically for this. I understand Murabaha, Sukuk, Ijara, and how IFRS and Sharia interact in the financial statements. I see this not as a constraint but as a distinguishing competency I want to develop. Third, SGH's regional expansion — UAE is active, broader GCC is planned. I want to be building infrastructure for growth, not reporting on a mature business."</p></div>
+<div class="anchor"><b>Coach Note</b>Naming Qurain International Real Estate and Al-Riyada Finance specifically signals real research. Most candidates will not do this.</div></div></details>
+
+<details class="qcard hr"><summary><span class="qnum">HR·04</span><span class="tag-pill">Tenure</span><span class="qtext">You have moved between roles every 3–4 years. Why would SGH be different?</span><span class="chev"></span></summary>
+<div class="answer"><div class="why">Tests whether you are a job-hopper. The pattern: JRDS 5.5 years, BorgWarner 1.5, Smiths 1.3, Fantasy World 3.5, ANDS 3.5, Bustan ~14 months. Frame each move as deliberate, not reactive.</div>
+<div class="approach"><h4>The Reframe</h4><p>"My career has three distinct phases. India — foundation building and deliberate sector transitions, each with a specific outcome I achieved before moving on. Kuwait from 2017 — consistent 3.5-year tenures at Fantasy World and ANDS, building each new layer of capability. The GFD role I am considering now is different in character from all previous moves. SGH is not another step on the ladder. It is the destination — the scale, the Sharia framework, the regional agenda, the holding company complexity. I am not looking for another chapter. I am looking for a home."</p></div>
+<div class="anchor"><b>The Landing Line:</b> "I am not looking for another chapter. I am looking for a home." Memorable, specific, and directly addresses the tenure fear.</div></div></details>
+
+<details class="qcard hr"><summary><span class="qnum">HR·05</span><span class="tag-pill">Gap</span><span class="qtext">You have no real estate background. How do you bridge that?</span><span class="chev"></span></summary>
+<div class="answer"><div class="why">The most predictable gap question. The wrong answer is to concede the gap. The right answer is to dissolve it.</div>
+<div class="approach"><h4>Your Answer</h4><p>"The skills that make an effective Group Finance Director — multi-entity consolidation, treasury management, capital allocation, board reporting, team leadership, ERP governance — are sector-transferable. I have deep experience in all of them. What changes between sectors is the revenue model and asset mix — and I have prepared specifically for that. SGH's rental income is Ijara under IAS 40, recognised straight-line. Property development revenue is IFRS 15 percentage completion. Al-Riyada's Murabaha margins are EIR under IFRS 9. I understand the accounting model. I also bring something real estate specialists often lack — operational finance discipline: tight working capital management, rigorous variance analysis, cash conversion focus. With 2,000+ leasable units, those skills matter enormously."</p></div></div></details>
+
+<details class="qcard hr"><summary><span class="qnum">HR·06</span><span class="tag-pill">Culture</span><span class="qtext">How do you feel about working in a Sharia-compliant environment as a non-Muslim?</span><span class="chev"></span></summary>
+<div class="answer"><div class="why">Values alignment test. Wants genuine respect and preparation — not performative "of course I have no problem with it."</div>
+<div class="approach"><h4>Your Answer</h4><p>"I have thought about this carefully. My honest answer is that I find it professionally compelling, not constraining. I have spent significant time understanding the Islamic finance framework — Murabaha, Sukuk, Ijara, Musharakah, Wakala, how the Sharia Supervisory Board functions, how IFRS and Sharia interact in financial statements. I also understand something more fundamental: the Sharia framework requires every financial transaction to be tied to a real asset and a genuine economic purpose. As a CA who believes in substance over form, I find that aligned with my own professional values — not in conflict with them. I am not a Sharia scholar. But I am committed to operating fully within the framework, working collaboratively with the SSB, and ensuring SGH's finance function reflects its Sharia principles accurately in every report and treasury decision."</p></div>
+<div class="anchor"><b>The Insight:</b> Connecting "substance over form" — a core CA/IFRS principle — to Sharia values is unexpected and sophisticated. It shows genuine thought, not rehearsed tolerance.</div></div></details>
+
+<details class="qcard hr"><summary><span class="qnum">HR·07</span><span class="tag-pill">Weakness</span><span class="qtext">What is your biggest professional weakness?</span><span class="chev"></span></summary>
+<div class="answer"><div class="why">Tests self-awareness and honesty. Wrong answers: strength disguised as weakness, career-limiting admission, or "I have no weaknesses."</div>
+<div class="approach"><h4>Your Answer</h4><p>"My genuine development area is delegation. Because I have built finance functions largely from scratch, I have historically stayed too close to the detail — wanting to personally review outputs before they go out. This can slow the team and limit their ownership. I have been actively working on this — creating tiered review protocols where the team owns the first two review layers and I engage only at the board pack level. It has improved the team's confidence measurably. At SGH, with a Chief Accountant already in place, this will be a continued focus — building trust in the existing team quickly so I operate at the right altitude as GFD, not as a senior controller."</p></div>
+<div class="good-box"><b>Why this works:</b> Naming Mohamed Adel's role shows you know the team structure and are already thinking about how to work with — not over — the existing team.</div></div></details>
+
+<details class="qcard hr"><summary><span class="qnum">HR·08</span><span class="tag-pill">Tricky</span><span class="qtext">You seem overqualified for this role. Are you?</span><span class="chev"></span></summary>
+<div class="answer"><div class="why">A confidence test. Never agree. Reframe the premise.</div>
+<div class="approach"><h4>Your Answer</h4><p>"I would push back on that gently. Overqualified implies the role cannot hold my interest. Managing KD 200M in assets across four subsidiaries — real estate, finance, engineering, and property management — within a fully Sharia-compliant framework with an active GCC expansion agenda is not a role I will outgrow. It is a role I want to grow into. The complexity here is exactly why I am sitting in front of you."</p></div></div></details>
+
+<details class="qcard hr"><summary><span class="qnum">HR·09</span><span class="tag-pill">Ambition</span><span class="qtext">Where do you see yourself in 5 years?</span><span class="chev"></span></summary>
+<div class="answer"><div class="why">Tests whether your ambition aligns with what SGH offers and whether you are a flight risk.</div>
+<div class="approach"><h4>Your Answer</h4><p>"In 5 years I want to be the Group Finance Director who has materially transformed SGH's finance function — not just maintained it. Specifically: close in 5 days not 10, real-time BI dashboards the CEO and Deputy CEO use daily, successful financial infrastructure built for 2–3 GCC market entries, and two or three finance leaders I have developed who are ready for more senior roles. I am not thinking about what title I will have in 5 years. I am thinking about what SGH will look like in 5 years because of the finance function I built."</p></div>
+<div class="warn-box"><b>Never say:</b> "I see myself as CFO in 5 years." Sounds like you are already planning to displace leadership or outgrow the role.</div></div></details>
+
+<details class="qcard hr"><summary><span class="qnum">HR·10</span><span class="tag-pill">Closing</span><span class="qtext">Do you have any questions for me?</span><span class="chev"></span></summary>
+<div class="answer"><div class="why">Not a formality. Quality of questions reveals depth of preparation. Ask one or two based on conversation flow.</div>
+<div class="approach"><h4>Best Questions to Ask Noura</h4>
+<p>"What does success look like for this role in the first 6 months — from your perspective, beyond the technical deliverables?"</p>
+<p>"What is the finance team culture like at SGH today — and what do you think the new GFD needs to do to earn the team's trust quickly?"</p>
+<p>"What would you want the ideal candidate to know about SGH's culture that might not be obvious from the outside?"</p></div>
+<div class="warn-box"><b>Do not ask:</b> Salary, benefits, or leave in Round 1. Do not ask what you could find in 5 minutes on the SGH website.</div>
+<div class="anchor"><b>Closing Line — Say This Verbatim:</b> "I want to be clear before we finish — I am genuinely excited about this opportunity. Everything I have learned about SGH's business, values, and growth agenda makes me confident this is the right next step. I look forward to hearing from you."</div></div></details>
+</div>
+
+<div id="s7">
+<div class="sec-head"><span class="sec-num">07</span><h2>Technical Round — Questions & Coached Answers</h2><span class="chip amber">Round 2 · CEO / Deputy CEO</span></div>
+<p class="sec-intro">The technical round tests whether you can actually do the job — strategy, Islamic finance application, IFRS depth, commercial judgment, and 90-day planning. Show that you have already thought like a GFD at SGH before you have started.</p>
+
+<details class="qcard tech"><summary><span class="qnum">T·01</span><span class="tag-pill">Strategy</span><span class="qtext">What is your vision for the finance function in a holding company like SGH?</span><span class="chev"></span></summary>
+<div class="answer"><div class="why">They want a strategic thinker, not a controller. Show ambition for what the finance function can become — not just what it currently does.</div>
+<div class="approach"><h4>Your Answer</h4><p>"Finance in a lean holding company must be a value creation engine, not a reporting function. With KD 200M in assets across four subsidiaries, every capital allocation decision matters — and the finance function must provide the analytical clarity that makes those decisions better. At Bustan Group I standardised reporting across 13 P&Ls, introduced rolling 12-month forecasts, deployed BI dashboards for executive visibility, and built an 18-person team with clear accountability. SAP across three entities cut close cycles by 40%. I would bring that same transformation to SGH — a finance function that gives the Chairman and CEO decision-ready data on demand, provides the M&A and expansion analysis that supports SGH's GCC growth agenda, and builds the financial infrastructure for the next decade. Finance as a strategic partner, not a back office."</p></div></div></details>
+
+<details class="qcard tech"><summary><span class="qnum">T·02</span><span class="tag-pill">Technical</span><span class="qtext">How would you manage consolidation across SGH's four subsidiaries with different revenue models?</span><span class="chev"></span></summary>
+<div class="answer"><div class="why">SGH has real estate, finance, engineering, and property management — different IFRS standards, different asset bases, different close cycles. They want to know you have done this before at scale.</div>
+<div class="approach"><h4>Your Answer</h4><p>"The framework is three things: standardisation, a hard-close calendar, and a COA mapping layer that handles the structural differences between subsidiaries. At Bustan Group I oversee 7 companies — FMCG, distribution, contracting, retail — each with a different revenue model. We achieved zero restatements in two years and cut consolidation from 12 days to 7. For SGH specifically, the complexity is the multi-standard revenue mix: rental income under IAS 40 recognised straight-line, Rawsam Engineering contracts under IFRS 15 percentage completion, Murabaha income at Al-Riyada under IFRS 9 EIR, development sales under IFRS 15 point-in-time. Each subsidiary has a different close driver. I would build the consolidation calendar around that reality — closing in the right sequence — and build intercompany elimination matrices to handle Murabaha facilities between SGH entities."</p></div></div></details>
+
+<details class="qcard tech"><summary><span class="qnum">T·03</span><span class="tag-pill">Islamic Finance</span><span class="qtext">How would you manage SGH's treasury in a fully Sharia-compliant environment?</span><span class="chev"></span></summary>
+<div class="answer"><div class="why">Treasury is a core GFD deliverable. They want to hear you understand Islamic instruments, not just that you will "figure it out."</div>
+<div class="approach"><h4>Your Answer</h4><p>"At ANDS I managed USD 70M+ treasury — including Commodity Murabaha and Wakala placements with KFH and Boubyan Bank. At SGH I would formalise a treasury policy covering: approved Islamic instruments (Commodity Murabaha, Wakala deposits, Mudarabah accounts), approved counterparties — licensed Islamic banks only, not conventional banks with zero-interest accounts which are insufficient for full Sharia compliance — maximum tenors, counterparty concentration limits, and minimum credit ratings. For financing cost risk, I would evaluate whether an Islamic Profit Rate Swap is appropriate for any floating-rate Murabaha exposure — documented formally at inception under IFRS 9 to qualify for cash flow hedge accounting. The SSB certifies the approved instrument list annually. The goal: SGH's cash generates a compliant return, financing cost is predictable, and every arrangement is SSB-certified."</p></div></div></details>
+
+<details class="qcard tech"><summary><span class="qnum">T·04</span><span class="tag-pill">Leadership</span><span class="qtext">What would be your priorities in the first 90 days?</span><span class="chev"></span></summary>
+<div class="answer"><div class="why">Tests whether you have a realistic, structured plan — not vague intentions about "learning the business."</div>
+<div class="approach"><h4>Days 1–30 — Listen</h4><p>Review all subsidiary management accounts, the consolidation methodology, treasury position, budget vs actuals, and any open audit findings. Meet every key stakeholder — CEO, subsidiary GMs, Chief Accountant Mohamed Adel, external auditors, Islamic bank relationship managers, Sharia Board chair. No restructuring. No pronouncements. Pure understanding.</p></div>
+<div class="approach"><h4>Days 31–60 — Design</h4><p>Identify the top 3 finance function pain points — likely consolidation speed, forecasting granularity, or treasury policy formalisation. Design targeted solutions. Begin building trust with Mohamed Adel and the finance team — they own the continuity of the function while I am onboarding.</p></div>
+<div class="approach"><h4>Days 61–90 — Commit</h4><p>Present a GFD's View to the CEO — current state assessment, quick wins delivered, 12-month finance function roadmap. By day 90 the CEO should be able to say: "He understood our business faster than anyone, and he is already making it better."</p></div></div></details>
+
+<details class="qcard tech"><summary><span class="qnum">T·05</span><span class="tag-pill">Behavioural</span><span class="qtext">Tell me about a time you delivered difficult financial news to senior leadership.</span><span class="chev"></span></summary>
+<div class="answer"><div class="why">Tests professional courage. GFDs who only tell leaders what they want to hear are dangerous. They want someone who speaks truth to power — with skill, not recklessness.</div>
+<div class="approach"><h4>Your Answer — ANDS Example</h4><p>"At ANDS, mid-year forecast showed the group was going to miss annual budget by approximately 18% — driven by an unexpected regulatory change affecting a major product category. I had two choices: let the miss become apparent gradually quarter by quarter, or call an emergency board session proactively with the full picture and a recovery plan. I chose transparency. I prepared a detailed variance analysis showing the exact drivers, a revised full-year forecast across three scenarios, and a specific set of cost reduction and working capital actions to partially offset the shortfall. The board was disappointed — but they thanked me for the preparation and approved the recovery plan. We ended the year 11% below budget, not 18%. The board relationship was stronger after that conversation, not weaker — because they knew they could trust the numbers and trust me to surface bad news early."</p></div>
+<div class="anchor"><b>The Landing:</b> "The relationship was stronger after, not weaker." This is the key line — honest communication builds trust, it does not damage it.</div></div></details>
+
+<details class="qcard tech"><summary><span class="qnum">T·06</span><span class="tag-pill">Commercial</span><span class="qtext">How would you evaluate a potential acquisition or JV for SGH's GCC expansion?</span><span class="chev"></span></summary>
+<div class="answer"><div class="why">Tests M&A analytical framework and commercial judgment — critical for a holding company with an active expansion agenda.</div>
+<div class="approach"><h4>Your Framework — Four Lenses</h4>
+<p><b>Strategic fit:</b> Does this align with SGH's portfolio thesis — real estate, Islamic finance, engineering, GCC markets? What synergies exist with the existing four subsidiaries?</p>
+<p><b>Financial returns:</b> IRR on capital deployed across bear/base/bull DCF scenarios. Payback period. Working capital normalisation. Related-party transaction risks. Debt-vs-equity classification issues.</p>
+<p><b>Sharia compliance:</b> If the target has conventional debt — how do we restructure it post-acquisition to Sharia-compliant instruments? What is the cost and timeline of that transition? Has the target's Sharia compliance been certified or is it informal?</p>
+<p><b>Execution risk:</b> Asset acquisition (no IFRS 3 PPA, no goodwill) vs business combination (full IFRS 3 PPA required — identifiable intangibles, contingent liabilities). MOC and KDIPA approvals for foreign acquisitions. Integration complexity.</p></div></div></details>
+</div>
+
+<div id="s8">
+<div class="sec-head"><span class="sec-num">08</span><h2>IFRS Standards — Mapped to SGH Operations</h2><span class="chip navy">Technical · 8 Key Standards</span></div>
+<p class="sec-intro">The standards you will live by as GFD. Each one mapped to SGH's specific business with the key judgement calls and your talking points highlighted.</p>
+
+<details class="qcard ifrs"><summary><span class="qnum">IFRS·16</span><span class="tag-pill">Leases</span><span class="qtext">Leases — both sides: SGH as lessor (2,000+ units, 5 malls) and as lessee (Ijara financing, office leases)</span><span class="chev"></span></summary>
+<div class="answer">
+<div class="approach"><h4>SGH as Lessor — Core Business</h4><p>All 2,000+ units and 5 malls are operating leases from SGH's perspective. Rental income = straight-line over each lease term regardless of payment timing. Advance rents received = deferred income (current liability) until earned. Investment property stays on balance sheet at IAS 40 Fair Value — not derecognised. Vacancy incentives (rent-free periods) = reduce the recognised straight-line income over the full lease term.</p></div>
+<div class="approach"><h4>SGH as Lessee — Ijara Financing / Office Leases</h4><p>Any Ijara wa Iqtina (lease-to-own) financing SGH takes: IFRS 16 finance lease treatment. Recognise (1) ROU asset — PV of future Ijara rentals, depreciated over shorter of lease term or useful life, and (2) Ijara liability — unwound at the rate implicit in the Ijara or SGH's incremental Islamic borrowing rate. Monthly P&L: depreciation charge + Ijara finance charge. The discount rate used must be documented and applied consistently.</p></div>
+<div class="approach"><h4>Key Judgement Call</h4><p>Determining the appropriate discount rate for Ijara liabilities where the implicit rate is not provided by the bank. Use SGH's incremental Murabaha profit rate — the rate SGH would pay for equivalent Sharia financing at that date. This must be periodically reviewed and updated when new Ijara arrangements are entered.</p></div></div></details>
+
+<details class="qcard ifrs"><summary><span class="qnum">IAS·40</span><span class="tag-pill">Inv. Property</span><span class="qtext">Investment Property — SGH's most material standard. KD 120M+ of malls and units classified here.</span><span class="chev"></span></summary>
+<div class="answer">
+<div class="approach"><h4>Classification</h4><p>Property held to earn rental income or for capital appreciation (not own use, not for sale in ordinary course) = Investment Property. SGH's malls and rental units qualify. Annual accounting policy choice: Cost Model (carry at cost less depreciation) or Fair Value Model (revalue annually, all changes in P&L). Most GCC property groups use Fair Value. The policy must be applied to the entire Investment Property class consistently.</p></div>
+<div class="approach"><h4>Fair Value Model — The Critical P&L Impact</h4><p>Unlike IAS 16 revaluation (gains to OCI), under IAS 40 Fair Value Model ALL changes go directly to P&L. A 5% uplift on a KD 100M portfolio = KD 5M gain in reported profit — entirely non-cash. Implication: always present "underlying profit excluding fair value movements" alongside reported profit in board packs. Dividend policy must be based on cash profit, not fair-value-inflated PAT. Distributing a non-cash IAS 40 gain as dividend drains real cash from the business.</p></div>
+<div class="approach"><h4>Valuation Process</h4><p>Independent RICS-qualified valuers annually. Methodology — income capitalisation or DCF of rental income — must be disclosed in notes. Auditors will scrutinise: cap rates, vacancy assumptions, rental growth forecasts, comparable transactions. Valuer must be independent of SGH.</p></div>
+<div class="approach"><h4>IAS 40 vs IAS 36 Interaction</h4><p>Under Fair Value Model — IAS 36 impairment testing does NOT apply to investment properties. The annual fair value already reflects any decline. IAS 36 still applies to goodwill (annual CGU test), cost-model assets, and Rawsam Engineering's PP&E.</p></div></div></details>
+
+<details class="qcard ifrs"><summary><span class="qnum">IFRS·9</span><span class="tag-pill">Fin. Instruments</span><span class="qtext">Financial Instruments — Murabaha receivables, tenant ECL, Sukuk classification, IPRS hedge accounting</span><span class="chev"></span></summary>
+<div class="answer">
+<div class="approach"><h4>Murabaha Receivables at Al-Riyada (Financial Assets)</h4><p>Business model: hold to collect. SPPI test: typically passes for vanilla Murabaha — cash flows are solely payments of principal and profit. Classification: amortised cost. Income: EIR method over facility life — not upfront. ECL: 3-stage model. Stage 1 (performing, 12-month ECL). Stage 2 (significant credit deterioration, lifetime ECL). Stage 3 (credit-impaired/default, lifetime ECL — income recognised on net carrying amount only, not gross).</p></div>
+<div class="approach"><h4>Tenant Receivables ECL</h4><p>Simplified approach permitted for trade receivables. Build a provision matrix by aging bucket using historical loss rates adjusted for forward-looking macro factors (Kuwait real estate vacancy rates, tenant sector health). With 2,000+ tenants this matrix is material and audit-sensitive.</p></div>
+<div class="approach"><h4>IPRS Hedge Accounting</h4><p>Three conditions for cash flow hedge: (1) Formal designation and documentation at inception — no backdating, ever. (2) Economic relationship between IPRS and Murabaha facility. (3) Hedge effectiveness within 80–125% range. If all three met: effective portion to OCI (Cash Flow Hedge Reserve). Recycled to P&L when Murabaha charge hits P&L — net result is flat finance cost line. Miss documentation at inception = FVTPL = P&L volatility. No exceptions.</p></div></div></details>
+
+<details class="qcard ifrs"><summary><span class="qnum">IFRS·15</span><span class="tag-pill">Revenue</span><span class="qtext">Revenue — applies to Rawsam Engineering, property development sales, and Al-Riyada fees. NOT to rental income.</span><span class="chev"></span></summary>
+<div class="answer">
+<div class="approach"><h4>Critical First Point — Rental Income is NOT IFRS 15</h4><p>Rental income is SGH's primary revenue line — but it is completely outside IFRS 15 scope. It is recognised under IAS 40 / IFRS 16 (lessor) on a straight-line basis over the lease term. Confusing this is the most common IFRS 15 mistake in real estate contexts. Know it cold.</p></div>
+<div class="approach"><h4>Rawsam Engineering — Over Time Recognition</h4><p>Long-term construction contracts: recognise over time if control transfers progressively. Input method (costs incurred ÷ total estimated costs) or output method (physical progress). Policy choice — applied consistently. Progress certificates from project managers drive the monthly accrual. Retentions only recognised when highly probable of receipt.</p></div>
+<div class="approach"><h4>Development Sales — The Off-Plan Question</h4><p>Off-plan sales: over-time recognition only if (a) SGH has enforceable right to payment for work done to date AND (b) asset has no alternative use. If both conditions met → % completion. If not → point-in-time on legal handover. At 0% construction, revenue is likely zero if point-in-time applies — regardless of contracts signed and deposits received.</p></div></div></details>
+
+<details class="qcard ifrs"><summary><span class="qnum">IFRS·3</span><span class="tag-pill">M&amp;A</span><span class="qtext">Business Combinations — triggered when SGH acquires a company. Goodwill, PPA, and annual impairment.</span><span class="chev"></span></summary>
+<div class="answer">
+<div class="approach"><h4>Asset vs Business Acquisition</h4><p>Buying a single property = asset acquisition (no IFRS 3, no goodwill, transaction costs capitalised). Buying a property company = business combination (IFRS 3 applies, goodwill may arise, transaction costs expensed). The classification determines accounting treatment entirely — it is one of the first questions to resolve in any SGH acquisition.</p></div>
+<div class="approach"><h4>Goodwill</h4><p>Excess of consideration over net identifiable assets at fair value at acquisition date. NOT amortised under IFRS. Allocated to CGUs and tested for impairment annually under IAS 36. If CGU's recoverable amount falls below carrying amount (including allocated goodwill) → impairment charge to P&L. This is why overpaying at acquisition has a long financial tail.</p></div>
+<div class="approach"><h4>For SGH's GCC Expansion</h4><p>Any corporate acquisition in UAE or Saudi triggers IFRS 3 regardless of jurisdiction. PPA required — identify all intangible assets: brand, customer relationships, below-market leases, development permits, management contracts. Each measured at fair value at acquisition date. Residual = goodwill. The PPA determines amortisation charges for identifiable intangibles going forward.</p></div></div></details>
+
+<details class="qcard ifrs"><summary><span class="qnum">IFRS·10</span><span class="tag-pill">Consolidation</span><span class="qtext">Consolidated Financials — your core daily task. Includes SPV consolidation for Sukuk structures.</span><span class="chev"></span></summary>
+<div class="answer">
+<div class="approach"><h4>SGH Group Structure</h4><p>SGH (parent) consolidates: Qurain International RE, Al-Riyada Finance, Rawsam Engineering, Dar Al Shuwaikh, any Sukuk SPVs. Control assessment: power over the entity + exposure to variable returns + ability to use that power. Wholly-owned subsidiaries straightforward. Sukuk SPVs: SGH likely controls them (created for SGH's benefit, SGH holds repurchase obligation) → must consolidate → Sukuk certificates outstanding appear as financial liability in consolidated balance sheet.</p></div>
+<div class="approach"><h4>Key Monthly Eliminations</h4><p>Intercompany Murabaha between entities (Al-Riyada lends to Qurain RE): eliminate both the Murabaha receivable at Al-Riyada and the Murabaha payable at Qurain RE, AND eliminate the intercompany "Islamic finance income" in Al-Riyada's P&L and "Islamic financing charge" in Qurain RE's P&L. Management fees from SGH holding to subsidiaries: eliminate holding fee income and subsidiary fee expense. These are the most error-prone eliminations — build a standing intercompany matrix updated monthly.</p></div>
+<div class="approach"><h4>Your Credential</h4><p>You currently consolidate 13 P&Ls across 7 companies at Bustan Group. This is IFRS 10 in daily practice. It is your single strongest qualification alignment to SGH's core GFD requirement. Lead with it.</p></div></div></details>
+
+<details class="qcard ifrs"><summary><span class="qnum">IAS·19</span><span class="tag-pill">Employee Benefits</span><span class="qtext">Employee Benefits — EOSI is a material obligation in Kuwait for any multi-entity group.</span><span class="chev"></span></summary>
+<div class="answer">
+<div class="approach"><h4>Kuwait EOSI</h4><p>Kuwait Labour Law: 15 working days per year for first 5 years, 1 month per year thereafter (indefinite contracts). For a group with 50–100+ employees across 4 subsidiaries, this is a material defined benefit obligation. IAS 19 treatment: actuarial valuation for material amounts. Current service cost to P&L. Actuarial gains/losses to OCI. Obligation on balance sheet as non-current liability.</p></div>
+<div class="approach"><h4>Annual Leave Accrual</h4><p>Kuwait Labour Law: minimum 30 working days annual leave, accumulates, encashable. Must accrue at current salary rate — not the rate at which leave was earned. Common inconsistency in GCC groups: some entities use historical rates, others use current rates. Standardise from day one.</p></div>
+<div class="approach"><h4>Your Day 30 Action</h4><p>Audit EOSI provision calculation methodology across all SGH entities. Inconsistent treatment is one of the most common audit findings in GCC family businesses — some use service years only with no actuarial discount, some with current salary, some with outdated formulas. One standardised approach across all four subsidiaries from the first close cycle you own.</p></div></div></details>
+
+<details class="qcard ifrs"><summary><span class="qnum">IAS·23</span><span class="tag-pill">Borrowing Costs</span><span class="qtext">Borrowing Costs — Murabaha profit during construction of qualifying assets must be capitalised, not expensed.</span><span class="chev"></span></summary>
+<div class="answer">
+<div class="approach"><h4>The Rule</h4><p>Borrowing costs directly attributable to acquiring, constructing, or producing a qualifying asset must be capitalised as part of that asset's cost. A qualifying asset = one that necessarily takes a substantial period to get ready for use or sale. Real estate developments clearly qualify. Routine inventory that is produced in large quantities on a repetitive basis does not.</p></div>
+<div class="approach"><h4>Islamic Finance Application</h4><p>Murabaha profit charges and Ijara rental costs incurred during the construction period of qualifying development properties are capitalised under IAS 23. This means SGH's development property balance sheet carrying amount includes these Islamic financing costs as part of cost. Post-completion → all charges go to P&L. For general borrowings (not property-specific): capitalisation rate = weighted average Islamic financing cost across SGH's borrowing portfolio.</p></div>
+<div class="approach"><h4>Audit Risk</h4><p>Capitalising financing costs during construction reduces reported P&L expense in the build phase — inflates profit. Auditors scrutinise this. Must be able to demonstrate the direct link between the specific Murabaha facility and the qualifying asset under construction. Document at facility inception.</p></div></div></details>
+</div>
+<div id="s9">
+<div class="sec-head"><span class="sec-num">09</span><h2>Test Bank — 25 Interactive Trick Questions</h2><span class="chip red">Self-Assessment</span></div>
+<p class="sec-intro">Every question has a deliberate trap. Click an option to reveal whether you are correct and get a full explanation. Your score is tracked below.</p>
+<div class="toolbar"><button class="btn" onclick="resetTest()">Reset Test</button><button class="btn amber" onclick="showScore()">Show Score</button></div>
+<div class="score-panel" id="sp-top"><div class="score-big" id="sd-top">0 / 25</div><div class="score-msg" id="sm-top">Answer all 25 questions to see your assessment.</div></div>
+<div class="test-card" id="tc0">
+<div class="test-q-hd"><span class="qnum">T·01</span><span class="tag-pill ifrs">Definition</span><span class="qtext">Murabaha is best described as:</span></div>
+<div class="test-opts" id="opts0">
+<button class="test-opt" data-q="0" data-idx="0" data-correct="1" onclick="pickAns(this)">An Islamic loan where the bank charges a profit rate instead of interest</button>
+<button class="test-opt" data-q="0" data-idx="1" data-correct="1" onclick="pickAns(this)">A sale transaction where the bank buys an asset and resells it at a disclosed markup</button>
+<button class="test-opt" data-q="0" data-idx="2" data-correct="1" onclick="pickAns(this)">A lease arrangement where the bank owns the asset and charges rent</button>
+<button class="test-opt" data-q="0" data-idx="3" data-correct="1" onclick="pickAns(this)">A profit-sharing partnership between two parties</button>
+</div>
+<div class="test-expl" id="expl0"><b>Explanation:</b> Murabaha is NOT a loan. A loan transfers money. Murabaha transfers an asset — the bank must own it before selling it to the client. If no asset changes hands, there is no Murabaha — there is Riba. The Murabaha markup is also NOT Riba: it is a trade profit on a real sale, not a return on money lent.</div>
+</div>
+<div class="test-card" id="tc1">
+<div class="test-q-hd"><span class="qnum">T·02</span><span class="tag-pill ifrs">Sharia</span><span class="qtext">In a Mudarabah, which party bears financial losses?</span></div>
+<div class="test-opts" id="opts1">
+<button class="test-opt" data-q="1" data-idx="0" data-correct="2" onclick="pickAns(this)">The Mudarib (manager) only</button>
+<button class="test-opt" data-q="1" data-idx="1" data-correct="2" onclick="pickAns(this)">Both parties equally</button>
+<button class="test-opt" data-q="1" data-idx="2" data-correct="2" onclick="pickAns(this)">The Rab-ul-Maal (capital provider) only</button>
+<button class="test-opt" data-q="1" data-idx="3" data-correct="2" onclick="pickAns(this)">Neither — Takaful covers losses</button>
+</div>
+<div class="test-expl" id="expl1"><b>Explanation:</b> Only the Rab-ul-Maal bears financial losses in a Mudarabah. The Mudarib loses time and effort only. Critical exception: if the Mudarib was negligent or breached the investment mandate, the protection evaporates and the full loss shifts to the negligent Mudarib. This exception protects capital providers from reckless management.</div>
+</div>
+<div class="test-card" id="tc2">
+<div class="test-q-hd"><span class="qnum">T·03</span><span class="tag-pill ifrs">IFRS</span><span class="qtext">SGH's CFO says issuing KD 30M Sukuk means investors are equity holders so it won't appear as debt on the balance sheet. Correct?</span></div>
+<div class="test-opts" id="opts2">
+<button class="test-opt" data-q="2" data-idx="0" data-correct="2" onclick="pickAns(this)">Yes — Sukuk holders are asset co-owners under Sharia, so it is equity</button>
+<button class="test-opt" data-q="2" data-idx="1" data-correct="2" onclick="pickAns(this)">Yes — the asset is in an SPV so SGH has no direct liability</button>
+<button class="test-opt" data-q="2" data-idx="2" data-correct="2" onclick="pickAns(this)">No — most Sukuk structures create a financial liability under IAS 32 because of contractual obligations to distribute and redeem at maturity</button>
+<button class="test-opt" data-q="2" data-idx="3" data-correct="2" onclick="pickAns(this)">No — Sukuk cannot be used to fund property development</button>
+</div>
+<div class="test-expl" id="expl2"><b>Explanation:</b> The CFO applies Sharia logic correctly but IFRS logic incorrectly. Under IAS 32, substance governs. SGH has a contractual obligation to make periodic distributions and redeem at face value at maturity — that is a financial liability regardless of the Sharia co-ownership form. The SPV is consolidated under IFRS 10. KD 30M appears as a liability on the balance sheet.</div>
+</div>
+<div class="test-card" id="tc3">
+<div class="test-q-hd"><span class="qnum">T·04</span><span class="tag-pill ifrs">Sharia</span><span class="qtext">The critical difference between Mudarabah and Musharakah is:</span></div>
+<div class="test-opts" id="opts3">
+<button class="test-opt" data-q="3" data-idx="0" data-correct="1" onclick="pickAns(this)">Mudarabah is short-term; Musharakah is long-term</button>
+<button class="test-opt" data-q="3" data-idx="1" data-correct="1" onclick="pickAns(this)">In Mudarabah only the capital provider bears losses; in Musharakah both parties bear losses proportionally</button>
+<button class="test-opt" data-q="3" data-idx="2" data-correct="1" onclick="pickAns(this)">Musharakah can only be used for real estate transactions</button>
+<button class="test-opt" data-q="3" data-idx="3" data-correct="1" onclick="pickAns(this)">Mudarabah requires a minimum of three parties</button>
+</div>
+<div class="test-expl" id="expl3"><b>Explanation:</b> Duration is irrelevant. The decisive distinction is loss allocation. Mudarabah: only the Rab-ul-Maal (capital provider) bears financial losses. Musharakah: BOTH parties contribute capital and BOTH bear losses in proportion to their capital contribution. This single distinction determines which instrument fits each transaction.</div>
+</div>
+<div class="test-card" id="tc4">
+<div class="test-q-hd"><span class="qnum">T·05</span><span class="tag-pill ifrs">IAS 40</span><span class="qtext">SGH uses the Fair Value Model under IAS 40. At year-end, the mall portfolio increases in value by KD 12M. The board wants to distribute this as dividends. Your response?</span></div>
+<div class="test-opts" id="opts4">
+<button class="test-opt" data-q="4" data-idx="0" data-correct="2" onclick="pickAns(this)">Approve — recognised in P&L so it is distributable profit</button>
+<button class="test-opt" data-q="4" data-idx="1" data-correct="2" onclick="pickAns(this)">Approve — IAS 40 Fair Value gains are the most reliable measure of value creation</button>
+<button class="test-opt" data-q="4" data-idx="2" data-correct="2" onclick="pickAns(this)">Reject — it is unrealised and non-cash; distributing it would drain real liquidity with no corresponding cash inflow</button>
+<button class="test-opt" data-q="4" data-idx="3" data-correct="2" onclick="pickAns(this)">Reject — IAS 40 gains go to OCI not P&L so they are never distributable</button>
+</div>
+<div class="test-expl" id="expl4"><b>Explanation:</b> C is correct. The trap is A — the gain IS recognised in P&L under IAS 40 Fair Value Model (unlike IAS 16 which goes to OCI). But recognised does not mean cash. Distributing a non-cash KD 12M gain would require SGH to pay out real cash it did not earn in cash — draining reserves or increasing debt. Dividend policy must be based on cash profit. D is wrong — IAS 40 FV gains specifically go to P&L, not OCI.</div>
+</div>
+<div class="test-card" id="tc5">
+<div class="test-q-hd"><span class="qnum">T·06</span><span class="tag-pill ifrs">Sharia</span><span class="qtext">SGH can save KD 7,000 by using conventional insurance instead of Takaful. The CFO says take the cheaper option — insurance is insurance. Correct?</span></div>
+<div class="test-opts" id="opts5">
+<button class="test-opt" data-q="5" data-idx="0" data-correct="2" onclick="pickAns(this)">Yes — same coverage, so cost is the deciding factor</button>
+<button class="test-opt" data-q="5" data-idx="1" data-correct="2" onclick="pickAns(this)">Yes — Sharia compliance applies to financing arrangements, not insurance</button>
+<button class="test-opt" data-q="5" data-idx="2" data-correct="2" onclick="pickAns(this)">No — conventional insurance contains Gharar and Maysir; Takaful is mandatory for a Sharia-compliant entity regardless of cost</button>
+<button class="test-opt" data-q="5" data-idx="3" data-correct="2" onclick="pickAns(this)">No — only if the SSB specifically prohibits conventional insurance in writing</button>
+</div>
+<div class="test-expl" id="expl5"><b>Explanation:</b> Sharia compliance is not optional based on cost. Conventional insurance contains Gharar (uncertain payout) and Maysir (speculative — you pay and may receive nothing or multiples). For a Sharia-compliant company like SGH, Takaful is mandatory regardless of the premium difference. The CFO's reasoning would be acceptable at a conventional company and is completely wrong at SGH.</div>
+</div>
+<div class="test-card" id="tc6">
+<div class="test-q-hd"><span class="qnum">T·07</span><span class="tag-pill ifrs">IFRS 9</span><span class="qtext">How should SGH account for a Murabaha financing facility used to purchase a property?</span></div>
+<div class="test-opts" id="opts6">
+<button class="test-opt" data-q="6" data-idx="0" data-correct="2" onclick="pickAns(this)">Trade payable — it originated from a purchase transaction</button>
+<button class="test-opt" data-q="6" data-idx="1" data-correct="2" onclick="pickAns(this)">Off-balance-sheet — no conventional loan was taken</button>
+<button class="test-opt" data-q="6" data-idx="2" data-correct="2" onclick="pickAns(this)">Financial liability at amortised cost under IFRS 9; profit element amortised using EIR</button>
+<button class="test-opt" data-q="6" data-idx="3" data-correct="2" onclick="pickAns(this)">Deferred income — the profit is built in upfront</button>
+</div>
+<div class="test-expl" id="expl6"><b>Explanation:</b> IFRS 9 follows economic substance not legal form. A Murabaha facility is economically equivalent to a loan — asset received, larger amount owed back over time. Under IFRS 9: financial liability at amortised cost. The profit element (total sale price minus cost) is amortised using the Effective Interest Rate method — mechanically identical to conventional interest expense accounting.</div>
+</div>
+<div class="test-card" id="tc7">
+<div class="test-q-hd"><span class="qnum">T·08</span><span class="tag-pill ifrs">Wakala</span><span class="qtext">SGH places KD 5M on Wakala at a target return of 4.2%. The bank achieves only 3.9%. SGH receives:</span></div>
+<div class="test-opts" id="opts7">
+<button class="test-opt" data-q="7" data-idx="0" data-correct="1" onclick="pickAns(this)">KD 5M + 4.2% — the target was agreed and the bank is obligated</button>
+<button class="test-opt" data-q="7" data-idx="1" data-correct="1" onclick="pickAns(this)">KD 5M + 3.9% — the actual return achieved; Wakala is not guaranteed</button>
+<button class="test-opt" data-q="7" data-idx="2" data-correct="1" onclick="pickAns(this)">KD 5M only — missing the target means SGH receives principal only</button>
+<button class="test-opt" data-q="7" data-idx="3" data-correct="1" onclick="pickAns(this)">Nothing — missing the target constitutes a default</button>
+</div>
+<div class="test-expl" id="expl7"><b>Explanation:</b> The most operationally important distinction between Wakala and a conventional fixed deposit. In a conventional fixed deposit, the bank guarantees the stated rate regardless of actual investment performance. In Wakala, the return is a share of actual profits achieved. If the bank achieves 3.9%, SGH receives 3.9%. The 4.2% target is a benchmark, not a guarantee. This is what makes it Sharia-compliant — no guaranteed return on money.</div>
+</div>
+<div class="test-card" id="tc8">
+<div class="test-q-hd"><span class="qnum">T·09</span><span class="tag-pill ifrs">IFRS 9</span><span class="qtext">SGH enters an IPRS but does NOT formally document the hedging relationship at inception. Six months later the IPRS has a positive fair value of KD 480,000. Where does this appear?</span></div>
+<div class="test-opts" id="opts8">
+<button class="test-opt" data-q="8" data-idx="0" data-correct="1" onclick="pickAns(this)">OCI as a Cash Flow Hedge Reserve — hedge accounting is automatic</button>
+<button class="test-opt" data-q="8" data-idx="1" data-correct="1" onclick="pickAns(this)">P&L as a fair value gain — without hedge documentation the IPRS is FVTPL</button>
+<button class="test-opt" data-q="8" data-idx="2" data-correct="1" onclick="pickAns(this)">Not recognised — IPRS instruments are off-balance-sheet</button>
+<button class="test-opt" data-q="8" data-idx="3" data-correct="1" onclick="pickAns(this)">Equity as a revaluation reserve under IAS 16</button>
+</div>
+<div class="test-expl" id="expl8"><b>Explanation:</b> Hedge accounting under IFRS 9 is not automatic and cannot be backdated — ever. Without formal designation and documentation at inception, the IPRS is treated as a held-for-trading derivative at FVTPL. The KD 480,000 gain goes directly to P&L, creating exactly the volatility the hedge was supposed to eliminate. Day-one documentation is not a formality — it is the legal trigger for hedge accounting treatment.</div>
+</div>
+<div class="test-card" id="tc9">
+<div class="test-q-hd"><span class="qnum">T·10</span><span class="tag-pill ifrs">Treasury</span><span class="qtext">LME copper prices fall 8% on the day SGH has a KD 3M Commodity Murabaha placement outstanding with KFH. The treasury manager says SGH has lost KD 240,000. Correct?</span></div>
+<div class="test-opts" id="opts9">
+<button class="test-opt" data-q="9" data-idx="0" data-correct="1" onclick="pickAns(this)">Yes — write down the investment immediately</button>
+<button class="test-opt" data-q="9" data-idx="1" data-correct="1" onclick="pickAns(this)">No — the deferred sale price to KFH is contractually fixed at inception; SGH has zero commodity price exposure</button>
+<button class="test-opt" data-q="9" data-idx="2" data-correct="1" onclick="pickAns(this)">Yes — SGH was briefly the legal owner of the copper so it absorbed the price movement</button>
+<button class="test-opt" data-q="9" data-idx="3" data-correct="1" onclick="pickAns(this)">No — but update the treasury policy to add commodity price risk monitoring</button>
+</div>
+<div class="test-expl" id="expl9"><b>Explanation:</b> The treasury manager fundamentally misunderstands the structure. The moment SGH sold the copper to KFH in Step 2 at a fixed deferred price of KD 3,012,548 — all commodity risk was eliminated. KFH owes SGH exactly KD 3,012,548 at maturity. This does not change with LME copper prices. SGH's position is a fixed-price receivable from KFH, not a copper holding. No write-down, no risk.</div>
+</div>
+<div class="test-card" id="tc10">
+<div class="test-q-hd"><span class="qnum">T·11</span><span class="tag-pill ifrs">Musharakah</span><span class="qtext">In a Diminishing Musharakah on a KD 8M property (KFH 60%, SGH 40%), SGH buys KFH's share down to 35% after 2 years. How does the monthly rent SGH pays KFH change?</span></div>
+<div class="test-opts" id="opts10">
+<button class="test-opt" data-q="10" data-idx="0" data-correct="2" onclick="pickAns(this)">Same — rent is fixed at the beginning of the arrangement</button>
+<button class="test-opt" data-q="10" data-idx="1" data-correct="2" onclick="pickAns(this)">More — SGH now has a larger ownership stake so has more responsibility</button>
+<button class="test-opt" data-q="10" data-idx="2" data-correct="2" onclick="pickAns(this)">Less — rent is charged only on KFH's remaining share, which has reduced from 60% to 35%</button>
+<button class="test-opt" data-q="10" data-idx="3" data-correct="2" onclick="pickAns(this)">Zero — once SGH's ownership crosses 50%, rent stops</button>
+</div>
+<div class="test-expl" id="expl10"><b>Explanation:</b> Rent is charged only on KFH's remaining ownership share — because rent is the return for allowing someone else to use your asset. As KFH's share reduced from 60% to 35%, KFH owns less property — so KFH can only legitimately charge rent on what it owns. Month 1 rent based on 60%. Now based on 35% — approximately 58% of original rent. This declining rent mechanic is precisely what makes Diminishing Musharakah economically similar to a conventional amortising mortgage.</div>
+</div>
+<div class="test-card" id="tc11">
+<div class="test-q-hd"><span class="qnum">T·12</span><span class="tag-pill ifrs">IFRS 15</span><span class="qtext">Rawsam Engineering signs a KD 5M contract (18-month duration). After 6 months, 25% of work is physically complete but only 20% of total estimated costs have been incurred. Revenue to recognise?</span></div>
+<div class="test-opts" id="opts11">
+<button class="test-opt" data-q="11" data-idx="0" data-correct="3" onclick="pickAns(this)">KD 1M — input method: 20% costs incurred x KD 5M</button>
+<button class="test-opt" data-q="11" data-idx="1" data-correct="3" onclick="pickAns(this)">KD 1.25M — output method: 25% physical completion x KD 5M</button>
+<button class="test-opt" data-q="11" data-idx="2" data-correct="3" onclick="pickAns(this)">KD 0 — revenue recognised only at project completion</button>
+<button class="test-opt" data-q="11" data-idx="3" data-correct="3" onclick="pickAns(this)">Either KD 1M or KD 1.25M depending on the chosen accounting policy — both are acceptable under IFRS 15</button>
+</div>
+<div class="test-expl" id="expl11"><b>Explanation:</b> IFRS 15 allows both input and output methods. The entity chooses whichever method best depicts transfer of control to the customer — and applies it consistently. Input = KD 1M. Output = KD 1.25M. Both are valid. As GFD, you set the accounting policy for Rawsam, document it, apply it consistently period-to-period, and agree it with the auditors. Neither method is inherently superior — the question is which better reflects actual progress on Rawsam's specific contract types.</div>
+</div>
+<div class="test-card" id="tc12">
+<div class="test-q-hd"><span class="qnum">T·13</span><span class="tag-pill ifrs">IFRS 3</span><span class="qtext">SGH acquires a property management company for KD 12M. Net identifiable assets at fair value = KD 9M. What happens to the KD 3M difference?</span></div>
+<div class="test-opts" id="opts12">
+<button class="test-opt" data-q="12" data-idx="0" data-correct="2" onclick="pickAns(this)">Written off immediately to P&L as an acquisition premium</button>
+<button class="test-opt" data-q="12" data-idx="1" data-correct="2" onclick="pickAns(this)">Goodwill — amortised over 10 years as an intangible asset</button>
+<button class="test-opt" data-q="12" data-idx="2" data-correct="2" onclick="pickAns(this)">Goodwill — NOT amortised; tested for impairment annually under IAS 36 CGU assessment</button>
+<button class="test-opt" data-q="12" data-idx="3" data-correct="2" onclick="pickAns(this)">Added to the fair value of the investment properties acquired</button>
+</div>
+<div class="test-expl" id="expl12"><b>Explanation:</b> Under IFRS 3: excess of consideration over fair value of net identifiable assets = Goodwill. Goodwill is NOT amortised under IFRS — this is a critical difference from some national GAAPs. It is allocated to a Cash Generating Unit and tested for impairment annually. If the CGU's recoverable amount falls below its carrying amount (including goodwill) → impairment charge to P&L. Every KD paid above fair value sits as Goodwill at risk of future write-down.</div>
+</div>
+<div class="test-card" id="tc13">
+<div class="test-q-hd"><span class="qnum">T·14</span><span class="tag-pill ifrs">Zakat</span><span class="qtext">Zakat at SGH should be calculated as 2.5% of net profit for simplicity. Correct?</span></div>
+<div class="test-opts" id="opts13">
+<button class="test-opt" data-q="13" data-idx="0" data-correct="2" onclick="pickAns(this)">Yes — net profit is the most reliable base for Zakat</button>
+<button class="test-opt" data-q="13" data-idx="1" data-correct="2" onclick="pickAns(this)">Yes — 2.5% of profit is the globally accepted standard rate</button>
+<button class="test-opt" data-q="13" data-idx="2" data-correct="2" onclick="pickAns(this)">No — Zakat is a wealth tax calculated on zakatable assets minus current liabilities, not on profit</button>
+<button class="test-opt" data-q="13" data-idx="3" data-correct="2" onclick="pickAns(this)">No — Zakat should be calculated on gross revenue</button>
+</div>
+<div class="test-expl" id="expl13"><b>Explanation:</b> Zakat is fundamentally different from income tax. Income tax is profit-based. Zakat is wealth-based — calculated on the zakatable asset base (cash, receivables, inventory, short-term investments) minus current liabilities due within the year. A profitable year with low zakatable assets generates less Zakat than a loss-making year with high cash holdings. This is why Zakat requires a dedicated workpaper separate from the tax computation — it cannot be derived from the P&L.</div>
+</div>
+<div class="test-card" id="tc14">
+<div class="test-q-hd"><span class="qnum">T·15</span><span class="tag-pill ifrs">Sukuk</span><span class="qtext">Sukuk income received by SGH as an investor — is it dividend income?</span></div>
+<div class="test-opts" id="opts14">
+<button class="test-opt" data-q="14" data-idx="0" data-correct="1" onclick="pickAns(this)">Yes — Sukuk holders are co-owners so income is equity-like</button>
+<button class="test-opt" data-q="14" data-idx="1" data-correct="1" onclick="pickAns(this)">No — it is Islamic finance income / investment income; never dividend income under IFRS</button>
+<button class="test-opt" data-q="14" data-idx="2" data-correct="1" onclick="pickAns(this)">Yes — if the Sukuk is equity-classified under IAS 32</button>
+<button class="test-opt" data-q="14" data-idx="3" data-correct="1" onclick="pickAns(this)">No — but only because Kuwait tax law classifies it differently</button>
+</div>
+<div class="test-expl" id="expl14"><b>Explanation:</b> Sukuk income is not dividend income. Under Sharia, Sukuk holders are co-owners — which sounds equity-like. But under IFRS 9, most Sukuk are debt-like financial assets (financial liability on the issuer's side). Income received = Islamic finance income, recognised using EIR. Dividends come from equity instruments where the investor holds an ownership stake in a company. Only Perpetual Sukuk (no redemption, discretionary distributions) — used by Islamic banks for Tier 1 capital — generates distributions treated as dividends. Not applicable to SGH's Sukuk investment portfolio.</div>
+</div>
+<div class="test-card" id="tc15">
+<div class="test-q-hd"><span class="qnum">T·16</span><span class="tag-pill ifrs">IAS 40 + IAS 36</span><span class="qtext">SGH uses the Fair Value Model for all investment properties. The auditor says IAS 36 impairment testing is required annually for all these properties. Correct?</span></div>
+<div class="test-opts" id="opts15">
+<button class="test-opt" data-q="15" data-idx="0" data-correct="2" onclick="pickAns(this)">Yes — IAS 36 applies to all non-financial assets annually</button>
+<button class="test-opt" data-q="15" data-idx="1" data-correct="2" onclick="pickAns(this)">Yes — but only for properties with vacancy rates above 20%</button>
+<button class="test-opt" data-q="15" data-idx="2" data-correct="2" onclick="pickAns(this)">No — under IAS 40 Fair Value Model, IAS 36 does not apply to investment properties; the fair value already reflects any decline</button>
+<button class="test-opt" data-q="15" data-idx="3" data-correct="2" onclick="pickAns(this)">No — IAS 36 only applies to financial assets</button>
+</div>
+<div class="test-expl" id="expl15"><b>Explanation:</b> IAS 40 Fair Value Model and IAS 36 do not overlap for the same assets. When SGH uses the Fair Value Model, the annual RICS independent valuation already incorporates any decline in asset value — it measures exactly what IAS 36 would be testing. Therefore IAS 36 impairment testing is not required for IAS 40 Fair Value assets. IAS 36 still applies to: goodwill (annual CGU test), any cost-model assets, and Rawsam Engineering's PP&E when indicators exist.</div>
+</div>
+<div class="test-card" id="tc16">
+<div class="test-q-hd"><span class="qnum">T·17</span><span class="tag-pill ifrs">IFRS 9</span><span class="qtext">Al-Riyada Finance's Murabaha receivable from a client becomes credit-impaired (Stage 3). The accounts team continues to accrue the full Murabaha profit on the gross balance. Correct?</span></div>
+<div class="test-opts" id="opts16">
+<button class="test-opt" data-q="16" data-idx="0" data-correct="1" onclick="pickAns(this)">Yes — the client contractually owes the full profit regardless of payment status</button>
+<button class="test-opt" data-q="16" data-idx="1" data-correct="1" onclick="pickAns(this)">No — under IFRS 9, once a financial asset is Stage 3, income is recognised only on the net carrying amount (gross minus ECL provision), not the gross balance</button>
+<button class="test-opt" data-q="16" data-idx="2" data-correct="1" onclick="pickAns(this)">Yes — IFRS 9 only affects provisioning, not income recognition</button>
+<button class="test-opt" data-q="16" data-idx="3" data-correct="1" onclick="pickAns(this)">No — all income recognition stops entirely the moment a client defaults</button>
+</div>
+<div class="test-expl" id="expl16"><b>Explanation:</b> IFRS 9 changed this from the old IAS 39 approach. For Stage 3 (credit-impaired) assets, you must calculate the effective interest rate on the net carrying amount — gross balance minus the ECL provision — not the gross balance. This reduces the income recognised and more accurately reflects economic reality: you are earning a return on the portion of the receivable you expect to collect, not the full contractual amount. The accounts team's approach overstates income on a non-performing asset.</div>
+</div>
+<div class="test-card" id="tc17">
+<div class="test-q-hd"><span class="qnum">T·18</span><span class="tag-pill ifrs">Sharia Governance</span><span class="qtext">In a Mudarabah, the Mudarib is found to have made investments that violated the agreed investment mandate (negligent). The fund lost KD 600,000. Who bears the loss?</span></div>
+<div class="test-opts" id="opts17">
+<button class="test-opt" data-q="17" data-idx="0" data-correct="1" onclick="pickAns(this)">Rab-ul-Maal only — capital providers always bear losses in Mudarabah</button>
+<button class="test-opt" data-q="17" data-idx="1" data-correct="1" onclick="pickAns(this)">Mudarib only — negligence voids the normal rule and shifts the entire loss to the negligent party</button>
+<button class="test-opt" data-q="17" data-idx="2" data-correct="1" onclick="pickAns(this)">Both equally — negligence triggers a 50/50 loss sharing</button>
+<button class="test-opt" data-q="17" data-idx="3" data-correct="1" onclick="pickAns(this)">Neither — Takaful covers this under the terms of the Mudarabah agreement</button>
+</div>
+<div class="test-expl" id="expl17"><b>Explanation:</b> The normal Mudarabah rule — only Rab-ul-Maal bears financial losses — applies to losses from normal business risk. When losses result from the Mudarib's negligence or breach of the agreed investment mandate, the protection evaporates entirely. The Mudarib becomes personally liable for the full loss. This is both the Sharia rule and the practical protection for capital providers — ensuring managers cannot be reckless with other people's money under the shield of 'I only lose my time.' Al-Riyada Finance would pursue the negligent manager for the full KD 600,000.</div>
+</div>
+<div class="test-card" id="tc18">
+<div class="test-q-hd"><span class="qnum">T·19</span><span class="tag-pill ifrs">IFRS 15</span><span class="qtext">SGH's UAE development subsidiary sells 200 off-plan apartments for AED 180M. Contracts signed, 10% deposits received, construction is 0% complete. The sales director says recognise AED 180M revenue now. Correct?</span></div>
+<div class="test-opts" id="opts18">
+<button class="test-opt" data-q="18" data-idx="0" data-correct="2" onclick="pickAns(this)">Yes — signed contracts with deposits paid satisfy revenue recognition criteria</button>
+<button class="test-opt" data-q="18" data-idx="1" data-correct="2" onclick="pickAns(this)">Yes — recognise only the AED 18M deposits received</button>
+<button class="test-opt" data-q="18" data-idx="2" data-correct="2" onclick="pickAns(this)">No — at 0% construction, if the point-in-time method applies, revenue is likely zero; over-time recognition requires specific conditions (enforceable right to payment for work done AND no alternative use of the asset) which may not be met at inception</button>
+<button class="test-opt" data-q="18" data-idx="3" data-correct="2" onclick="pickAns(this)">Defer all revenue until UAE regulatory approval is received</button>
+</div>
+<div class="test-expl" id="expl18"><b>Explanation:</b> IFRS 15 recognises revenue when performance obligations are satisfied — when control of the apartments transfers to buyers. At 0% construction the apartments do not exist. Over-time recognition requires (a) SGH has an enforceable right to payment for work completed to date AND (b) the asset has no alternative use (SGH cannot sell the apartment to another buyer). If these conditions are not met at inception, recognition is at a point in time — legal handover, which may be 2-3 years away. Booking AED 180M on day one would be a material misstatement.</div>
+</div>
+<div class="test-card" id="tc19">
+<div class="test-q-hd"><span class="qnum">T·20</span><span class="tag-pill ifrs">IAS 23</span><span class="qtext">SGH constructs a new mall using a Murabaha facility specifically drawn for this project. Construction takes 24 months. Can the Murabaha profit accruing during construction be capitalised?</span></div>
+<div class="test-opts" id="opts19">
+<button class="test-opt" data-q="19" data-idx="0" data-correct="1" onclick="pickAns(this)">No — Murabaha profit is not 'interest' so IAS 23 does not apply</button>
+<button class="test-opt" data-q="19" data-idx="1" data-correct="1" onclick="pickAns(this)">Yes — IAS 23 requires borrowing costs directly attributable to a qualifying asset to be capitalised; Murabaha profit qualifies as a borrowing cost under IFRS substance-over-form</button>
+<button class="test-opt" data-q="19" data-idx="2" data-correct="1" onclick="pickAns(this)">Only if the SSB approves capitalisation</button>
+<button class="test-opt" data-q="19" data-idx="3" data-correct="1" onclick="pickAns(this)">Only conventional interest can be capitalised; Islamic finance charges must always be expensed</button>
+</div>
+<div class="test-expl" id="expl19"><b>Explanation:</b> IAS 23 applies to Islamic financing charges under IFRS substance-over-form. The Murabaha profit directly attributable to financing the construction of a qualifying asset (a mall under construction, which takes substantially more than a short period to get ready for use) must be capitalised as part of the cost of that asset. This reduces P&L expense during construction and increases the asset's carrying amount. Once construction is complete and the mall is ready for its intended use, capitalisation ceases and all further Murabaha charges go to P&L.</div>
+</div>
+<div class="test-card" id="tc20">
+<div class="test-q-hd"><span class="qnum">T·21</span><span class="tag-pill ifrs">IFRS + Sharia</span><span class="qtext">SGH's Sharia Board certifies a financing structure as Murabaha. The IFRS 9 SPPI test on the instrument fails. What is the correct IFRS classification?</span></div>
+<div class="test-opts" id="opts20">
+<button class="test-opt" data-q="20" data-idx="0" data-correct="1" onclick="pickAns(this)">SGH can use Murabaha classification because the Sharia Board has certified it</button>
+<button class="test-opt" data-q="20" data-idx="1" data-correct="1" onclick="pickAns(this)">FVTPL — IFRS 9 classifies based on contractual cash flow characteristics and business model, not Sharia labelling</button>
+<button class="test-opt" data-q="20" data-idx="2" data-correct="1" onclick="pickAns(this)">Amortised cost — Murabaha instruments are always amortised cost</button>
+<button class="test-opt" data-q="20" data-idx="3" data-correct="1" onclick="pickAns(this)">The Sharia Board certification takes precedence for Sharia-compliant companies</button>
+</div>
+<div class="test-expl" id="expl20"><b>Explanation:</b> Sharia and IFRS are completely independent frameworks answering different questions. The SSB certifies whether the transaction is permissible under Islamic law. IFRS 9 classifies based on contractual cash flow characteristics (SPPI test) and business model. If SPPI fails — meaning cash flows are not solely payments of principal and profit — the instrument is FVTPL regardless of what the SSB says about its permissibility. The SSB does not override IFRS. A GFD must apply both frameworks simultaneously and independently.</div>
+</div>
+<div class="test-card" id="tc21">
+<div class="test-q-hd"><span class="qnum">T·22</span><span class="tag-pill ifrs">Tawarruq</span><span class="qtext">The statement 'Commodity Murabaha (Tawarruq) is universally accepted by all Sharia scholars as fully compliant' is:</span></div>
+<div class="test-opts" id="opts21">
+<button class="test-opt" data-q="21" data-idx="0" data-correct="1" onclick="pickAns(this)">True — universally accepted with no compliance risk</button>
+<button class="test-opt" data-q="21" data-idx="1" data-correct="1" onclick="pickAns(this)">False — the OIC Fiqh Academy and some scholars consider organised Tawarruq to be a disguised interest arrangement; the SSB must specifically certify the structure used</button>
+<button class="test-opt" data-q="21" data-idx="2" data-correct="1" onclick="pickAns(this)">False — Commodity Murabaha is prohibited by all major Sharia authorities</button>
+<button class="test-opt" data-q="21" data-idx="3" data-correct="1" onclick="pickAns(this)">True — LME listing of the commodity makes it automatically Sharia-compliant</button>
+</div>
+<div class="test-expl" id="expl21"><b>Explanation:</b> Organised Tawarruq is genuinely controversial. The OIC International Islamic Fiqh Academy (2009 resolution) expressed concern that when the same institution arranges both commodity legs, the commodity element becomes a legal fiction disguising an interest-bearing loan. GCC scholars are generally more permissive. Malaysian scholars accept it widely. As GFD, you cannot assume universal approval. Your SSB must specifically certify the exact structure used — counterparties, commodity type, independence of transaction legs, pricing methodology. 'Everyone does it' is not a Sharia compliance defence.</div>
+</div>
+<div class="test-card" id="tc22">
+<div class="test-q-hd"><span class="qnum">T·23</span><span class="tag-pill ifrs">IAS 32</span><span class="qtext">A Perpetual Sukuk issued by Kuwait Finance House pays distributions entirely at KFH's discretion with no fixed redemption date. How is it classified on KFH's balance sheet?</span></div>
+<div class="test-opts" id="opts22">
+<button class="test-opt" data-q="22" data-idx="0" data-correct="1" onclick="pickAns(this)">Financial liability — all Sukuk are liabilities regardless of structure</button>
+<button class="test-opt" data-q="22" data-idx="1" data-correct="1" onclick="pickAns(this)">Equity — no contractual obligation to deliver cash; distributions are discretionary and there is no redemption obligation</button>
+<button class="test-opt" data-q="22" data-idx="2" data-correct="1" onclick="pickAns(this)">Contingent liability — payments are uncertain</button>
+<button class="test-opt" data-q="22" data-idx="3" data-correct="1" onclick="pickAns(this)">Off-balance-sheet — held in the SPV only</button>
+</div>
+<div class="test-expl" id="expl22"><b>Explanation:</b> Most Sukuk are liabilities — but Perpetual Sukuk is the specific exception that proves the rule. IAS 32 classifies an instrument as equity only when there is NO contractual obligation to deliver cash. If KFH can choose not to make distributions and never has to redeem, the holder has no right to demand cash. That passes the IAS 32 equity test. This is why Islamic banks issue Perpetual Sukuk as regulatory Tier 1 capital under Basel III — it counts as equity capital. This exception does NOT apply to SGH's term Sukuk with defined redemption obligations.</div>
+</div>
+<div class="test-card" id="tc23">
+<div class="test-q-hd"><span class="qnum">T·24</span><span class="tag-pill ifrs">IFRS 16</span><span class="qtext">SGH's mall lease agreements include a 6-month rent-free period at the beginning to incentivise a major anchor tenant. How should rental income be recognised?</span></div>
+<div class="test-opts" id="opts23">
+<button class="test-opt" data-q="23" data-idx="0" data-correct="1" onclick="pickAns(this)">Recognise KD 0 for the first 6 months, then the full contracted rent for the remaining lease term</button>
+<button class="test-opt" data-q="23" data-idx="1" data-correct="1" onclick="pickAns(this)">Recognise the total expected lease rental on a straight-line basis over the full lease term, including the rent-free period</button>
+<button class="test-opt" data-q="23" data-idx="2" data-correct="1" onclick="pickAns(this)">Recognise the cash received in each period — KD 0 for months 1-6, then the contracted amount</button>
+<button class="test-opt" data-q="23" data-idx="3" data-correct="1" onclick="pickAns(this)">Recognise income only when the rent-free period ends</button>
+</div>
+<div class="test-expl" id="expl23"><b>Explanation:</b> Under IAS 40 / IFRS 16 lessor accounting, rental income must be recognised on a straight-line basis over the entire lease term — including any rent-free incentive periods. The rent-free period does not create a gap in income recognition; it reduces the average income recognised across the full term. For a 3-year lease at KD 100,000/year with a 6-month rent-free period: total cash = KD 250,000 over 30 months. Straight-line income = KD 250,000 ÷ 36 months = KD 6,944/month throughout the full lease, even in the rent-free months.</div>
+</div>
+<div class="test-card" id="tc24">
+<div class="test-q-hd"><span class="qnum">T·25</span><span class="tag-pill ifrs">Consolidation</span><span class="qtext">SGH charges a KD 200,000 annual management fee from the holding company to Rawsam Engineering. In SGH's consolidated financial statements, this is:</span></div>
+<div class="test-opts" id="opts24">
+<button class="test-opt" data-q="24" data-idx="0" data-correct="1" onclick="pickAns(this)">Revenue at the SGH holding company level — intercompany management fees are always recognised</button>
+<button class="test-opt" data-q="24" data-idx="1" data-correct="1" onclick="pickAns(this)">An intercompany transaction that must be fully eliminated on consolidation — both the fee income and the corresponding fee expense</button>
+<button class="test-opt" data-q="24" data-idx="2" data-correct="1" onclick="pickAns(this)">Revenue at SGH but with a disclosure note about the related-party nature</button>
+<button class="test-opt" data-q="24" data-idx="3" data-correct="1" onclick="pickAns(this)">Recognised only to the extent Rawsam Engineering paid cash during the year</button>
+</div>
+<div class="test-expl" id="expl24"><b>Explanation:</b> Intercompany transactions must be fully eliminated on consolidation under IFRS 10. SGH holding company recognises KD 200,000 fee income. Rawsam recognises KD 200,000 fee expense. In the consolidated financial statements, both are eliminated — the consolidated group cannot generate revenue or incur expense by transacting with itself. The elimination removes both the income line and the expense line. Failure to eliminate intercompany management fees is one of the most common consolidation errors in GCC holding companies.</div>
+</div>
+<div class="score-panel" id="sp-bot"><div class="score-big" id="sd-bot">—</div><div class="score-msg" id="sm-bot">Complete all 25 questions then click Show Score.</div></div>
+</div>
+<footer>SGH-PREP-2025 · CA Dhruv Sharma · Group Finance Director · Confidential · Personal Use Only</footer>
+</div><!-- wrap -->
+
+<script>
+let score=0,answered=new Array(25).fill(false);
+function pickAns(btn){
+  const qi=+btn.dataset.q,correct=+btn.dataset.correct,sel=+btn.dataset.idx;
+  if(answered[qi])return;
+  answered[qi]=true;
+  document.querySelectorAll('#opts'+qi+' button').forEach((b,idx)=>{
+    b.disabled=true;
+    if(idx===correct)b.classList.add(sel===correct?'correct':'reveal');
+  });
+  if(sel===correct){btn.classList.add('correct');score++;}
+  else btn.classList.add('wrong');
+  document.getElementById('expl'+qi).style.display='block';
+  updateScore();
+}
+function updateScore(){
+  const done=answered.filter(Boolean).length;
+  const txt=score+' / 25 ('+done+' answered)';
+  document.getElementById('sd-top').textContent=txt;
+  document.getElementById('sd-bot').textContent=txt;
+  let msg='Answer all 25 questions to see your full assessment.';
+  if(done===25){
+    const pct=score/25;
+    if(pct===1)msg='Perfect score. You are fully interview-ready on Islamic finance and IFRS.';
+    else if(pct>=0.88)msg='Excellent. Review wrong answers once and walk in with confidence.';
+    else if(pct>=0.72)msg='Solid. Study the questions you got wrong — focus on IFRS and Sharia intersections.';
+    else if(pct>=0.52)msg='Good start. Go back through Sections 3–5 and retake.';
+    else msg='More study needed. Work through all sections before retesting.';
+  }
+  document.getElementById('sm-top').textContent=msg;
+  document.getElementById('sm-bot').textContent=msg;
+}
+function showScore(){
+  document.getElementById('sp-top').classList.add('show');
+  document.getElementById('sp-bot').classList.add('show');
+}
+function resetTest(){
+  score=0;answered=new Array(25).fill(false);
+  document.querySelectorAll('.test-opt').forEach(b=>{b.disabled=false;b.className='test-opt';});
+  document.querySelectorAll('.test-expl').forEach(e=>e.style.display='none');
+  document.getElementById('sp-top').classList.remove('show');
+  document.getElementById('sp-bot').classList.remove('show');
+  updateScore();
+}
+updateScore();
+</script>
+</body></html>
